@@ -3,7 +3,17 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Phone, Mail, MapPin, Send } from "lucide-react"
+import { Phone, Mail, MapPin, Send, Loader2, CheckCircle } from "lucide-react"
+
+// Google Form Configuration
+// Replace these with your actual Google Form entry IDs
+const GOOGLE_FORM_ACTION_URL = process.env.NEXT_PUBLIC_GOOGLE_FORM_URL || ""
+const GOOGLE_FORM_ENTRIES = {
+  name: process.env.NEXT_PUBLIC_GOOGLE_FORM_NAME_ENTRY || "entry.123456789",
+  email: process.env.NEXT_PUBLIC_GOOGLE_FORM_EMAIL_ENTRY || "entry.234567890",
+  phone: process.env.NEXT_PUBLIC_GOOGLE_FORM_PHONE_ENTRY || "entry.345678901",
+  message: process.env.NEXT_PUBLIC_GOOGLE_FORM_MESSAGE_ENTRY || "entry.456789012",
+}
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -12,13 +22,41 @@ export function ContactSection() {
     phone: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-    alert("Thank you for your inquiry! We will contact you soon.")
-    setFormData({ name: "", email: "", phone: "", message: "" })
+    setIsSubmitting(true)
+    setError("")
+
+    try {
+      // Create form data for Google Forms
+      const googleFormData = new FormData()
+      googleFormData.append(GOOGLE_FORM_ENTRIES.name, formData.name)
+      googleFormData.append(GOOGLE_FORM_ENTRIES.email, formData.email)
+      googleFormData.append(GOOGLE_FORM_ENTRIES.phone, formData.phone)
+      googleFormData.append(GOOGLE_FORM_ENTRIES.message, formData.message)
+
+      // Submit to Google Form using no-cors mode (Google Forms doesn't support CORS)
+      await fetch(GOOGLE_FORM_ACTION_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: googleFormData,
+      })
+
+      // Since no-cors doesn't return response status, we assume success
+      setIsSubmitted(true)
+      setFormData({ name: "", email: "", phone: "", message: "" })
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000)
+    } catch {
+      setError("Something went wrong. Please try again or contact us directly.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -97,10 +135,33 @@ export function ContactSection() {
                     placeholder="Tell us about your requirements"
                   />
                 </div>
-                <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6">
-                  Send Message
-                  <Send className="ml-2 h-4 w-4" />
-                </Button>
+                {error && (
+                  <p className="text-destructive text-sm">{error}</p>
+                )}
+                {isSubmitted ? (
+                  <Button type="button" className="w-full bg-green-600 text-white py-6" disabled>
+                    <CheckCircle className="mr-2 h-4 w-4" />
+                    Message Sent Successfully!
+                  </Button>
+                ) : (
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6"
+                    disabled={isSubmitting || !GOOGLE_FORM_ACTION_URL}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <Send className="ml-2 h-4 w-4" />
+                      </>
+                    )}
+                  </Button>
+                )}
               </form>
             </CardContent>
           </Card>
