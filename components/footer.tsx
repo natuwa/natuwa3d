@@ -77,7 +77,7 @@ export function Footer() {
             © {new Date().getFullYear()} NATUWA. All rights reserved.
           </p>
           <p className="text-background/60 text-sm flex items-center gap-1">
-            Made with <Heart className="w-4 h-4 text-accent fill-accent" /> in India
+            Made with <Heart className="w-4 h-4 text-accent fill-accent" /> in Delhi
           </p>
         </div>
       </div>

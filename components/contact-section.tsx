@@ -174,7 +174,7 @@ export function ContactSection() {
               </div>
               <div>
                 <h3 className="font-serif text-lg font-semibold text-foreground mb-1">Call Us</h3>
-                <p className="text-muted-foreground">+91 98765 43210</p>
+                <p className="text-muted-foreground">+91 81730 31933</p>
                 <p className="text-muted-foreground">Mon-Sat, 10am - 7pm</p>
               </div>
             </div>
@@ -185,7 +185,7 @@ export function ContactSection() {
               </div>
               <div>
                 <h3 className="font-serif text-lg font-semibold text-foreground mb-1">Email Us</h3>
-                <p className="text-muted-foreground">hello@natuwa.com</p>
+                <p className="text-muted-foreground">pragya.anim@gmail.com</p>
                 <p className="text-muted-foreground">We reply within 24 hours</p>
               </div>
             </div>
@@ -196,8 +196,7 @@ export function ContactSection() {
               </div>
               <div>
                 <h3 className="font-serif text-lg font-semibold text-foreground mb-1">Visit Us</h3>
-                <p className="text-muted-foreground">123 Creative Studio Lane</p>
-                <p className="text-muted-foreground">Mumbai, Maharashtra 400001</p>
+                <p className="text-muted-foreground">Delhi, India</p>
               </div>
             </div>
 
