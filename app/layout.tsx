@@ -17,7 +17,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: 'NATUWA - Your Frozen Moment | Wedding 3D Printed Miniatures',
+  title: 'natuwa3d - Your Frozen Moment | Wedding 3D Printed Miniatures',
   description: 'Transform your precious wedding moments into timeless 3D printed miniatures. Custom-crafted keepsakes that capture your love story forever.',
   generator: 'v0.app',
   icons: {
