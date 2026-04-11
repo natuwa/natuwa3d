@@ -52,7 +52,7 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden fixed top-[70px] left-0 right-0 bg-background border-b border-border py-4 px-6 z-50 pointer-events-auto">
+          <div className="md:hidden fixed top-[70px] left-0 right-0 bg-background border-b border-border py-4 px-6 z-50">
             <div className="flex flex-col gap-4 w-full">
               <Link 
                 href="#products" 
