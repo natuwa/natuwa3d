@@ -13,13 +13,13 @@ const products = [
     title: "Traditional Wedding",
     description: "Traditional Indian attire with intricate details",
     price: "₹3,999",
-    image: "/images/miniature-2.jpg",
+    image: "/images/miniature-22.jpg",
   },
   {
     title: "Family Portrait",
     description: "Include your family in a beautiful group miniature",
     price: "₹7,999",
-    image: "/images/miniature-3.jpg",
+    image: "/images/miniature-33.jpg",
   },
 ]
 
