@@ -35,7 +35,7 @@ export function Navbar() {
             <Link href="#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Contact
             </Link>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSeBD0w5-UBiK0ZF5UGAA-RrI41OaGaBodq67aEMiVJNUcPMLw/viewform?usp=header", "_blank")}>
               Book Now
             </Button>
           </div>
