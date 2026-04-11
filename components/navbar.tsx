@@ -52,8 +52,8 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border py-4 px-6">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden fixed top-[70px] left-0 right-0 bg-background border-b border-border py-4 px-6 z-50">
+            <div className="flex flex-col gap-4 w-full">
               <Link 
                 href="#products" 
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
