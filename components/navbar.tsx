@@ -83,9 +83,10 @@ export function Navbar() {
               >
                 Contact
               </Link>
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 w-full">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBD0w5-UBiK0ZF5UGAA-RrI41OaGaBodq67aEMiVJNUcPMLw/viewform" target="_blank"
+  rel="noopener noreferrer" className="block bg-primary text-primary-foreground px-4 py-2 rounded-md">
                 Book Now
-              </Button>
+              </a>
             </div>
           </div>
         )}
