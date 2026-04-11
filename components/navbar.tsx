@@ -52,7 +52,7 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden fixed top-[70px] left-0 right-0 bg-background border-b border-border py-4 px-6 z-50">
+          <div className="md:hidden fixed top-[70px] left-0 right-0 bg-background border-b border-border py-4 px-6 z-50 pointer-events-auto">
             <div className="flex flex-col gap-4 w-full">
               <Link 
                 href="#products" 
@@ -82,9 +82,14 @@ export function Navbar() {
               >
                 Contact
               </Link>
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 w-full">
-                Book Now
-              </Button>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBD0w5-UBiK0ZF5UGAA-RrI41OaGaBodq67aEMiVJNUcPMLw/viewform"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 onClick={() => setIsOpen(false)}
+                 className="block bg-primary text-primary-foreground px-4 py-2 rounded-md"
+              >
+                 Book Now
+              </a>
             </div>
           </div>
         )}
