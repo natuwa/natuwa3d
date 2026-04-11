@@ -6,19 +6,19 @@ const products = [
   {
     title: "Couple Miniature",
     description: "Classic couple figurine capturing your wedding look",
-    price: "₹1,499",
+    price: "₹1,999",
     image: "/images/miniature-1.jpg",
   },
   {
     title: "Traditional Wedding",
     description: "Traditional Indian attire with intricate details",
-    price: "₹3,999",
+    price: "₹2,999",
     image: "/images/miniature-22.jpg",
   },
   {
     title: "Family Portrait",
     description: "Include your family in a beautiful group miniature",
-    price: "₹7,999",
+    price: "₹3,999",
     image: "/images/miniature-33.jpg",
   },
 ]
