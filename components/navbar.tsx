@@ -83,12 +83,18 @@ export function Navbar() {
               >
                 Contact
               </Link>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBD0w5-UBiK0ZF5UGAA-RrI41OaGaBodq67aEMiVJNUcPMLw/viewform"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 onClick={() => setIsOpen(false)}
-                 className="block bg-primary text-primary-foreground px-4 py-2 rounded-md text-center">
-                 Book Now
+              <a
+                href="#"
+                onClick={() => {
+                  setIsOpen(false);
+                  window.open(
+                    "https://docs.google.com/forms/d/e/1FAIpQLSeBD0w5-UBiK0ZF5UGAA-RrI41OaGaBodq67aEMiVJNUcPMLw/viewform",
+                    "_blank"
+                  );
+                }}
+                className="block bg-primary text-primary-foreground px-4 py-2 rounded-md text-center"
+              >
+                Book Now
               </a>
             </div>
           </div>
