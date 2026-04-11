@@ -84,10 +84,14 @@ export function Navbar() {
                 Contact
               </Link>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBD0w5-UBiK0ZF5UGAA-RrI41OaGaBodq67aEMiVJNUcPMLw/viewform"
-                 target="_blank" rel="noopener noreferrer"
-                 onClick={() => setIsOpen(false)}
+                 target="_blank" rel="noopener noreferrer" 
+                 onClick={(e) => {
+                   e.stopPropagation();
+                   setIsOpen(false);
+                   window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSeBD0w5-UBiK0ZF5UGAA-RrI41OaGaBodq67aEMiVJNUcPMLw/viewform";
+               }}
                  className="block bg-primary text-primary-foreground px-4 py-2 rounded-md">
-                Book Now
+                  Book Now
               </a>
             </div>
           </div>
