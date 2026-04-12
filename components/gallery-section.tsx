@@ -4,14 +4,14 @@ import Image from "next/image"
 import { useState } from "react"
 
 const galleryImages = [
-  { src: "/images/hero-couple.jpg", alt: "Wedding couple miniature" },
-  { src: "/images/miniature-a.jpg", alt: "Miniature 1" },
-  { src: "/images/miniature-2.jpg", alt: "Miniature 2" },
-  { src: "/images/miniature-3.jpg", alt: "Miniature 3" },
-  { src: "/images/miniature-4.jpg", alt: "Miniature 4" },
-  { src: "/images/miniature-c.jpg", alt: "Miniature 5" },
-  { src: "/images/miniature-b.jpg", alt: "Miniature 6" },
-  { src: "/images/miniature-7.jpg", alt: "Miniature 7" },
+  { src: "/images/hero-couple.jpg", alt: "Wedding couple miniature", title: "Couple Miniature" },
+  { src: "/images/miniature-a.jpg", alt: "Miniature 1" , title: "Western Style" },
+  { src: "/images/miniature-2.jpg", alt: "Miniature 2" , title: "Indian Wedding" },
+  { src: "/images/miniature-3.jpg", alt: "Miniature 3" , title: "Family Set" },
+  { src: "/images/miniature-4.jpg", alt: "Miniature 4" , title: "Bride Solo" },
+  { src: "/images/miniature-c.jpg", alt: "Miniature 5" , title: "Groom Solo" },
+  { src: "/images/miniature-b.jpg", alt: "Miniature 6" , title: "Royal Theme" },
+  { src: "/images/miniature-7.jpg", alt: "Miniature 7" , title: "Custom Pose" },
 ]
 
 export function GallerySection() {
