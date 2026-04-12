@@ -54,27 +54,28 @@ export function GallerySection() {
 
         {/* Lightbox */}
         {selectedImage && (
-          <div
-            className="fixed inset-0 bg-foreground/90 z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedImage(null)}
-          >
-            <div className="relative max-w-4xl max-h-[90vh] w-full aspect-square">
-              <Image
-                src={selectedImage}
-                alt="Selected miniature"
-                fill
-                className="object-contain"
-              />
-            </div>
-            <button
-              className="absolute top-4 right-4 text-background text-4xl hover:text-accent transition-colors"
-              onClick={() => setSelectedImage(null)}
-              aria-label="Close lightbox"
-            >
-              ×
-            </button>
-          </div>
-        )}
+          {selectedImage && (
+  <div
+    className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+    onClick={() => setSelectedImage(null)}
+  >
+    <div className="relative max-w-5xl w-full h-[80vh]">
+      <Image
+        src={selectedImage}
+        alt="Selected miniature"
+        fill
+        className="object-contain rounded-xl"
+      />
+    </div>
+
+    <button
+      className="absolute top-4 right-4 text-white text-4xl hover:text-accent"
+      onClick={() => setSelectedImage(null)}
+    >
+      ×
+    </button>
+  </div>
+)}
       </div>
     </section>
   )
