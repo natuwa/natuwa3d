@@ -46,6 +46,9 @@ export function GallerySection() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute bottom-0 w-full bg-black/50 text-white text-center p-2">
+                  {image.title}
+                </div>
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300" />
               </div>
             </div>
