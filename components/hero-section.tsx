@@ -60,13 +60,12 @@ export function HeroSection() {
           <div className="relative order-1 lg:order-2">
             <div className="relative w-full aspect-square max-w-lg mx-auto">
               <div className="absolute inset-0 bg-secondary rounded-full scale-90" />
-              <video
-                src="/hero-video.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="object-cover rounded-3xl shadow-2xl z-10 relative w-full h-full"
+              <Image
+                src="/images/hero-couple.jpg"
+                alt="3D printed wedding couple miniature"
+                fill
+                className="object-cover rounded-3xl shadow-2xl z-10 relative"
+                priority
               />
               {/* Decorative Elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-accent rounded-full" />
