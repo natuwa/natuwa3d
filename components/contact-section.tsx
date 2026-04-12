@@ -208,9 +208,9 @@ export function ContactSection() {
                   href="https://www.facebook.com/natuwa3d"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="..."
+                  className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                 >
-                  <Facebook />
+                  <Facebook className="w-5 h-5" />
                 </a>
                 <a href="https://instagram.com/natuwa3d" className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
