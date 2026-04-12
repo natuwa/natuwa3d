@@ -5,9 +5,13 @@ import { useState } from "react"
 
 const galleryImages = [
   { src: "/images/hero-couple.jpg", alt: "Wedding couple miniature" },
-  { src: "/images/miniature-1.jpg", alt: "Western style wedding couple" },
-  { src: "/images/miniature-2.jpg", alt: "Traditional Indian wedding couple" },
-  { src: "/images/miniature-3.jpg", alt: "Family group miniature" },
+  { src: "/images/miniature-1.jpg", alt: "Miniature 1" },
+  { src: "/images/miniature-2.jpg", alt: "Miniature 2" },
+  { src: "/images/miniature-3.jpg", alt: "Miniature 3" },
+  { src: "/images/miniature-4.jpg", alt: "Miniature 4" },
+  { src: "/images/miniature-5.jpg", alt: "Miniature 5" },
+  { src: "/images/miniature-6.jpg", alt: "Miniature 6" },
+  { src: "/images/miniature-7.jpg", alt: "Miniature 7" },
 ]
 
 export function GallerySection() {
@@ -28,7 +32,7 @@ export function GallerySection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {galleryImages.map((image, index) => (
             <div
               key={index}
