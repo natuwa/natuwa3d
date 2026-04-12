@@ -5,12 +5,12 @@ import { useState } from "react"
 
 const galleryImages = [
   { src: "/images/hero-couple.jpg", alt: "Wedding couple miniature" },
-  { src: "/images/miniature-1.jpg", alt: "Miniature 1" },
+  { src: "/images/miniature-a.jpg", alt: "Miniature 1" },
   { src: "/images/miniature-2.jpg", alt: "Miniature 2" },
   { src: "/images/miniature-3.jpg", alt: "Miniature 3" },
   { src: "/images/miniature-4.jpg", alt: "Miniature 4" },
-  { src: "/images/miniature-5.jpg", alt: "Miniature 5" },
-  { src: "/images/miniature-6.jpg", alt: "Miniature 6" },
+  { src: "/images/miniature-c.jpg", alt: "Miniature 5" },
+  { src: "/images/miniature-b.jpg", alt: "Miniature 6" },
   { src: "/images/miniature-7.jpg", alt: "Miniature 7" },
 ]
 
