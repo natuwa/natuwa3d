@@ -36,12 +36,11 @@ export function GallerySection() {
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className={`relative cursor-pointer overflow-hidden rounded-xl group ${
-                index === 0 ? "md:col-span-2 md:row-span-2" : ""
+              className="relative cursor-pointer overflow-hidden rounded-xl group"
               }`}
               onClick={() => setSelectedImage(image.src)}
             >
-              <div className={`relative ${index === 0 ? "aspect-square" : "aspect-[3/4]"}`}>
+              <div className="relative aspect-square">
                 <Image
                   src={image.src}
                   alt={image.alt}
