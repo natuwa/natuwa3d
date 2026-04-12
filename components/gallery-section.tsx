@@ -37,7 +37,7 @@ export function GallerySection() {
             <div
               key={index}
               className="relative cursor-pointer overflow-hidden rounded-xl group"
-              nClick={() => setSelectedImage(image.src)}
+              onClick={() => setSelectedImage(image.src)}
             >
               <div className="relative aspect-square">
                 <Image
