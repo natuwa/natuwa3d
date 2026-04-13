@@ -12,18 +12,27 @@ export default function Home() {
       </p>
 
       {/* IMAGE */}
-      <div className="flex justify-center">
-        <div className="w-full max-w-5xl">
-          <img
-            src="/images/size guideline.jpg"
+       <div className="flex justify-center">
+        <div className="relative w-full max-w-5xl">
+          
+          <Image
+            src="/images/size-guideline.jpg"
             alt="Miniature Size"
+            width={1200}
+            height={600}
             className="w-full h-auto"
           />
+      
+          {/* TEXT OVER IMAGE */}
+          <p className="absolute top-3 left-1/2 -translate-x-1/2 text-xs text-gray-700 bg-white/80 px-3 py-1 rounded-md">
+            (Shown in hand for better size understanding)
+          </p>
+      
         </div>
       </div>
 
-      <p className="mt-2 text-xs text-gray-400">
-        (Shown in hand for better size understanding)
+      <p className="absolute top-2 left-1/2 -translate-x-1/2 text-xs text-gray-600 bg-white/80 px-3 py-1 rounded-md">
+      (Shown in hand for better size understanding)
       </p>
 
       <p className="mt-6 text-base text-gray-500">
