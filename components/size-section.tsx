@@ -45,7 +45,7 @@ export default function Home() {
 
         <div>
           <h3 className="text-base font-medium text-gray-900">8 Inch</h3>
-          <<p className="text-sm text-gray-500 mt-1">Balanced size with clear detailing</p>
+          <p className="text-sm text-gray-500 mt-1">Balanced size with clear detailing</p>
         </div>
 
         <div>
