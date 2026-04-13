@@ -23,17 +23,12 @@ export default function Home() {
             className="w-full h-auto"
           />
       
-          {/* TEXT OVER IMAGE */}
-          <p className="absolute top-3 left-1/2 -translate-x-1/2 text-xs text-gray-700 bg-white/80 px-3 py-1 rounded-md">
+          <p className="absolute top-4 left-1/2 -translate-x-1/2 text-xs text-gray-800 bg-white/90 backdrop-blur px-4 py-1 rounded-full shadow">
             (Shown in hand for better size understanding)
           </p>
       
         </div>
       </div>
-
-      <p className="absolute top-2 left-1/2 -translate-x-1/2 text-xs text-gray-600 bg-white/80 px-3 py-1 rounded-md">
-      (Shown in hand for better size understanding)
-      </p>
 
       <p className="mt-6 text-base text-gray-500">
         All sizes maintain same quality & detailing — only the scale changes.
