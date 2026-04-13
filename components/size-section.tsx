@@ -6,7 +6,7 @@ export default function SizeSection() {
       </h2>
 
       <p className="text-gray-600 mb-10">
-        Available in 4, 6, 8 , 10 & 12 inches — crafted to match your space and style
+        Available in 4, 6, 8 & 10 inches — crafted to match your space and style
       </p>
 
       <div className="flex justify-center">
