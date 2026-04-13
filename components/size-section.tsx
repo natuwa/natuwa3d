@@ -17,7 +17,7 @@ export default function Home() {
         <Image
           src="/images/size guideline.jpg"
           alt="Miniature Size"
-          width={1400}
+          width={1000}
           height={600}
         />
       </div>
