@@ -6,7 +6,7 @@ export default function SizeSection() {
       </h2>
 
       <p className="text-gray-600 mb-10">
-        Available in 4, 6, 8 & 10 inches — crafted to match your space and style
+        Available in 4, 6, 8, 10 & 12 inches — crafted to match your space and style
       </p>
 
       <div className="flex justify-center">
@@ -20,7 +20,7 @@ export default function SizeSection() {
         All sizes maintain same quality & detailing — only the scale changes.
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 text-sm">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-10 text-sm">
         <div>
           <h3 className="font-semibold">4 Inch</h3>
           <p className="text-gray-500">Compact & Budget Friendly</p>
@@ -36,6 +36,10 @@ export default function SizeSection() {
         <div>
           <h3 className="font-semibold">10 Inch</h3>
           <p className="text-gray-500">Premium Showpiece</p>
+        </div>
+        <div className="border-2 border-black rounded-lg p-2 bg-white shadow-md">
+          <h3 className="font-semibold">12 Inch 👑</h3>
+          <p className="text-gray-500">Luxury Masterpiece</p>
         </div>
       </div>
     </section>
