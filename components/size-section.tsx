@@ -16,7 +16,7 @@ export default function Home() {
         <div className="relative w-full max-w-5xl">
           
           <Image
-            src="/images/size-guideline.jpg"
+            src="/images/sizeGuideline.jpg"
             alt="Miniature Size"
             width={1200}
             height={600}
