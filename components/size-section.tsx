@@ -13,7 +13,8 @@ export default function Home() {
         <img
           src="/images/size.jpg"
           alt="Miniature Size"
-          />
+          className="w-full max-w-4xl rounded-xl shadow-md"
+        />
       </div>
       <p className="mt-6 text-sm text-gray-500 text-center">
         All sizes maintain same quality & detailing — only the scale changes.
