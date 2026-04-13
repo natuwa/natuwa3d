@@ -12,7 +12,7 @@ export default function SizeSection() {
       <div className="flex justify-center">
         <img
           src="/images/size.jpg"
-          alt="Miniature Size Guide"
+          alt="Miniature Size"
           className="rounded-xl shadow-md max-w-4xl w-full transition-transform duration-300 hover:scale-105"
         />
       </div>
