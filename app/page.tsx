@@ -9,7 +9,7 @@ import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
 
-export function Home() {
+export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
