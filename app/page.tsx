@@ -9,7 +9,7 @@ import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
 
-export function SizeSection() {
+export function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
