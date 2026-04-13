@@ -1,4 +1,4 @@
-export default function SizeSection() {
+export default function Home() {
   return (
     <section className="py-16 bg-[#f8f5f2] text-center">
       <h2 className="text-3xl font-semibold mb-4">
