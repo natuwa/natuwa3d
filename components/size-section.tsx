@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function Home() {
   return (
     <section className="py-16 bg-[#f8f5f2] text-center">
@@ -10,10 +11,11 @@ export default function Home() {
       </p>
 
       <div className="flex justify-center">
-        <img
+        <Image
           src="/images/size.jpg"
           alt="Miniature Size"
-          className="w-full max-w-4xl rounded-xl shadow-md"
+          width={800}
+          height={600}
         />
       </div>
       <p className="mt-6 text-sm text-gray-500 text-center">
