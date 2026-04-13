@@ -13,8 +13,7 @@ export default function SizeSection() {
         <img
           src="/images/size.jpg"
           alt="Miniature Size"
-          className="rounded-xl shadow-md max-w-4xl w-full transition-transform duration-300 hover:scale-105"
-        />
+          />
       </div>
       <p className="mt-6 text-sm text-gray-500 text-center">
         All sizes maintain same quality & detailing — only the scale changes.
