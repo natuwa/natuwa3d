@@ -68,7 +68,7 @@ export default function BookNowPage() {
           />
 
           <textarea
-            name="entry.1361398854"  // 
+            name="entry.1361398854"
             placeholder="Delivery Address"
             className="w-full border p-3 rounded-md"
             required
