@@ -68,7 +68,7 @@ export default function BookNowPage() {
           />
 
           <textarea
-            name="entry.1361398854"  // ⚠️ ADDRESS ID abhi missing hai
+            name="entry.1361398854"  // 
             placeholder="Delivery Address"
             className="w-full border p-3 rounded-md"
             required
