@@ -16,7 +16,7 @@ const products = [
     image: "/images/miniature-22.jpg",
   },
   {
-    title: "Premium Detailed 👑",
+    title: "Premium Detailed ",
     description: "Highly detailed with realistic textures & finishing — most lifelike result",
     price: "₹3,999",
     image: "/images/miniature-33.jpg",
@@ -63,9 +63,7 @@ export function ProductsSection() {
                   <span className="font-serif text-2xl font-bold text-primary">
                     {product.price}
                   </span>
-                  <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                    Order Now
-                  </Button>
+                  
                 </div>
               </CardContent>
             </Card>
