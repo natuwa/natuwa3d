@@ -12,44 +12,66 @@ export default function BookNowPage() {
           Fill the details below to place your order
         </p>
 
-        <form className="space-y-4">
+        <form
+          action="https://docs.google.com/forms/d/e/1FAIpQLSdaM7mAU168xh7dTcrB3SIVA8l_BA2mlFlMo5VNRItL8mBB4A/formResponse"
+          method="POST"
+          target="hidden_iframe"
+          onSubmit={() => alert("Order Submitted Successfully 🎉")}
+          className="space-y-4"
+        >
 
           <input
+            name="entry.1221928907"
             type="text"
             placeholder="Your Name"
             className="w-full border p-3 rounded-md"
+            required
           />
 
           <input
+            name="entry.167600853"
             type="tel"
             placeholder="Phone Number"
             className="w-full border p-3 rounded-md"
+            required
           />
 
-          <select className="w-full border p-3 rounded-md">
-            <option>Select Quality</option>
-            <option>Raw Miniature</option>
-            <option>Flat Color Finish</option>
-            <option>Premium Detailed</option>
+          <select
+            name="entry.1834772149"
+            className="w-full border p-3 rounded-md"
+            required
+          >
+            <option value="">Select Quality</option>
+            <option value="raw">Raw Miniature</option>
+            <option value="flat">Flat Color Finish</option>
+            <option value="premium">Premium Detailed</option>
           </select>
 
-          <select className="w-full border p-3 rounded-md">
-            <option>Select Size</option>
-            <option>4 Inch</option>
-            <option>6 Inch</option>
-            <option>8 Inch</option>
-            <option>10 Inch</option>
-            <option>12 Inch</option>
+          <select
+            name="entry.627069154"
+            className="w-full border p-3 rounded-md"
+            required
+          >
+            <option value="">Select Size</option>
+            <option value="4">4 Inch</option>
+            <option value="6">6 Inch</option>
+            <option value="8">8 Inch</option>
+            <option value="10">10 Inch</option>
+            <option value="12">12 Inch</option>
           </select>
 
           <input
+            name="entry.1361243778"
             type="date"
             className="w-full border p-3 rounded-md"
+            required
           />
 
           <textarea
+            name="entry.999999999"  // ⚠️ ADDRESS ID abhi missing hai
             placeholder="Delivery Address"
             className="w-full border p-3 rounded-md"
+            required
           ></textarea>
 
           <button className="w-full bg-black text-white py-3 rounded-md">
@@ -57,6 +79,8 @@ export default function BookNowPage() {
           </button>
 
         </form>
+
+        <iframe name="hidden_iframe" style={{ display: "none" }}></iframe>
 
       </div>
     </div>
