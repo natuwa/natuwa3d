@@ -16,7 +16,7 @@ export default function BookNowPage() {
           action="https://docs.google.com/forms/d/e/1FAIpQLSdaM7mAU168xh7dTcrB3SIVA8l_BA2mlFlMo5VNRItL8mBB4A/formResponse"
           method="POST"
           target="hidden_iframe"
-          onSubmit={() => alert("Order Submitted Successfully 🎉")}
+          onSubmit={() => alert("Order Submitted Successfully ")}
           className="space-y-4"
         >
 
