@@ -51,11 +51,7 @@ export function ProductsSection() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <p className="text-gray-500 text-sm mt-8 max-w-2xl mx-auto text-center">
-                Each miniature is handcrafted from your photos. We aim for a close resemblance,
-                but exact 100% likeness is not guaranteed — typically 70–80% similarity can be achieved.
-              </p>
-              
+                           
               <CardContent className="p-6">
                 <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
                   {product.title}
