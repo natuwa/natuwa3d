@@ -85,7 +85,7 @@ export function Navbar() {
               >
                 Contact
               </Link>
-              <a
+             
                 <Link
                   href="/book-now"
                   onClick={() => setIsOpen(false)}
@@ -93,12 +93,7 @@ export function Navbar() {
                 >
                   Book Now
                 </Link>
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-                className="block bg-primary text-primary-foreground px-4 py-2 rounded-md text-center"
-              >
-                Book Now
-              </a>
+                
             </div>
           </div>
         )}
