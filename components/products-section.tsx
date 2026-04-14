@@ -4,23 +4,26 @@ import { Button } from "@/components/ui/button"
 
 const products = [
   {
-    title: "Couple Miniature",
-    description: "Classic couple figurine capturing your wedding look",
+    title: "Raw Miniature",
+    description: "Unpainted grey model with basic detailing — best for budget",
     price: "₹1,999",
     image: "/images/miniature-1.jpg",
   },
   {
-    title: "Traditional Wedding",
-    description: "Traditional Indian attire with intricate details",
+    title: "Flat Color Finish",
+    description: "Clean hand-painted colors without textures — simple & elegant look",
     price: "₹2,999",
     image: "/images/miniature-22.jpg",
   },
   {
-    title: "Family Portrait",
-    description: "Include your family in a beautiful group miniature",
+    title: "Premium Detailed 👑",
+    description: "Highly detailed with realistic textures & finishing — most lifelike result",
     price: "₹3,999",
     image: "/images/miniature-33.jpg",
   },
+  <p className="text-gray-500 text-base mt-6">
+    All options use the same 3D model — only the finishing level changes.
+  </p>
 ]
 
 export function ProductsSection() {
@@ -29,13 +32,13 @@ export function ProductsSection() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
-            Our Collection
+            Quality Section
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-balance">
-            Choose Your Perfect Keepsake
+            Choose Your Perfect Finish
           </h2>
           <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
-            Each miniature is custom-crafted to match your unique style and wedding attire
+            Select the level of detailing and finish that matches your style and budget
           </p>
         </div>
 
