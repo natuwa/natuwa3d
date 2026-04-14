@@ -51,9 +51,7 @@ export function ProductsSection() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <p className="text-gray-500 text-base mt-6">
-                All options use the same 3D model — only the finishing level changes.
-              </p>
+              
               <CardContent className="p-6">
                 <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
                   {product.title}
