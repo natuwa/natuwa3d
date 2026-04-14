@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,7 +15,7 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex flex-col">
             <span className="font-serif text-2xl md:text-3xl font-bold tracking-wide text-foreground">
-              NATUWA
+              NATUWA3D
             </span>
             <span className="text-xs text-muted-foreground tracking-widest uppercase">
               Your frozen Moment
@@ -35,9 +36,11 @@ export function Navbar() {
             <Link href="#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Contact
             </Link>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSeBD0w5-UBiK0ZF5UGAA-RrI41OaGaBodq67aEMiVJNUcPMLw/viewform?usp=header", "_blank")}>
-              Book Now
-            </Button>
+            <Link href="/book-now">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                Book Now
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -83,8 +86,13 @@ export function Navbar() {
                 Contact
               </Link>
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSeBD0w5-UBiK0ZF5UGAA-RrI41OaGaBodq67aEMiVJNUcPMLw/viewform"
-                target="_blank"
+                <Link
+                  href="/book-now"
+                  onClick={() => setIsOpen(false)}
+                  className="block bg-primary text-primary-foreground px-4 py-2 rounded-md text-center"
+                >
+                  Book Now
+                </Link>
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="block bg-primary text-primary-foreground px-4 py-2 rounded-md text-center"
