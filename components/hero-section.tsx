@@ -29,15 +29,14 @@ export function HeroSection() {
               Handcrafted with love, each piece captures the essence of your special day.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link href="/book-now">
-                <Button 
-                  size="lg" 
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base"
-                >
-                  Book Your Order
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
+              <Button asChild
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base"
+              >
+                <Link href="/book-now">
+                  Start Your Order
+                </Link>
+              </Button>
               <Button size="lg" variant="outline" className="border-border hover:bg-secondary px-8 py-6 text-base">
                 View Gallery
               </Button>
