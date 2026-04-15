@@ -34,7 +34,7 @@ export function HeroSection() {
                 className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base"
               >
                 <Link href="/book-now">
-                  Start Your Order
+                  Book Your Order
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="border-border hover:bg-secondary px-8 py-6 text-base">
