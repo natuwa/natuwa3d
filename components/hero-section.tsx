@@ -28,7 +28,7 @@ export function HeroSection() {
               Transform your wedding memories into stunning 3D printed miniatures. 
               Handcrafted with love, each piece captures the essence of your special day.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start relative z-20">
               <Button asChild
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base"
@@ -74,7 +74,7 @@ export function HeroSection() {
                 className="object-cover rounded-3xl shadow-2xl z-10 relative w-full h-full pointer-events-none"
               />
               {/* Decorative Elements */}
-              className="object-cover rounded-3xl shadow-2xl z-10 relative w-full h-full pointer-events-none" />
+              
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full" />
             </div>
           </div>
