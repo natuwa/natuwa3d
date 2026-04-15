@@ -18,7 +18,13 @@ export default function BookNowPage() {
           action="https://docs.google.com/forms/d/e/1FAIpQLSdaM7mAU168xh7dTcrB3SIVA8l_BA2mlFlMo5VNRItL8mBB4A/formResponse"
           method="POST"
           target="hidden_iframe"
-          onSubmit={() => alert("Order Submitted Successfully 🎉")}
+          onSubmit={() => {
+            alert("Order Submitted Successfully 🎉");          
+            // payment redirect after 1 second
+            setTimeout(() => {
+              window.location.href = "https://rzp.io/l/abcd123"; // 👈 apna payment link daalo
+            }, 1000);
+          }}
           className="space-y-4"
         >
 
@@ -80,7 +86,7 @@ export default function BookNowPage() {
             type="submit"
             className="w-full bg-black text-white py-3 rounded-md"
           >
-            Submit Order
+            Proceed to Payment ₹500
           </button>
 
         </form>
