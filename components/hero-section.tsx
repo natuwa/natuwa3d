@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -28,10 +29,15 @@ export function HeroSection() {
               Handcrafted with love, each piece captures the essence of your special day.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base">
-                Start Your Order
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link href="/book-now">
+                <Button 
+                  size="lg" 
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base"
+                >
+                  Book Your Order
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
               <Button size="lg" variant="outline" className="border-border hover:bg-secondary px-8 py-6 text-base">
                 View Gallery
               </Button>
