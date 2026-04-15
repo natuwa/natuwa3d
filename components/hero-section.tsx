@@ -74,7 +74,7 @@ export function HeroSection() {
                 className="object-cover rounded-3xl shadow-2xl z-10 relative w-full h-full"
               />
               {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-accent rounded-full" />
+              className="object-cover rounded-3xl shadow-2xl z-10 relative w-full h-full pointer-events-none" />
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full" />
             </div>
           </div>
