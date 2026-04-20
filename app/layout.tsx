@@ -49,7 +49,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${playfair.variable} ${lato.variable} font-sans antialiased`}>
         {children}
-       <script src="//code.tidio.co/c4mztfhlj2ryzp2iyk8vzat40wzgrlim.js" async></script>
+       <Script
+        src="//code.tidio.co/c4mztfhlj2ryzp2iyk8vzat40wzgrlim.js"
+        strategy="afterInteractive"
+      />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
