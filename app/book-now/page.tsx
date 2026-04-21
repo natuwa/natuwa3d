@@ -24,27 +24,35 @@ export default function BookNowPage() {
             const form = e.target
             const formData = new FormData(form)
           
-            // Google Form submit
-            form.submit()
-          
-            alert("Order Submitted Successfully 🎉\n\n✨ Your miniature slot is reserved!\nGenerating secure payment link... 💳")
-          
-            // API call (NEW LINK BANAYEGA)
-            const res = await fetch("/api/create-payment", {
+            // 👇 Google Form ko manually submit karo (background me)
+            fetch(form.action, {
               method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                name: formData.get("entry.1221928907"),
-                phone: formData.get("entry.167600853"),
-              }),
+              body: formData,
+              mode: "no-cors",
             })
           
-            const result = await res.json()
+            alert("Order Submitted 🎉\n\nGenerating secure payment link... 💳")
           
-            // Redirect to NEW payment link
-            window.location.href = result.url
+            try {
+              const res = await fetch("/api/create-payment", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  name: formData.get("entry.1221928907"),
+                  phone: formData.get("entry.167600853"),
+                }),
+              })
+          
+              const result = await res.json()
+          
+              window.location.href = result.url
+          
+            } catch (err) {
+              console.error(err)
+              alert("Something went wrong ❌")
+            }
           }}
           className="space-y-4"
         >
