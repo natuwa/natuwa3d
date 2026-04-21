@@ -22,7 +22,7 @@ export default function BookNowPage() {
             alert("Order Submitted Successfully 🎉");          
             // payment redirect after 1 second
             setTimeout(() => {
-              window.location.href = "https://razorpay.com/payment-link/plink_SfqNCSUyYFf9Ox"; // 👈 apna payment link daalo
+              window.location.href = "https://razorpay.com/payment-link/plink_SfqNCSUyYFf9Ox"; // 👈apna payment link daalo
             }, 1000);
           }}
           className="space-y-4"
