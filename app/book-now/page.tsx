@@ -19,11 +19,18 @@ export default function BookNowPage() {
           method="POST"
           target="hidden_iframe"
           onSubmit={(e) => {
-            e.preventDefault(); // 👈 important
-            alert("Order Submitted Successfully 🎉\n\n✨ Your miniature slot is reserved!\nComplete your advance payment to confirm 💳");          
-            // payment redirect after 1 second
+            e.preventDefault();
+          
+            // Google form submit manually
+            const form = e.target;
+            form.submit();
+          
+            // optional alert
+            alert("Order Submitted Successfully 🎉\n\nComplete your payment to confirm 💳");
+          
+            // redirect to payment
             setTimeout(() => {
-              window.location.href = "https://rzp.io/rzp/Su5J66q"; // 👈apna payment link daalo
+              window.location.href = "https://rzp.io/rzp/Su5J66q";
             }, 1000);
           }}
           className="space-y-4"
