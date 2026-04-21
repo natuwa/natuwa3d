@@ -18,7 +18,8 @@ export default function BookNowPage() {
           action="https://docs.google.com/forms/d/e/1FAIpQLSdaM7mAU168xh7dTcrB3SIVA8l_BA2mlFlMo5VNRItL8mBB4A/formResponse"
           method="POST"
           target="hidden_iframe"
-          onSubmit={() => {
+          onSubmit={(e) => {
+            e.preventDefault(); // 👈 important
             alert("Order Submitted Successfully 🎉\n\n✨ Your miniature slot is reserved!\nComplete your advance payment to confirm 💳");          
             // payment redirect after 1 second
             setTimeout(() => {
