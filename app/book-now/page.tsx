@@ -19,7 +19,7 @@ export default function BookNowPage() {
           method="POST"
           target="hidden_iframe"
           onSubmit={() => {
-            alert("Order Submitted Successfully 🎉");          
+            alert("Order Submitted Successfully 🎉\n\nNow proceed for advance payment");          
             // payment redirect after 1 second
             setTimeout(() => {
               window.location.href = "https://razorpay.com/payment-link/plink_SfqNCSUyYFf9Ox"; // 👈apna payment link daalo
