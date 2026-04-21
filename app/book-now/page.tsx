@@ -18,46 +18,12 @@ export default function BookNowPage() {
           action="https://docs.google.com/forms/d/e/1FAIpQLSdaM7mAU168xh7dTcrB3SIVA8l_BA2mlFlMo5VNRItL8mBB4A/formResponse"
           method="POST"
           target="hidden_iframe"
-          onSubmit={async (e) => {
-            e.preventDefault()
-          
-            const form = e.target
-            const formData = new FormData(form)
-          
-            // ✅ Google Form background me submit
-            fetch(form.action, {
-              method: "POST",
-              body: formData,
-              mode: "no-cors",
-            })
-          
-            alert("Order Submitted 🎉\n\nGenerating secure payment link... 💳")
-          
-            try {
-              const res = await fetch("/api/create-payment", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  name: formData.get("entry.1221928907"),
-                  phone: formData.get("entry.167600853"),
-                }),
-              })
-          
-              const result = await res.json()
-          
-              if (result.url) {
-                window.location.href = result.url
-              } else {
-                alert("Payment link generation failed ❌")
-                console.log(result)
-              }
-          
-            } catch (err) {
-              console.error(err)
-              alert("Something went wrong ❌")
-            }
+          onSubmit={() => {
+            alert("Order Submitted Successfully 🎉\n\n✨ Your miniature slot is reserved!\nComplete your advance payment to confirm 💳");          
+            // payment redirect after 1 second
+            setTimeout(() => {
+              window.location.href = "https://rzp.io/rzp/Su5J66q"; // 👈apna payment link daalo
+            }, 1000);
           }}
           className="space-y-4"
         >
@@ -120,7 +86,7 @@ export default function BookNowPage() {
             type="submit"
             className="w-full bg-black text-white py-3 rounded-md"
           >
-            Proceed to Payment ₹500
+            Confirm Order & Pay ₹500 →
           </button>
 
         </form>
