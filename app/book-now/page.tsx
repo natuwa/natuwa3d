@@ -24,7 +24,7 @@ export default function BookNowPage() {
             const form = e.target
             const formData = new FormData(form)
           
-            // 👇 Google Form ko manually submit karo (background me)
+            // ✅ Google Form background me submit
             fetch(form.action, {
               method: "POST",
               body: formData,
@@ -47,7 +47,12 @@ export default function BookNowPage() {
           
               const result = await res.json()
           
-              window.location.href = result.url
+              if (result.url) {
+                window.location.href = result.url
+              } else {
+                alert("Payment link generation failed ❌")
+                console.log(result)
+              }
           
             } catch (err) {
               console.error(err)
