@@ -86,7 +86,7 @@ export default function BookNowPage() {
             type="submit"
             className="w-full bg-black text-white py-3 rounded-md"
           >
-            Proceed to Payment ₹500
+            Confirm Order & Pay ₹500 →
           </button>
 
         </form>
