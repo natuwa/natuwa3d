@@ -1,5 +1,4 @@
 "use client"
-
 export default function BookNowPage() {
   return (
     <div className="min-h-screen bg-[#f8f5f2] py-16 px-4">
