@@ -18,12 +18,33 @@ export default function BookNowPage() {
           action="https://docs.google.com/forms/d/e/1FAIpQLSdaM7mAU168xh7dTcrB3SIVA8l_BA2mlFlMo5VNRItL8mBB4A/formResponse"
           method="POST"
           target="hidden_iframe"
-          onSubmit={() => {
-            alert("Order Submitted Successfully 🎉\n\n✨ Your miniature slot is reserved!\nComplete your advance payment to confirm 💳");          
-            // payment redirect after 1 second
-            setTimeout(() => {
-              window.location.href = "https://razorpay.com/payment-link/plink_SfqNCSUyYFf9Ox"; // 👈apna payment link daalo
-            }, 1000);
+          onSubmit={async (e) => {
+            e.preventDefault()
+          
+            const form = e.target
+            const formData = new FormData(form)
+          
+            // Google Form submit
+            form.submit()
+          
+            alert("Order Submitted Successfully 🎉\n\n✨ Your miniature slot is reserved!\nGenerating secure payment link... 💳")
+          
+            // API call (NEW LINK BANAYEGA)
+            const res = await fetch("/api/create-payment", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                name: formData.get("entry.1221928907"),
+                phone: formData.get("entry.167600853"),
+              }),
+            })
+          
+            const result = await res.json()
+          
+            // Redirect to NEW payment link
+            window.location.href = result.url
           }}
           className="space-y-4"
         >
