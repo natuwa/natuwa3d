@@ -21,8 +21,7 @@ export function HeroSection() {
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight text-balance">
               Turn Your Image Into a <br />
-              <span className="text-primary">3D Miniature</span> <br />
-               Memory
+              <span className="text-primary">3D Miniature</span>
             </h1>
             <p className="mt-6 text-muted-foreground text-lg md:text-xl max-w-lg mx-auto lg:mx-0 leading-relaxed">
               Transform your wedding memories into stunning 3D printed miniatures. 
