@@ -26,12 +26,12 @@ export default function ThankYouPage() {
 
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/919554069828"
+          href="https://wa.me/919554069828?text=Hi%20I%20just%20paid%20₹500%20for%203D%20miniature.%20My%20details:%20%0AName:%20%0APhone:%20%0AHere%20are%20my%20photos."
           target="_blank"
           rel="noopener noreferrer"
           className="block w-full bg-green-500 hover:bg-green-600 transition text-white py-3 rounded-lg mb-4 font-medium"
         >
-          Send Photos on WhatsApp
+          📸 Send Photos on WhatsApp
         </a>
 
         {/* Back to Home */}
