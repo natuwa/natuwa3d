@@ -27,6 +27,9 @@ export function HeroSection() {
               Book your slot with just ₹500 advance 
             </p>
               <p className="mt-6 text-muted-foreground text-lg md:text-xl max-w-lg mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-red-500 font-medium mt-2">
+                Only 5 slots left this week
+                </p>
               Transform your memories into stunning 3D printed miniatures. 
               Handcrafted with love, each piece captures the essence of your special day.
             </p>
@@ -36,7 +39,7 @@ export function HeroSection() {
                 className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base"
               >
                 <Link href="/book-now">
-                  Book Your Order
+                  Book Your Miniature Now →
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-border hover:bg-secondary px-8 py-6 text-base">
@@ -50,10 +53,6 @@ export function HeroSection() {
               </a>
             </Button>
             </div>
-            <p className="text-red-500 font-medium mt-2">
-            Only 5 slots left this week
-            </p>
-
             {/* Stats */}
             <div className="mt-12 flex gap-8 justify-center lg:justify-start">
               <div>
