@@ -39,7 +39,7 @@ export function HeroSection() {
                 className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base"
               >
                 <Link href="/book-now">
-                  Book Your Miniature Now →
+                  Reserve Your Slot @ ₹500 →
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-border hover:bg-secondary px-8 py-6 text-base">
