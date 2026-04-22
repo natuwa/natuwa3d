@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+    <section id="gallery" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-accent blur-3xl" />
@@ -37,8 +37,10 @@ export function HeroSection() {
                   Book Your Order
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-border hover:bg-secondary px-8 py-6 text-base">
-                View Gallery
+              <Button asChild size="lg" variant="outline" className="border-border hover:bg-secondary px-8 py-6 text-base">
+                <Link href="#gallery">
+                  View Gallery
+                </Link>
               </Button>
             </div>
 
