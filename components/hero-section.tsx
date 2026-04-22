@@ -47,11 +47,14 @@ export function HeroSection() {
                   View Gallery
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="px-8 py-6 text-base">
-              <a href="https://wa.me/919554069828" target="_blank">
-                Chat on WhatsApp
-              </a>
-            </Button>
+              <Link 
+                href="https://wa.me/919554069828?text=Hi%20I%20want%203D%20miniature"
+                target="_blank"
+              >
+                <Button size="lg" variant="outline" className="px-8 py-6 text-base">
+                  Chat on WhatsApp
+                </Button>
+              </Link>
             </div>
             {/* Stats */}
             <div className="mt-12 flex gap-8 justify-center lg:justify-start">
