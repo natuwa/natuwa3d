@@ -76,7 +76,7 @@ export function HeroSection() {
           {/* Right Image */}
           <div className="relative order-1 lg:order-2">
             <div className="relative w-full aspect-square max-w-lg mx-auto">
-              <div className="absolute inset-0 bg-secondary rounded-full scale-90" />
+              <div className="absolute inset-0 bg-secondary rounded-full scale-90 -z-10" />
               <video
                 src="/hero-couple%20turntable3.mp4"
                 autoPlay
