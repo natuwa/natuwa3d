@@ -27,7 +27,7 @@ export default function ThankYouPage() {
 
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/91XXXXXXXXXX"
+          href="https://wa.me/919554069828"
           target="_blank"
           rel="noopener noreferrer"
           className="block w-full bg-green-500 text-white py-3 rounded-lg mb-4"
