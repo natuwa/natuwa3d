@@ -50,8 +50,8 @@ export function HeroSection() {
               </a>
             </Button>
             </div>
-            <p className="text-xs text-muted-foreground mt-2">
-              Limited slots available this month
+            <p className="text-red-500 font-medium mt-2">
+            Only 5 slots left this week
             </p>
 
             {/* Stats */}
