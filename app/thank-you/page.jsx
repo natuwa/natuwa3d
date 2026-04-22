@@ -1,5 +1,4 @@
 "use client";
-
 export default function ThankYouPage() {
   return (
     <div className="min-h-screen bg-[#f8f5f2] flex items-center justify-center px-4">
