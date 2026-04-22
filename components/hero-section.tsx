@@ -23,6 +23,9 @@ export function HeroSection() {
               Turn Your Image Into a <br />
               <span className="text-primary">3D Miniature</span>
             </h1>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Book your slot with just ₹500 advance 💳
+            </p>
             <p className="mt-6 text-muted-foreground text-lg md:text-xl max-w-lg mx-auto lg:mx-0 leading-relaxed">
               Transform your wedding memories into stunning 3D printed miniatures. 
               Handcrafted with love, each piece captures the essence of your special day.
