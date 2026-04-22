@@ -26,6 +26,11 @@ export function HeroSection() {
             <p className="mt-6 text-sm text-muted-foreground">
               Book your slot with just ₹500 advance 
             </p>
+            <Button asChild size="lg" variant="outline" className="px-8 py-6 text-base">
+              <a href="https://wa.me/919554069828" target="_blank">
+                Chat on WhatsApp
+              </a>
+            </Button>
             <p className="mt-6 text-muted-foreground text-lg md:text-xl max-w-lg mx-auto lg:mx-0 leading-relaxed">
               Transform your wedding memories into stunning 3D printed miniatures. 
               Handcrafted with love, each piece captures the essence of your special day.
