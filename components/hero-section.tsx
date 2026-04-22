@@ -50,6 +50,9 @@ export function HeroSection() {
               </a>
             </Button>
             </div>
+            <p className="text-xs text-muted-foreground mt-2">
+              Limited slots available this month
+            </p>
 
             {/* Stats */}
             <div className="mt-12 flex gap-8 justify-center lg:justify-start">
