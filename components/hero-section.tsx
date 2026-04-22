@@ -83,7 +83,7 @@ export function HeroSection() {
                 loop
                 muted
                 playsInline
-                className="object-cover rounded-3xl shadow-2xl z-10 relative w-full h-full pointer-events-none"
+                className="object-cover rounded-3xl shadow-2xl w-full h-full"
               />
               {/* Decorative Elements */}
               
