@@ -60,7 +60,7 @@ export function HeroSection() {
             <div className="mt-12 flex gap-8 justify-center lg:justify-start">
               <div>
                 <p className="font-serif text-3xl md:text-4xl font-bold text-foreground">500+</p>
-                <p className="text-sm text-muted-foreground">Happy Couples</p>
+                <p className="text-sm text-muted-foreground">Happy Couples ❤️</p>
               </div>
               <div className="w-px bg-border" />
               <div>
@@ -69,7 +69,7 @@ export function HeroSection() {
               </div>
               <div className="w-px bg-border" />
               <div>
-                <p className="font-serif text-3xl md:text-4xl font-bold text-foreground">5★</p>
+                <p className="font-serif text-3xl md:text-4xl font-bold text-foreground">5⭐</p>
                 <p className="text-sm text-muted-foreground">Reviews</p>
               </div>
             </div>
