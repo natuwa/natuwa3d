@@ -21,7 +21,7 @@ export function HeroSection() {
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight text-balance">
               Custom 3D Printed <br />
-              <span className="text-primary">Miniature</span> in India
+              <span className="text-primary">Wedding Miniature</span> in India
             </h1>
             <p className="mt-8 text-sm text-muted-foreground">
               Book your slot with just ₹500 advance 
