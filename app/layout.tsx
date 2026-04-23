@@ -18,7 +18,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "3D Wedding Miniatures in India | Custom Couple Figurine | NATUWA3D",
+  title: "3D Printed Miniatures in India | Custom Couple Figurine | NATUWA3D",
   description:
     "Order personalized 3D printed wedding miniatures in India. Custom couple figurines for weddings, anniversaries & gifts. Starting from ₹2999.",
   
