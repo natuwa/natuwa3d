@@ -19,9 +19,9 @@ export function HeroSection() {
             <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
               Wedding Keepsakes
             </p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight text-balance">
               Custom 3D Printed <br />
-              <span className="text-primary"> Miniatures</span> in India
+              <span className="text-primary">Miniature</span>in India
             </h1>
             <p className="mt-8 text-sm text-muted-foreground">
               Book your slot with just ₹500 advance 
