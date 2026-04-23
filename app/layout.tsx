@@ -18,9 +18,46 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: 'natuwa3d - Your Frozen Moment | Wedding 3D Printed Miniatures',
-  description: 'Transform your precious wedding moments into timeless 3D printed miniatures. Custom-crafted keepsakes that capture your love story forever.',
-  generator: 'v0.app',
+  title: "3D Wedding Miniatures in India | Custom Couple Figurine | NATUWA3D",
+  description:
+    "Order personalized 3D printed wedding miniatures in India. Custom couple figurines for weddings, anniversaries & gifts. Starting from ₹2999.",
+  
+  keywords: [
+    "3D wedding miniature",
+    "custom couple figurine",
+    "3D printed miniature India",
+    "wedding miniature gift",
+    "personalized miniature couple",
+  ],
+
+  openGraph: {
+    title: "Custom 3D Wedding Miniatures | NATUWA3D",
+    description:
+      "Turn your wedding memories into stunning 3D printed miniatures. Perfect gift for couples.",
+    url: "https://natuwa3d.com",
+    siteName: "NATUWA3D",
+    images: [
+      {
+        url: "/og-image.jpg", // 👉 ek achhi product image upload karo public folder me
+        width: 1200,
+        height: 630,
+        alt: "3D printed wedding miniature couple",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "3D Wedding Miniatures | NATUWA3D",
+    description:
+      "Custom 3D printed couple figurines for weddings & gifts.",
+    images: ["/og-image.jpg"],
+  },
+
+  metadataBase: new URL("https://natuwa3d.com"),
+
   icons: {
     icon: [
       {
@@ -38,21 +75,24 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
-}
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={`${playfair.variable} ${lato.variable} font-sans antialiased`}>
         {children}
-       <Script
-        src="//code.tidio.co/c4mztfhlj2ryzp2iyk8vzat40wzgrlim.js"
-        strategy="afterInteractive"
-      />
+
+        {/* Tidio Chatbot */}
+        <Script
+          src="//code.tidio.co/c4mztfhlj2ryzp2iyk8vzat40wzgrlim.js"
+          strategy="afterInteractive"
+        />
+
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
