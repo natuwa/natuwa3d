@@ -96,12 +96,13 @@ export function HeroSection() {
 
                 {/* PLAY BUTTON */}
                 {!playing && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-white/80 backdrop-blur-md p-6 rounded-full shadow-xl">
-                      <span className="text-3xl">▶</span>
-                    </div>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+                  <div className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:scale-105 transition">
+                    <span className="text-white text-lg">▶</span>
+                    <span className="text-white text-sm">View 360°</span>
                   </div>
-                )}
+                </div>
+              )}
               </div>
 
               {/* Decoration */}
