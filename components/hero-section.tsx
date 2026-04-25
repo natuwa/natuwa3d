@@ -9,11 +9,16 @@ export function HeroSection() {
   const [playing, setPlaying] = useState(false);
 
   const handleClick = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setPlaying(true);
-    }
-  };
+  if (!videoRef.current) return;
+
+  if (videoRef.current.paused) {
+    videoRef.current.play();
+    setPlaying(true);
+  } else {
+    videoRef.current.pause();
+    setPlaying(false);
+  }
+};
 
   return (
     <section
@@ -95,11 +100,18 @@ export function HeroSection() {
                 />
 
                 {/* PLAY BUTTON */}
-                {!playing && (
+                {!playing ? (
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
-                  <div className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:scale-105 transition">
+                  <div className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
                     <span className="text-white text-lg">▶</span>
                     <span className="text-white text-sm">View 360°</span>
+                  </div>
+                </div>
+              ) : (
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+                  <div className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
+                    <span className="text-white text-lg">⏸</span>
+                    <span className="text-white text-sm">Pause</span>
                   </div>
                 </div>
               )}
