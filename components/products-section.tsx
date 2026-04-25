@@ -7,19 +7,19 @@ const products = [
     title: "Raw Miniature",
     description: "Unpainted grey model with basic detailing — best for budget",
     price: "₹1,999",
-    image: "/images/miniature-1.jpg",
+    image: "/images/miniature3d4.webp",
   },
   {
     title: "Flat Color Finish",
     description: "Clean hand-painted colors without textures — simple & elegant look",
     price: "₹2,999",
-    image: "/images/miniature-22.jpg",
+    image: "/images/miniature3d3.webp",
   },
   {
     title: "Premium Detailed ",
     description: "Highly detailed with realistic textures & finishing — most lifelike result",
     price: "₹3,999",
-    image: "/images/miniature-33.jpg",
+    image: "/images/miniature3d2.webp",
   },
   
 ]
