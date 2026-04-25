@@ -26,12 +26,12 @@ export function HeroSection() {
       className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-accent blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-primary blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* LEFT CONTENT */}
