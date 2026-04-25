@@ -6,7 +6,7 @@ import { useState } from "react"
 const galleryImages = [
   { src: "/images/hero-couple.jpg", alt: "Wedding couple miniature", title: "Wedding Miniatures" },
   { src: "/images/miniature-a.jpg", alt: "Miniature 1" , title: "Couple Miniatures" },
-  { src: "/images/miniature-2.jpg", alt: "Miniature 2" , title: "Family Miniatures" },
+  { src: "/images/family-one.webp", alt: "Miniature 2" , title: "Family Couple Miniatures" },
   { src: "/images/miniature-3.jpg", alt: "Miniature 3" , title: "Mummy Papa Memories" },
   { src: "/images/miniature-4.jpg", alt: "Miniature 4" , title: "Kids Miniatures" },
   { src: "/images/miniature-c.jpg", alt: "Miniature 5" , title: "Custom Miniatures" },
