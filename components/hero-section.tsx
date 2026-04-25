@@ -1,9 +1,15 @@
+"use client";
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link";
+import { useRef } from "react";
 
 export function HeroSection() {
+  const videoRef = useRef(null);
+  const handleClick = () => {
+    videoRef.current.play();
+  };
   return (
     <section id="gallery" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
       {/* Background Pattern */}
@@ -79,14 +85,16 @@ export function HeroSection() {
           <div className="relative order-1 lg:order-2">
             <div className="relative w-full aspect-square max-w-lg mx-auto">
               <div className="absolute inset-0 bg-secondary rounded-full scale-90 -z-10" />
-              <video
-                src="/hero-couple%20turntable3.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="object-cover rounded-3xl shadow-2xl w-full h-full "
-              />
+              <div onClick={handleClick} className="cursor-pointer">
+          <video
+            ref={videoRef}
+            src="/hero-couple%20turntable3.mp4"
+            loop
+            muted
+            playsInline
+            className="object-cover rounded-3xl shadow-2xl w-full h-full"
+          />
+        </div>
               {/* Decorative Elements */}
               
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full -z-10" />
