@@ -35,7 +35,7 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* LEFT CONTENT */}
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left order-2 lg:order-1">
             <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
               Wedding Keepsakes
             </p>
@@ -82,7 +82,7 @@ export function HeroSection() {
           </div>
 
           {/* RIGHT VIDEO */}
-          <div className="relative">
+          <div className="relative order-1 lg:order-2">
             <div className="relative w-full aspect-square max-w-lg mx-auto">
 
               {/* Background Circle */}
