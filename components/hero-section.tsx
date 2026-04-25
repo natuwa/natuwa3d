@@ -55,26 +55,29 @@ export function HeroSection() {
 
             {/* Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+
               <Button asChild size="lg" className="px-8 py-6">
                 <Link href="/book-now">
                   Reserve Your Slot @ ₹500 →
                 </Link>
               </Button>
-
+            
               <Button asChild size="lg" variant="outline" className="px-8 py-6">
-                <Link href="#gallery">
+                <a href="#gallery">
                   View Gallery
-                </Link>
+                </a>
               </Button>
-
-              <Link
+            
+              <a
                 href="https://wa.me/919554069828?text=Hi%20I%20want%203D%20miniature"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <Button size="lg" variant="outline" className="px-8 py-6">
                   Chat on WhatsApp
                 </Button>
-              </Link>
+              </a>
+            
             </div>
           </div>
 
