@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link";
 import { useRef, useState } from "react";
-
 export function HeroSection() {
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);  
@@ -19,7 +18,6 @@ export function HeroSection() {
         <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-accent blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-primary blur-3xl" />
       </div>
-
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -82,7 +80,6 @@ export function HeroSection() {
               </div>
             </div>
           </div>
-
           {/* Right Image */}
           <div className="relative order-1 lg:order-2">
             <div className="relative w-full aspect-square max-w-lg mx-auto">
@@ -100,8 +97,7 @@ export function HeroSection() {
                 muted
                 playsInline
                 className="object-cover rounded-3xl shadow-2xl w-full h-full"
-              />
-            
+              />            
               {!playing && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="bg-white/80 p-5 rounded-full shadow-xl">
@@ -110,8 +106,7 @@ export function HeroSection() {
                 </div>
               )}
             </div>
-              {/* Decorative Elements */}
-              
+              {/* Decorative Elements */}              
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full -z-10" />
             </div>
           </div>
