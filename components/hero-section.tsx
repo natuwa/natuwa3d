@@ -83,29 +83,29 @@ export function HeroSection() {
           {/* Right Image */}
           <div className="relative order-1 lg:order-2">
             <div className="relative w-full aspect-square max-w-lg mx-auto">
-              <div className="absolute inset-0 bg-secondary rounded-full scale-90 -z-10" />
+              <div className="absolute inset-0 bg-secondary rounded-full scale-90 -z-10" />              
               <div onClick={handleClick} className="cursor-pointer">
-          <video
-            <div
-              onClick={handleClick}
-              className="relative cursor-pointer w-full h-full"
-            >
-              <video
-                ref={videoRef}
-                src="/hero-couple%20turntable3.mp4"
-                loop
-                muted
-                playsInline
-                className="object-cover rounded-3xl shadow-2xl w-full h-full"
-              />            
-              {!playing && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white/80 p-5 rounded-full shadow-xl">
-                    <span className="text-3xl">▶</span>
+                <video
+                  <div
+                    onClick={handleClick}
+                    className="relative cursor-pointer w-full h-full"
+                  >
+                    <video
+                      ref={videoRef}
+                      src="/hero-couple%20turntable3.mp4"
+                      loop
+                      muted
+                      playsInline
+                      className="object-cover rounded-3xl shadow-2xl w-full h-full"
+                    />            
+                    {!playing && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="bg-white/80 p-5 rounded-full shadow-xl">
+                          <span className="text-3xl">▶</span>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </div>
-              )}
-            </div>
               {/* Decorative Elements */}              
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full -z-10" />
             </div>
