@@ -4,11 +4,12 @@ import { Button } from "@/components/ui/button"
 
 const products = [
   {
-    title: "Raw Miniature",
-    description: "Unpainted grey model with basic detailing — best for budget",
-    price: "₹1,999",
-    image: "/images/miniature3d4.webp",
+    title: "Premium Detailed ",
+    description: "Highly detailed with realistic textures & finishing — most lifelike result",
+    price: "₹3,999",
+    image: "/images/miniature3d2.webp",
   },
+  
   {
     title: "Flat Color Finish",
     description: "Clean hand-painted colors without textures — simple & elegant look",
@@ -16,11 +17,12 @@ const products = [
     image: "/images/miniature3d3.webp",
   },
   {
-    title: "Premium Detailed ",
-    description: "Highly detailed with realistic textures & finishing — most lifelike result",
-    price: "₹3,999",
-    image: "/images/miniature3d2.webp",
+    title: "Raw Miniature",
+    description: "Unpainted grey model with basic detailing — best for budget",
+    price: "₹1,999",
+    image: "/images/miniature3d4.webp",
   },
+  
   
 ]
 
