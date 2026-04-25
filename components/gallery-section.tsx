@@ -68,7 +68,7 @@ export function GallerySection() {
             : selectedIndex - 1
         )
       }
-      className="absolute left-[8%] md:left-[18%] top-1/2 -translate-y-1/2 text-white text-5xl z-50"
+      className="absolute left-[18%] top-1/2 -translate-y-1/2 z-50 bg-white/20 hover:bg-white/30 active:scale-95 backdrop-blur-md text-white text-4xl w-14 h-14 rounded-full shadow-xl flex items-center justify-center transition"
     >
       ‹
     </button>
@@ -92,7 +92,7 @@ export function GallerySection() {
             : selectedIndex + 1
         )
       }
-      className="absolute right-[8%] md:right-[18%] top-1/2 -translate-y-1/2 text-white text-5xl z-50"
+      className="absolute right-[18%] top-1/2 -translate-y-1/2 z-50 bg-white/20 hover:bg-white/30 active:scale-95 backdrop-blur-md text-white text-4xl w-14 h-14 rounded-full shadow-xl flex items-center justify-center transition"
     >
       ›
     </button>
