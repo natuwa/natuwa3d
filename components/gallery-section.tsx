@@ -74,7 +74,14 @@ export function GallerySection() {
     </button>
 
     {/* Image */}
-    <div className="relative max-w-5xl w-full h-[80vh]">
+    <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
+      <button
+        onClick={() => setSelectedIndex(null)}
+        className="bg-white text-black px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition"
+      >
+        Back to Gallery
+      </button>
+    </div>
       <Image
         src={galleryImages[selectedIndex].src}
         alt="Selected miniature"
