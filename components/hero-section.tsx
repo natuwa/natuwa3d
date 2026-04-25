@@ -3,12 +3,14 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export function HeroSection() {
   const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);  
   const handleClick = () => {
     videoRef.current.play();
+    setPlaying(true);
   };
   return (
     <section id="gallery" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
@@ -87,14 +89,27 @@ export function HeroSection() {
               <div className="absolute inset-0 bg-secondary rounded-full scale-90 -z-10" />
               <div onClick={handleClick} className="cursor-pointer">
           <video
-            ref={videoRef}
-            src="/hero-couple%20turntable3.mp4"
-            loop
-            muted
-            playsInline
-            className="object-cover rounded-3xl shadow-2xl w-full h-full"
-          />
-        </div>
+            <div
+              onClick={handleClick}
+              className="relative cursor-pointer w-full h-full"
+            >
+              <video
+                ref={videoRef}
+                src="/hero-couple%20turntable3.mp4"
+                loop
+                muted
+                playsInline
+                className="object-cover rounded-3xl shadow-2xl w-full h-full"
+              />
+            
+              {!playing && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="bg-white/80 p-5 rounded-full shadow-xl">
+                    <span className="text-3xl">▶</span>
+                  </div>
+                </div>
+              )}
+            </div>
               {/* Decorative Elements */}
               
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full -z-10" />
