@@ -6,11 +6,11 @@ import { useState } from "react"
 const galleryImages = [
   { src: "/images/hero-couple.jpg", alt: "Wedding couple miniature", title: "Wedding Miniatures" },
   { src: "/images/miniature-a.jpg", alt: "Miniature 1" , title: "Couple Miniatures" },
-  { src: "/images/family-one.webp", alt: "Miniature 2" , title: "Family Couple Miniatures" },
-  { src: "/images/miniature-3.jpg", alt: "Miniature 3" , title: "Mummy Papa Memories" },
-  { src: "/images/miniature-4.jpg", alt: "Miniature 4" , title: "Kids Miniatures" },
-  { src: "/images/miniature-c.jpg", alt: "Miniature 5" , title: "Custom Miniatures" },
-  { src: "/images/miniature-b.jpg", alt: "Miniature 6" , title: "Single Miniatures" },
+  { src: "/images/family-couple.webp", alt: "Miniature 2" , title: "Family Couple Miniatures" },
+  { src: "/images/old-memory.webp", alt: "Miniature 3" , title: "Old Memories" },
+  { src: "/images/mother-son.webp", alt: "Miniature 4" , title: "Kids Miniatures" },
+  { src: "/images/compare.webp", alt: "Miniature 5" , title: "Compare Miniatures" },
+  { src: "/images/single-professional1.webp", alt: "Miniature 6" , title: "Single Miniatures" },
   { src: "/images/miniature-7.jpg", alt: "Miniature 7" , title: "SuperHero Miniatures" },
 ]
 
