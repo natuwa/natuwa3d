@@ -41,7 +41,7 @@ export default function Home() {
         </div>
     
         <div>
-          <h3 className="text-base font-medium text-gray-900">6 Inch ⭐</h3>
+          <h3 className="text-base font-medium text-gray-900">6 Inch </h3>
           <p className="text-sm text-gray-500 mt-1">Slightly bigger, most preferred</p>
         </div>
     
@@ -55,8 +55,8 @@ export default function Home() {
           <p className="text-sm text-gray-500 mt-1">Bigger presence, eye-catching</p>
         </div>
     
-        <div className="border-2 border-black rounded-lg p-2 bg-white shadow-md">
-          <h3 className="text-base font-medium text-gray-900">12 Inch 👑</h3>
+        <div 
+          <h3 className="text-base font-medium text-gray-900">12 Inch </h3>
           <p className="text-sm text-gray-500 mt-1">Premium large display piece</p>
         </div>
     
