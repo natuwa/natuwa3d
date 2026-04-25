@@ -15,7 +15,7 @@ const galleryImages = [
 ]
 
 export function GallerySection() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
 
   return (
     <section id="gallery" className="py-20 bg-secondary/50">
@@ -37,7 +37,7 @@ export function GallerySection() {
             <div
               key={index}
               className="relative cursor-pointer overflow-hidden rounded-xl group"
-              onClick={() => setSelectedImage(image.src)}
+              onClick={() => setSelectedIndex(index)}
             >
               <div className="relative aspect-square">
                 <Image
@@ -56,29 +56,57 @@ export function GallerySection() {
         </div>
 
         {/* Lightbox */}
-        {selectedImage && (
-          <div
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedImage(null)}
-          >
-            <div className="relative max-w-5xl w-full h-[80vh]">
-              <Image
-                src={selectedImage}
-                alt="Selected miniature"
-                fill
-                className="object-contain rounded-xl"
-              />
-            </div>
-        
-            <button
-              className="absolute top-4 right-4 text-white text-4xl hover:text-accent"
-              onClick={() => setSelectedImage(null)}
-            >
-              ×
-            </button>
-          </div>
-        )}
-      </div>
+        {selectedIndex !== null && (
+  <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+
+    {/* Left Arrow */}
+    <button
+      onClick={() =>
+        setSelectedIndex(
+          selectedIndex === 0
+            ? galleryImages.length - 1
+            : selectedIndex - 1
+        )
+      }
+      className="absolute left-4 text-white text-5xl z-50"
+    >
+      ‹
+    </button>
+
+    {/* Image */}
+    <div className="relative max-w-5xl w-full h-[80vh]">
+      <Image
+        src={galleryImages[selectedIndex].src}
+        alt="Selected miniature"
+        fill
+        className="object-contain rounded-xl"
+      />
+    </div>
+
+    {/* Right Arrow */}
+    <button
+      onClick={() =>
+        setSelectedIndex(
+          selectedIndex === galleryImages.length - 1
+            ? 0
+            : selectedIndex + 1
+        )
+      }
+      className="absolute right-4 text-white text-5xl z-50"
+    >
+      ›
+    </button>
+
+    {/* Close */}
+    <button
+      onClick={() => setSelectedIndex(null)}
+      className="absolute top-4 right-4 text-white text-4xl"
+    >
+      ×
+    </button>
+
+  </div>
+)}
     </section>
   )
 }
