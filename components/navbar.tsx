@@ -30,9 +30,7 @@ export function Navbar() {
             <Link href="#process" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               How It Works
             </Link>
-            <Link href="/gallery" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Gallery
-            </Link>
+            <Link href="#gallery" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"> Gallery </Link>
             <Link href="#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Contact
             </Link>
