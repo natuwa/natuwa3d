@@ -74,14 +74,7 @@ export function GallerySection() {
     </button>
 
     {/* Image */}
-    <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-      <button
-        onClick={() => setSelectedIndex(null)}
-        className="bg-white text-black px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition"
-      >
-        Back to Gallery
-      </button>
-    </div>
+    <div className="relative max-w-5xl w-full h-[80vh]">
       <Image
         src={galleryImages[selectedIndex].src}
         alt="Selected miniature"
@@ -104,16 +97,27 @@ export function GallerySection() {
       ›
     </button>
 
+    {/* Back Button */}
+    <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
+      <button
+        onClick={() => setSelectedIndex(null)}
+        className="bg-white text-black px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition"
+      >
+        Back to Gallery
+      </button>
+    </div>
+
     {/* Close */}
     <button
       onClick={() => setSelectedIndex(null)}
-      lassName="absolute left-10 md:left-20 text-white text-5xl z-50"
+      className="absolute top-4 right-4 text-white text-4xl"
     >
       ×
     </button>
 
   </div>
 )}
+  
       </div>
     </section>
   )
