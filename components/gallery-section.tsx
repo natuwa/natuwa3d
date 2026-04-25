@@ -107,6 +107,7 @@ export function GallerySection() {
 
   </div>
 )}
+      </div>
     </section>
   )
 }
