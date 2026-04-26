@@ -69,12 +69,15 @@ export function HeroSection() {
               </Button>
             
               <a
-                href="https://wa.me/919554069828?text=Hi%20I%20want%203D%20miniature"
+                href="https://wa.me/919560672813?text=Hi%20Natuwa3D,%20I%20want%20price%20details%20for%20custom%20miniature"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button size="lg" variant="outline" className="px-8 py-6">
-                  Chat on WhatsApp
+                <Button
+                  size="lg"
+                  className="px-8 py-6 bg-green-600 hover:bg-green-700 text-white"
+                >
+                  Get Instant Price on WhatsApp
                 </Button>
               </a>
             
