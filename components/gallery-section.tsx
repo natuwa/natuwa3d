@@ -17,7 +17,7 @@ const galleryImages = [
 
 export function GallerySection() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
-  const [direction, setDirection] = useState(0)
+  const [direction, setDirection] = useState<number>(0)
 
   const nextSlide = () => {
     if (selectedIndex === null) return
@@ -147,7 +147,7 @@ export function GallerySection() {
                     className="absolute inset-0"
                   >
                     <Image
-                      src={galleryImages[selectedIndex].src}
+                      src={galleryImages[selectedIndex!].src}
                       alt="Selected"
                       fill
                       className="object-contain rounded-2xl"
@@ -175,7 +175,7 @@ export function GallerySection() {
 
             {/* Title */}
             <div className="absolute bottom-8 text-white text-xl font-semibold">
-              {galleryImages[selectedIndex].title}
+              {galleryImages[selectedIndex!].title}
             </div>
           </div>
         )}
