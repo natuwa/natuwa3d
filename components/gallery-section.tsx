@@ -134,7 +134,7 @@ export function GallerySection() {
                       src={galleryImages[selectedIndex!].src}
                       alt="Selected"
                       fill
-                      className="object-contain rounded-2xl"
+                      className="object-contain rounded-2xl shadow-2xl"
                     />
                   </motion.div>
                 </AnimatePresence>
