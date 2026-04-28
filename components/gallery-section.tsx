@@ -1,4 +1,3 @@
-
 "use client"
 
 import Image from "next/image"
@@ -45,21 +44,23 @@ export function GallerySection() {
           <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
             Our Work
           </p>
+
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
             Gallery of Memories
           </h2>
+
           <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
             Browse through our collection of handcrafted miniatures
           </p>
         </div>
 
-        {/* Grid */}
+        {/* Grid Gallery */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className="relative cursor-pointer overflow-hidden rounded-xl group"
               onClick={() => setSelectedIndex(index)}
+              className="relative cursor-pointer overflow-hidden rounded-xl group"
             >
               <div className="relative aspect-square">
                 <Image
@@ -69,7 +70,7 @@ export function GallerySection() {
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
 
-                <div className="absolute bottom-0 w-full bg-black/50 text-white text-center p-2">
+                <div className="absolute bottom-0 w-full bg-black/50 text-white text-center p-2 text-sm">
                   {image.title}
                 </div>
               </div>
@@ -77,14 +78,14 @@ export function GallerySection() {
           ))}
         </div>
 
-        {/* Premium Fullscreen Slider */}
+        {/* Fullscreen Slider */}
         {selectedIndex !== null && (
           <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center overflow-hidden">
 
             {/* Close */}
             <button
               onClick={() => setSelectedIndex(null)}
-              className="absolute top-5 right-5 text-white text-4xl z-50"
+              className="absolute top-5 right-5 text-white text-4xl z-50 hover:scale-110 transition"
             >
               ×
             </button>
@@ -92,7 +93,7 @@ export function GallerySection() {
             {/* Left Arrow */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 md:left-8 text-white text-5xl z-50"
+              className="absolute left-3 md:left-8 text-white text-5xl z-50 bg-white/10 rounded-full w-14 h-14 flex items-center justify-center hover:bg-white/20 transition"
             >
               ‹
             </button>
@@ -100,15 +101,15 @@ export function GallerySection() {
             {/* Right Arrow */}
             <button
               onClick={nextSlide}
-              className="absolute right-4 md:right-8 text-white text-5xl z-50"
+              className="absolute right-3 md:right-8 text-white text-5xl z-50 bg-white/10 rounded-full w-14 h-14 flex items-center justify-center hover:bg-white/20 transition"
             >
               ›
             </button>
 
-            {/* Slider */}
+            {/* Main Slider */}
             <div className="flex items-center justify-center gap-4 md:gap-8 w-full px-6">
 
-              {/* Left Small */}
+              {/* Left Preview */}
               <div className="relative w-[18%] h-[250px] hidden md:block opacity-40 scale-90">
                 <Image
                   src={
@@ -124,8 +125,9 @@ export function GallerySection() {
                 />
               </div>
 
-              {/* Center Big Image */}
+              {/* Center Main Image */}
               <div className="relative w-[90%] md:w-[55%] h-[70vh] overflow-hidden rounded-2xl">
+
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={selectedIndex}
@@ -146,39 +148,18 @@ export function GallerySection() {
                     }}
                     className="absolute inset-0"
                   >
-                  <motion.div
-                    key={selectedIndex}
-                    initial={{
-                      x: direction > 0 ? 250 : -250,
-                      opacity: 0,
-                      scale: 1.12,
-                    }}
-                    animate={{
-                      x: 0,
-                      opacity: 1,
-                      scale: 1,
-                    }}
-                    exit={{
-                      x: direction > 0 ? -250 : 250,
-                      opacity: 0,
-                      scale: 0.92,
-                    }}
-                    transition={{
-                      duration: 0.55,
-                    }}
-                    className="absolute inset-0"
-                  >
                     <Image
-                      src={galleryImages[selectedIndex!].src}
+                      src={galleryImages[selectedIndex].src}
                       alt="Selected"
                       fill
                       className="object-contain rounded-2xl shadow-2xl"
                     />
                   </motion.div>
                 </AnimatePresence>
+
               </div>
 
-              {/* Right Small */}
+              {/* Right Preview */}
               <div className="relative w-[18%] h-[250px] hidden md:block opacity-40 scale-90">
                 <Image
                   src={
@@ -196,11 +177,13 @@ export function GallerySection() {
             </div>
 
             {/* Title */}
-            <div className="absolute bottom-8 text-white text-xl font-semibold">
-              {galleryImages[selectedIndex!].title}
+            <div className="absolute bottom-8 text-white text-xl font-semibold text-center px-4">
+              {galleryImages[selectedIndex].title}
             </div>
+
           </div>
         )}
+
       </div>
     </section>
   )
