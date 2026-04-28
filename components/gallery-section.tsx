@@ -1,3 +1,4 @@
+
 "use client"
 
 import Image from "next/image"
@@ -125,7 +126,7 @@ export function GallerySection() {
 
               {/* Center Big Image */}
               <div className="relative w-[90%] md:w-[55%] h-[70vh] overflow-hidden rounded-2xl">
-                <AnimatePresence mode="wait">
+                <AnimatePresence>
                   <motion.div
                     key={selectedIndex}
                     initial={{
@@ -141,8 +142,7 @@ export function GallerySection() {
                       opacity: 0,
                     }}
                     transition={{
-                      duration: 0.45,
-                      ease: "easeInOut",
+                      duration: 0.45
                     }}
                     className="absolute inset-0"
                   >
