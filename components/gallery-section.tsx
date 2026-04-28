@@ -126,8 +126,27 @@ export function GallerySection() {
 
               {/* Center Big Image */}
               <div className="relative w-[90%] md:w-[55%] h-[70vh] overflow-hidden rounded-2xl">
-                <AnimatePresence>
-                  
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={selectedIndex}
+                    initial={{
+                      x: direction > 0 ? 250 : -250,
+                      opacity: 0,
+                      scale: 1.12,
+                    }}
+                    animate={{
+                      x: 0,
+                      opacity: 1,
+                      scale: 1,
+                    }}
+                    exit={{
+                      x: direction > 0 ? -250 : 250,
+                      opacity: 0,
+                      scale: 0.92,
+                    }}
+                    transition={{
+                      duration: 0.55,
+                    }}
                     className="absolute inset-0"
                   >
                     <Image
