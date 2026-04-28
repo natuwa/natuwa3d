@@ -130,6 +130,25 @@ export function GallerySection() {
                   <motion.div
                     key={selectedIndex}
                     initial={{
+                      x: direction > 0 ? 300 : -300,
+                      opacity: 0
+                    }}
+                    animate={{
+                      x: 0,
+                      opacity: 1
+                    }}
+                    exit={{
+                      x: direction > 0 ? -300 : 300,
+                      opacity: 0
+                    }}
+                    transition={{
+                      duration: 0.45
+                    }}
+                    className="absolute inset-0"
+                  >
+                  <motion.div
+                    key={selectedIndex}
+                    initial={{
                       x: direction > 0 ? 250 : -250,
                       opacity: 0,
                       scale: 1.12,
