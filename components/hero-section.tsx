@@ -55,14 +55,14 @@ export function HeroSection() {
 
             {/* Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-
-              <Button asChild size="lg" className="px-8 py-6">
+            
+              <Button asChild size="lg" className="px-8 py-6 bg-primary text-white hover:opacity-90">
                 <Link href="/book-now">
                   Reserve Your Slot @ ₹500 →
                 </Link>
               </Button>
             
-              <Button asChild size="lg" variant="outline" className="px-8 py-6">
+              <Button asChild size="lg" className="px-8 py-6 bg-primary text-white hover:opacity-90">
                 <a href="#gallery">
                   View Gallery
                 </a>
@@ -75,14 +75,13 @@ export function HeroSection() {
               >
                 <Button
                   size="lg"
-                  className="px-8 py-6 bg-green-600 hover:bg-green-700 text-white"
+                  className="px-8 py-6 bg-primary text-white hover:opacity-90"
                 >
                   Get Instant Price on WhatsApp
                 </Button>
               </a>
             
             </div>
-          </div>
 
           {/* RIGHT VIDEO */}
           <div className="relative order-1 lg:order-2">
