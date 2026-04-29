@@ -1,6 +1,13 @@
 import Image from "next/image"
 
-const categoryData: any = {
+type Category = {
+  title: string
+  price: string
+  description: string
+  image: string
+}
+
+const categoryData: Record<string, Category> = {
   "wedding-miniatures": {
     title: "Wedding Miniatures",
     price: "₹2999",
@@ -15,7 +22,7 @@ const categoryData: any = {
   }
 }
 
-export default function Page({ params }: any) {
+export default function Page({ params }: { params: { slug: string } }) {
   const data = categoryData[params.slug]
 
   if (!data) {
@@ -47,10 +54,7 @@ export default function Page({ params }: any) {
           {data.price}
         </p>
 
-        <a
-          href="https://wa.me/919560672813"
-          target="_blank"
-        >
+        <a href="https://wa.me/919560672813" target="_blank">
           <button style={{
             background: "#6b4f3b",
             color: "white",
