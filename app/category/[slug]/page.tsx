@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-const categoryData = {
+const categoryData: any = {
   "wedding-miniatures": {
     title: "Wedding Miniatures",
     price: "₹2999",
@@ -19,45 +19,49 @@ export default function Page({ params }: any) {
   const data = categoryData[params.slug]
 
   if (!data) {
-    return <div className="p-10 text-center">Category not found</div>
+    return <div style={{ padding: "40px" }}>Category not found</div>
   }
 
   return (
-    <div className="min-h-screen bg-[#f8f5f2] py-16 px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div style={{ minHeight: "100vh", padding: "40px", background: "#f8f5f2" }}>
+      <div style={{ maxWidth: "900px", margin: "auto" }}>
 
-        <div className="relative w-full h-[400px]">
+        <h1 style={{ fontSize: "40px", marginBottom: "20px" }}>
+          {data.title}
+        </h1>
+
+        <div style={{ position: "relative", width: "100%", height: "400px", marginBottom: "20px" }}>
           <Image
             src={data.image}
             alt={data.title}
             fill
-            className="object-cover rounded-2xl"
+            style={{ objectFit: "cover", borderRadius: "12px" }}
           />
         </div>
 
-        <div>
-          <h1 className="text-4xl font-serif font-bold mb-4">
-            {data.title}
-          </h1>
+        <p style={{ fontSize: "18px", marginBottom: "10px" }}>
+          {data.description}
+        </p>
 
-          <p className="text-lg mb-4">
-            {data.description}
-          </p>
+        <p style={{ fontSize: "22px", fontWeight: "bold", marginBottom: "20px" }}>
+          {data.price}
+        </p>
 
-          <p className="text-xl text-primary mb-6">
-            {data.price}
-          </p>
+        <a
+          href="https://wa.me/919560672813"
+          target="_blank"
+        >
+          <button style={{
+            background: "#6b4f3b",
+            color: "white",
+            padding: "12px 20px",
+            borderRadius: "8px",
+            border: "none"
+          }}>
+            Order on WhatsApp
+          </button>
+        </a>
 
-          <a
-            href="https://wa.me/919560672813"
-            target="_blank"
-          >
-            <button className="bg-primary text-white px-6 py-3 rounded-lg">
-              Order on WhatsApp
-            </button>
-          </a>
-
-        </div>
       </div>
     </div>
   )
