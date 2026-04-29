@@ -4,11 +4,10 @@ import Image from "next/image"
 import { useState } from "react"
 
 export default function CategoryClient({ data }: any) {
-
   const [size, setSize] = useState("4 inch")
   const [file, setFile] = useState<File | null>(null)
 
-  const priceMap: Record<string, number> = {
+  const priceMap: any = {
     "4 inch": data.basePrice,
     "6 inch": data.basePrice + 1000,
     "8 inch": data.basePrice + 2000,
@@ -49,12 +48,12 @@ export default function CategoryClient({ data }: any) {
             {data.description}
           </p>
 
-          {/* PRICE */}
+          {/* Price */}
           <p className="text-2xl font-semibold text-primary mb-6">
             ₹{finalPrice}
           </p>
 
-          {/* SIZE SELECT */}
+          {/* Size Selection */}
           <div className="mb-6">
             <p className="mb-2 font-medium">Select Size:</p>
             <div className="flex gap-3">
@@ -74,30 +73,29 @@ export default function CategoryClient({ data }: any) {
             </div>
           </div>
 
-          {/* IMAGE UPLOAD */}
+          {/* Image Upload */}
           <div className="mb-6">
             <p className="mb-2 font-medium">Upload Your Photo:</p>
             <input
               type="file"
               onChange={(e) => setFile(e.target.files?.[0] || null)}
-              className="border p-2 rounded-lg w-full"
+              className="border p-2 rounded-lg w-full bg-white"
             />
           </div>
 
-          {/* FEATURES */}
+          {/* Features */}
           <ul className="mb-6 text-muted-foreground space-y-3">
             <li>✨ High-quality 3D printing</li>
             <li>🎨 Premium finishing</li>
             <li>🚚 Delivery in 7–10 days</li>
           </ul>
 
-          {/* WHATSAPP BUTTON */}
+          {/* WhatsApp Button */}
           <a
             href={`https://wa.me/919560672813?text=${encodeURIComponent(
               `Hi, I want to order ${data.title} (${size}) - ₹${finalPrice}`
             )}`}
             target="_blank"
-            rel="noopener noreferrer"
           >
             <button className="bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:scale-105 transition-all duration-300">
               Order on WhatsApp
