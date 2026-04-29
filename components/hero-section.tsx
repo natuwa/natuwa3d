@@ -37,7 +37,7 @@ export function HeroSection() {
           {/* LEFT CONTENT */}
           <div className="text-center lg:text-left order-2 lg:order-1">
             <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
-              Wedding Keepsakes
+              Get Booked Your 3D Miniature
             </p>
 
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight">
