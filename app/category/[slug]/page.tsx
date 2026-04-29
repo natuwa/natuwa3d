@@ -1,9 +1,15 @@
 import CategoryClient from "./CategoryClient"
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+type Params = {
+  params: {
+    slug: string
+  }
+}
+
+export async function generateMetadata({ params }: Params) {
   const title = params.slug
     .replace(/-/g, " ")
-    .replace(/\b\w/g, (c: string) => c.toUpperCase())
+    .replace(/\b\w/g, (c) => c.toUpperCase())
 
   return {
     title: `${title} | NATUWA3D`,
@@ -11,7 +17,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-const categoryData: any = {
+const categoryData = {
   "wedding-miniatures": {
     title: "Wedding Miniatures",
     basePrice: 2999,
@@ -24,10 +30,10 @@ const categoryData: any = {
     description: "Perfect gift for couples and anniversaries.",
     image: "/images/miniature-a.jpg"
   }
-}
+} as const
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const data = categoryData[params.slug]
+export default function Page({ params }: Params) {
+  const data = categoryData[params.slug as keyof typeof categoryData]
 
   if (!data) {
     return <div className="p-10 text-center">Category not found</div>
