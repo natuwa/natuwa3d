@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
             <Link href="/" className="inline-block mb-4">
-              <span className="font-serif text-3xl font-bold">NATUWA</span>
+              <span className="font-serif text-3xl font-bold">NATUWA3D</span>
               <span className="block text-xs tracking-widest uppercase text-background/60">
                 Your frozen Moment
               </span>
@@ -74,7 +74,7 @@ export function Footer() {
 
         <div className="border-t border-background/20 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-background/60 text-sm">
-            © {new Date().getFullYear()} NATUWA. All rights reserved.
+            © {new Date().getFullYear()} NATUWA3D. All rights reserved.
           </p>
           <p className="text-background/60 text-sm flex items-center gap-1">
             Made with <Heart className="w-4 h-4 text-accent fill-accent" /> in India
