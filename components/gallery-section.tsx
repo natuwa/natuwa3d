@@ -3,7 +3,6 @@
 import Image from "next/image"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import Link from "next/link"
 
 const galleryImages = [
   { src: "/images/hero-couple.jpg", alt: "Wedding couple miniature", title: "Wedding Miniatures" },
@@ -60,8 +59,7 @@ export function GallerySection() {
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              <Link href={`/categories/${image.title.toLowerCase().replace(/\s+/g, "-")}`}>
-                <div className="relative cursor-pointer overflow-hidden rounded-xl group">
+              onClick={() => setSelectedIndex(index)}
               className="relative cursor-pointer overflow-hidden rounded-xl group"
             >
               <div className="relative aspect-square">
