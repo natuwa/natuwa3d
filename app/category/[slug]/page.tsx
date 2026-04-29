@@ -1,6 +1,8 @@
 import Image from "next/image"
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const title = params.slug.replace(/-/g, " ")
+  const title = params.slug
+  .replace(/-/g, " ")
+  .replace(/\b\w/g, (c) => c.toUpperCase())
 
   return {
     title: `${title} | NATUWA3D`,
@@ -44,6 +46,9 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
 
         {/* CONTENT */}
         <div>
+          <p className="text-sm text-muted-foreground mb-4">
+            Home / {data.title}
+          </p>
           <h1 className="text-4xl font-serif font-bold mb-4">
             {data.title}
           </h1>
@@ -56,17 +61,17 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
             {data.price}
           </p>
 
-          <ul className="mb-6 text-muted-foreground space-y-2">
-            <li>✔ High-quality 3D printing</li>
-            <li>✔ Premium finishing</li>
-            <li>✔ Delivery in 7–10 days</li>
+          <ul className="mb-6 text-muted-foreground space-y-3">
+            <li>✨ High-quality 3D printing</li>
+            <li>🎨 Premium finishing</li>
+            <li>🚚 Delivery in 7–10 days</li>
           </ul>
 
           <a
-            href="https://wa.me/919560672813?text=I want to order this category"
+            href={`https://wa.me/919560672813?text=I want to order ${data.title}`}
             target="_blank"
           >
-            <button className="bg-primary text-white px-6 py-3 rounded-lg hover:opacity-90">
+            <button className="bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
               Order on WhatsApp
             </button>
           </a>
