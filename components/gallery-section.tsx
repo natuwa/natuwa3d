@@ -1,188 +1,101 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import Link from "next/link"
 
 const galleryImages = [
-  { src: "/images/hero-couple.jpg", alt: "Wedding couple miniature", title: "Wedding Miniatures" },
-  { src: "/images/miniature-a.jpg", alt: "Miniature 1", title: "Couple Miniatures" },
-  { src: "/images/family-couple.webp", alt: "Miniature 2", title: "Family Couple Miniatures" },
-  { src: "/images/old-memory.webp", alt: "Miniature 3", title: "Old Memories" },
-  { src: "/images/mother-son.webp", alt: "Miniature 4", title: "Kids Miniatures" },
-  { src: "/images/compare.webp", alt: "Miniature 5", title: "Compare Miniatures" },
-  { src: "/images/single-professional1.webp", alt: "Miniature 6", title: "Single Miniatures" },
-  { src: "/images/miniature-7.jpg", alt: "Miniature 7", title: "SuperHero Miniatures" },
+  {
+    src: "/images/hero-couple.jpg",
+    title: "Wedding Miniatures",
+    slug: "wedding-miniature",
+  },
+  {
+    src: "/images/miniature-a.jpg",
+    title: "Couple Miniatures",
+    slug: "couple-miniature",
+  },
+  {
+    src: "/images/family-couple.webp",
+    title: "Family Miniatures",
+    slug: "family-miniature",
+  },
+  {
+    src: "/images/old-memory.webp",
+    title: "Old Memories",
+    slug: "old-memory",
+  },
+  {
+    src: "/images/mother-son.webp",
+    title: "Kids Miniatures",
+    slug: "kids-miniature",
+  },
+  {
+    src: "/images/compare.webp",
+    title: "Compare Miniatures",
+    slug: "compare-miniature",
+  },
+  {
+    src: "/images/single-professional1.webp",
+    title: "Single Miniatures",
+    slug: "single-miniature",
+  },
+  {
+    src: "/images/miniature-7.jpg",
+    title: "Superhero Miniatures",
+    slug: "superhero-miniature",
+  },
 ]
 
 export function GallerySection() {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
-  const [direction, setDirection] = useState<number>(0)
-
-  const nextSlide = () => {
-    if (selectedIndex === null) return
-    setDirection(1)
-    setSelectedIndex(
-      selectedIndex === galleryImages.length - 1 ? 0 : selectedIndex + 1
-    )
-  }
-
-  const prevSlide = () => {
-    if (selectedIndex === null) return
-    setDirection(-1)
-    setSelectedIndex(
-      selectedIndex === 0 ? galleryImages.length - 1 : selectedIndex - 1
-    )
-  }
-
   return (
-    <section id="gallery" className="py-20 bg-secondary/50">
+    <section id="gallery" className="py-20 bg-[#f8f5f2]">
       <div className="container mx-auto px-6">
 
         {/* Heading */}
         <div className="text-center mb-16">
-          <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">
+          <p className="text-sm tracking-widest uppercase text-muted-foreground mb-3">
             Our Work
           </p>
 
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold">
             Gallery of Memories
           </h2>
 
-          <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
-            Browse through our collection of handcrafted miniatures
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+            Browse through our handcrafted 3D printed miniatures
           </p>
         </div>
 
-        {/* Grid Gallery */}
+        {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {galleryImages.map((image, index) => (
-            <div
+            <Link
               key={index}
-              onClick={() => setSelectedIndex(index)}
-              className="relative cursor-pointer overflow-hidden rounded-xl group"
+              href={`/category/${image.slug}`}
+              className="group relative overflow-hidden rounded-xl block"
             >
               <div className="relative aspect-square">
+
+                {/* Image */}
                 <Image
                   src={image.src}
-                  alt={image.alt}
+                  alt={image.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
 
-                <div className="absolute bottom-0 w-full bg-black/50 text-white text-center p-2 text-sm">
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300"></div>
+
+                {/* Title */}
+                <div className="absolute bottom-0 w-full text-center text-white p-3 text-sm bg-black/50 backdrop-blur-sm">
                   {image.title}
                 </div>
+
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-
-        {/* Fullscreen Slider */}
-        {selectedIndex !== null && (
-          <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center overflow-hidden">
-
-            {/* Close */}
-            <button
-              onClick={() => setSelectedIndex(null)}
-              className="absolute top-5 right-5 text-white text-4xl z-50 hover:scale-110 transition"
-            >
-              ×
-            </button>
-
-            {/* Left Arrow */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-3 md:left-8 text-white text-5xl z-50 bg-white/10 rounded-full w-14 h-14 flex items-center justify-center hover:bg-white/20 transition"
-            >
-              ‹
-            </button>
-
-            {/* Right Arrow */}
-            <button
-              onClick={nextSlide}
-              className="absolute right-3 md:right-8 text-white text-5xl z-50 bg-white/10 rounded-full w-14 h-14 flex items-center justify-center hover:bg-white/20 transition"
-            >
-              ›
-            </button>
-
-            {/* Main Slider */}
-            <div className="flex items-center justify-center gap-4 md:gap-8 w-full px-6">
-
-              {/* Left Preview */}
-              <div className="relative w-[18%] h-[250px] hidden md:block opacity-40 scale-90">
-                <Image
-                  src={
-                    galleryImages[
-                      selectedIndex === 0
-                        ? galleryImages.length - 1
-                        : selectedIndex - 1
-                    ].src
-                  }
-                  alt="Prev"
-                  fill
-                  className="object-contain rounded-xl"
-                />
-              </div>
-
-              {/* Center Main Image */}
-              <div className="relative w-[90%] md:w-[55%] h-[70vh] overflow-hidden rounded-2xl">
-
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={selectedIndex}
-                    initial={{
-                      x: direction > 0 ? 300 : -300,
-                      opacity: 0
-                    }}
-                    animate={{
-                      x: 0,
-                      opacity: 1
-                    }}
-                    exit={{
-                      x: direction > 0 ? -300 : 300,
-                      opacity: 0
-                    }}
-                    transition={{
-                      duration: 0.45
-                    }}
-                    className="absolute inset-0"
-                  >
-                    <Image
-                      src={galleryImages[selectedIndex].src}
-                      alt="Selected"
-                      fill
-                      className="object-contain rounded-2xl shadow-2xl"
-                    />
-                  </motion.div>
-                </AnimatePresence>
-
-              </div>
-
-              {/* Right Preview */}
-              <div className="relative w-[18%] h-[250px] hidden md:block opacity-40 scale-90">
-                <Image
-                  src={
-                    galleryImages[
-                      selectedIndex === galleryImages.length - 1
-                        ? 0
-                        : selectedIndex + 1
-                    ].src
-                  }
-                  alt="Next"
-                  fill
-                  className="object-contain rounded-xl"
-                />
-              </div>
-            </div>
-
-            {/* Title */}
-            <div className="absolute bottom-8 text-white text-xl font-semibold text-center px-4">
-              {galleryImages[selectedIndex].title}
-            </div>
-
-          </div>
-        )}
 
       </div>
     </section>
