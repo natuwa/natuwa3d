@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 type Category = {
   title: string
   price: string
@@ -37,14 +35,18 @@ export default function Page({ params }: { params: { slug: string } }) {
           {data.title}
         </h1>
 
-        <div style={{ position: "relative", width: "100%", height: "400px", marginBottom: "20px" }}>
-          <Image
-            src={data.image}
-            alt={data.title}
-            fill
-            style={{ objectFit: "cover", borderRadius: "12px" }}
-          />
-        </div>
+        {/* ✅ FIXED IMAGE */}
+        <img
+          src={data.image}
+          alt={data.title}
+          style={{
+            width: "100%",
+            height: "400px",
+            objectFit: "cover",
+            borderRadius: "12px",
+            marginBottom: "20px"
+          }}
+        />
 
         <p style={{ fontSize: "18px", marginBottom: "10px" }}>
           {data.description}
