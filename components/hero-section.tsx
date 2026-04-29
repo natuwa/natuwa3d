@@ -69,7 +69,7 @@ export function HeroSection() {
               </Button>
             
               <a
-                href="https://wa.me/919560672813?text=Hi%20Natuwa3D,%20I%20want%20price%20details%20for%20custom%20miniature"
+                href="https://wa.me/919560672813?text=Hi%20Natuwa3D"
                 target="_blank"
                 rel="noopener noreferrer"
               >
