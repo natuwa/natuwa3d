@@ -77,7 +77,7 @@ export function HeroSection() {
                   size="lg"
                   className="px-8 py-6 bg-primary text-white hover:opacity-90"
                 >
-                  Get Instant Price on WhatsApp
+                  chat on WhatsApp
                 </Button>
               </a>
             
