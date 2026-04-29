@@ -3,7 +3,7 @@ import CategoryClient from "./CategoryClient"
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const title = params.slug
     .replace(/-/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase())
+    .replace(/\b\w/g, (c: string) => c.toUpperCase())
 
   return {
     title: `${title} | NATUWA3D`,
@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-const categoryData: Record<string, any> = {
+const categoryData: any = {
   "wedding-miniatures": {
     title: "Wedding Miniatures",
     basePrice: 2999,
