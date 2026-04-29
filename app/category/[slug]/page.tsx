@@ -1,9 +1,12 @@
 import Image from "next/image"
-export const metadata = {
-  title: "Wedding Miniatures in India | NATUWA3D",
-  description: "Custom 3D printed wedding miniatures..."
-}
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const title = params.slug.replace(/-/g, " ")
 
+  return {
+    title: `${title} | NATUWA3D`,
+    description: `Order ${title} 3D printed miniatures in India.`,
+  }
+}
 const categoryData: any = {
   "wedding-miniatures": {
     title: "Wedding Miniatures",
@@ -19,7 +22,7 @@ const categoryData: any = {
   }
 }
 
-export default function CategoryPage({ params }: any) {
+export default function CategoryPage({ params }: { params: { slug: string } }) {
   const data = categoryData[params.slug]
 
   if (!data) return <div className="p-10">Category not found</div>
@@ -32,7 +35,7 @@ export default function CategoryPage({ params }: any) {
         {/* IMAGE */}
         <div className="relative w-full h-[400px]">
           <Image
-            src={data.image}
+            src={data.image || "/images/default.jpg"}
             alt={data.title}
             fill
             className="object-cover rounded-2xl shadow-lg"
