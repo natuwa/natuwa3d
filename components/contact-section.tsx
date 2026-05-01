@@ -243,7 +243,7 @@ export function ContactSection() {
                   </svg>
                 </a>
                 <a 
-                  href="https://www.pinterest.com/your-profile"
+                  href="https://in.pinterest.com/natuwa3d/"
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white"
