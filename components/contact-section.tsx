@@ -229,7 +229,7 @@ export function ContactSection() {
                   </svg>
                 </a>
                 <a 
-                  href="https://www.linkedin.com/in/your-profile"
+                  href="https://www.linkedin.com/in/navya-kumari-12b148407/"
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white"
