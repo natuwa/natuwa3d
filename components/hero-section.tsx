@@ -52,35 +52,35 @@ return ( <section
           Only 5 slots left this week
         </p>
 
-        {/* Buttons */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-
-          {/* Button 1 */}
-          <Button asChild size="lg" className="px-8 py-6 w-full sm:w-auto bg-primary text-white hover:opacity-90">
-            <Link href="/book-now">
-              Reserve Your Slot @ ₹500 →
-            </Link>
-          </Button>
-
-          {/* Button 2 */}
-          <Button asChild size="lg" className="px-8 py-6 w-full sm:w-auto bg-primary text-white hover:opacity-90">
-            <a href="#gallery">
-              View Gallery
-            </a>
-          </Button>
-
-          {/* Button 3 - WhatsApp */}
-          <Button asChild size="lg" className="px-8 py-6 w-full sm:w-auto bg-green-500 text-white hover:opacity-90">
-            <a
-              href="https://wa.me/918796289333?text=Hi%20Natuwa3D"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              WhatsApp Now
-            </a>
-          </Button>
-
-        </div>
+       {/* Buttons */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            
+              {/* Button 1 */}
+              <Button asChild size="lg" className="px-8 py-6 bg-primary text-white hover:opacity-90">
+                <Link href="/book-now">
+                  Reserve Your Slot @ ₹500 →
+                </Link>
+              </Button>
+            
+              {/* Button 2 */}
+              <Button asChild size="lg" className="px-8 py-6 bg-primary text-white hover:opacity-90">
+                <a href="#gallery">
+                  View Gallery
+                </a>
+              </Button>
+            
+              {/* Button 3 */}
+              <Button asChild size="lg" className="px-8 py-6 bg-green-500 text-white hover:opacity-90">
+                <a
+                  href="https://wa.me/918796289333?text=Hi%20Natuwa3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WhatsApp Now
+                </a>
+              </Button>
+            
+            </div>
       </div>
 
       {/* RIGHT VIDEO */}
