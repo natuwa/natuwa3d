@@ -81,7 +81,7 @@ return ( <section
               </Button>
             
             </div>
-      </div>
+      
 
       {/* RIGHT VIDEO */}
       <div className="relative order-1 lg:order-2">
