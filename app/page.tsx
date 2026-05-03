@@ -15,22 +15,22 @@ export default function Home() {
       <HeroSection />
 
       {/* 🔥 NEW FESTIVAL OFFER SECTION */}
-      <section className="w-full bg-pink-100 py-12 text-center">
-        <h2 className="text-3xl font-bold">
+      <section className="w-full bg-[#f8f5f2] py-14 text-center">
+        <h2 className="text-3xl font-semibold text-[#4a2c2a]">
           🎁 Raksha Bandhan Special Miniature
         </h2>
-
-        <p className="mt-3 text-lg">
+      
+        <p className="mt-3 text-lg text-[#6b4c4c]">
           Flat 20% OFF – Make Your Bond Memorable ❤️
         </p>
-
-        <p className="mt-2 text-sm text-red-500">
+      
+        <p className="mt-2 text-sm text-[#a94442]">
           ⏳ Limited Time Offer
         </p>
-
+      
         <a
           href="/book-now"
-          className="inline-block mt-5 px-6 py-3 bg-black text-white rounded-full"
+          className="inline-block mt-6 px-8 py-3 bg-[#4a2c2a] text-white rounded-full hover:bg-[#3a1f1d] transition"
         >
           Order Now
         </a>
