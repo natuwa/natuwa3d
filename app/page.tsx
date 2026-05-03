@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
 import { GallerySection } from "@/components/gallery-section"
@@ -11,19 +14,21 @@ import Image from "next/image"
 
 const showOffer = true
 
-// 🔥 OFFER CONFIG (ONLY CHANGE THIS)
+// 🔥 OFFER CONFIG
 const offerTitle = "Raksha Bandhan Miniature"
 const offerText = "Flat 20% OFF – Make Your Bond Memorable ❤️"
 const offerTag = "⏳ Limited Time Offer"
 
 export default function Home() {
+  const [open, setOpen] = useState(false)
+
   return (
     <main className="min-h-screen bg-background">
       
       <Navbar />
       <HeroSection />
       
-      {/* About natuwa3d Description */}
+      {/* About Section */}
       <section className="max-w-5xl mx-auto px-6 py-14 text-center">
         <h2 className="text-3xl font-semibold mb-4">
           Personalized 3D Wedding Miniatures
@@ -31,8 +36,7 @@ export default function Home() {
       
         <p className="text-muted-foreground leading-relaxed">
           At NATUWA3D, we create highly detailed 3D printed wedding miniatures that
-          capture your most special moments forever. Our custom couple figurines are
-          perfect for weddings, anniversaries, and unique gifts in India.
+          capture your most special moments forever.
         </p>
       </section>
 
@@ -47,12 +51,10 @@ export default function Home() {
               
               <h2 className="text-3xl font-semibold leading-snug">
 
-                {/* Brand Badge */}
                 <span className="bg-[#4a2c2a]/10 text-[#4a2c2a] border border-[#4a2c2a]/20 px-3 py-1 rounded-full text-sm mr-2">
                   🎁 Special Offer
                 </span>
               
-                {/* Dynamic Festival Text */}
                 <span className="text-[#4a2c2a]">
                   {offerTitle}
                 </span>
@@ -76,19 +78,65 @@ export default function Home() {
             </div>
       
             {/* RIGHT IMAGE */}
-            <div className="flex justify-center overflow-hidden rounded-2xl">
+            <div
+              onClick={() => setOpen(true)}
+              className="flex justify-center overflow-hidden rounded-2xl cursor-pointer group"
+            >
               <Image
                 src="/images/raksha-bhandhan-6.webp"
                 alt="Miniature Offer"
                 width={260}
                 height={260}
-                className="transition-transform duration-300 hover:scale-110 object-cover"
+                className="transition-all duration-300 group-hover:scale-110 object-cover"
               />
             </div>
       
           </div>
-      
         </section>
+      )}
+
+      {/* 🔥 FULLSCREEN MODAL */}
+      {open && (
+        <div
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="text-center px-4"
+          >
+            {/* CLOSE BUTTON */}
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-6 right-6 text-white text-3xl"
+            >
+              ✕
+            </button>
+
+            <Image
+              src="/images/raksha-bhandhan-6.webp"
+              alt="Full Offer"
+              width={500}
+              height={500}
+              className="rounded-2xl shadow-2xl"
+            />
+
+            <h2 className="text-white text-2xl mt-6 font-semibold">
+              {offerTitle}
+            </h2>
+
+            <p className="text-white/80 mt-2">
+              {offerText}
+            </p>
+
+            <a
+              href="/book-now"
+              className="inline-block mt-5 px-6 py-3 bg-white text-black rounded-full"
+            >
+              Order Now
+            </a>
+          </div>
+        </div>
       )}
 
       <GallerySection />
