@@ -15,7 +15,7 @@ export default function Home() {
       <HeroSection />
 
       {/* 🔥 NEW FESTIVAL OFFER SECTION */}
-      <section className="w-full bg-[#f8f5f2] py-14 text-center">
+      <section className="w-full bg-[#f8f5f2] py-14 text-center border-t border-[#e5dcd6]">
         <h2 className="text-3xl font-semibold text-[#4a2c2a]">
           🎁 Raksha Bandhan Special Miniature
         </h2>
