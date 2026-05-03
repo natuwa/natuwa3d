@@ -66,8 +66,8 @@ export default function Home() {
             {/* RIGHT IMAGE */}
             <div className="flex justify-center">
               <img
-                src="/offer-miniature.jpg"   // 👈 yaha apni image ka naam daalo
-                alt="Miniature Offer"
+                src="/images/raksha-bhandhan-6.webp"
+                alt="Raksha Bandhan Miniature"
                 className="w-full max-w-sm rounded-2xl shadow-lg object-cover"
               />
             </div>
