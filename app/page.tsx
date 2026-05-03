@@ -20,8 +20,21 @@ export default function Home() {
       
       <Navbar />
       <HeroSection />
+      
+      {/* About natuwa3d Description */}
+      <section className="max-w-5xl mx-auto px-6 py-16 text-center">
+        <h2 className="text-3xl font-semibold mb-4">
+          Personalized 3D Wedding Miniatures
+        </h2>
+      
+        <p className="text-muted-foreground leading-relaxed">
+          At NATUWA3D, we create highly detailed 3D printed wedding miniatures that
+          capture your most special moments forever. Our custom couple figurines are
+          perfect for weddings, anniversaries, and unique gifts in India.
+        </p>
+      </section>
 
-      {/* 🔥 DYNAMIC OFFER SECTION */}
+      {/* 🔥 OFFER SECTION */}
       {showOffer && (
         <section className="w-full bg-[#f8f5f2] py-14 text-center border-t border-[#e5dcd6]">
           
@@ -47,18 +60,7 @@ export default function Home() {
         </section>
       )}
 
-      {/* EXISTING CONTENT */}
-      <section className="max-w-5xl mx-auto px-6 py-16 text-center">
-        <h2 className="text-3xl font-semibold mb-4">
-          Personalized 3D Wedding Miniatures
-        </h2>
       
-        <p className="text-muted-foreground leading-relaxed">
-          At NATUWA3D, we create highly detailed 3D printed wedding miniatures that
-          capture your most special moments forever. Our custom couple figurines are
-          perfect for weddings, anniversaries, and unique gifts in India.
-        </p>
-      </section>
 
       <GallerySection />
       <SizeSection />
