@@ -76,13 +76,13 @@ export default function Home() {
             </div>
       
             {/* RIGHT IMAGE */}
-            <div className="flex justify-center">
+            <div className="flex justify-center overflow-hidden rounded-2xl">
               <Image
                 src="/images/raksha-bhandhan-6.webp"
-                alt="Raksha Bandhan Miniature"
+                alt="Miniature Offer"
                 width={260}
                 height={260}
-                className="rounded-2xl shadow-lg object-cover border border-[#e5dcd6]"
+                className="transition-transform duration-300 hover:scale-110 object-cover"
               />
             </div>
       
