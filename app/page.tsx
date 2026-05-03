@@ -68,7 +68,7 @@ export default function Home() {
               <img
                 src="/images/raksha-bhandhan-6.webp"
                 alt="Raksha Bandhan Miniature"
-                className="w-full max-w-sm rounded-2xl shadow-lg object-cover"
+                className="w-full max-w-[220px] rounded-2xl shadow-lg object-cover"
               />
             </div>
       
