@@ -45,9 +45,9 @@ export default function Home() {
               
               <h2 className="text-3xl font-semibold">
 
-                <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm mr-2">
+                <span className="bg-[#4a2c2a]/10 text-[#4a2c2a] border border-[#4a2c2a]/20 px-3 py-1 rounded-full text-sm mr-2">
                   🎁 Special Offer
-                </span>
+                </span
               
                 <span className="text-[#4a2c2a]">
                   Raksha Bandhan Special Miniature
