@@ -12,7 +12,7 @@ import Image from "next/image"
 const showOffer = true
 
 // 🔥 OFFER CONFIG (ONLY CHANGE THIS)
-const offerTitle = "Raksha Bandhan Special Miniature"
+const offerTitle = "Raksha Bandhan Miniature"
 const offerText = "Flat 20% OFF – Make Your Bond Memorable ❤️"
 const offerTag = "⏳ Limited Time Offer"
 
