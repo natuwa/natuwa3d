@@ -8,7 +8,7 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
-const showOffer = false
+const showOffer = true
 // 🔥 OFFER CONFIG (BAS YE CHANGE KARNA HAI FUTURE ME)
 const offerTitle = "🎁 Raksha Bandhan Special Miniature"
 const offerText = "Flat 20% OFF – Make Your Bond Memorable ❤️"
