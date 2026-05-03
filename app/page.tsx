@@ -8,6 +8,7 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
+const showOffer = true
 // 🔥 OFFER CONFIG (BAS YE CHANGE KARNA HAI FUTURE ME)
 const offerTitle = "🎁 Raksha Bandhan Special Miniature"
 const offerText = "Flat 20% OFF – Make Your Bond Memorable ❤️"
@@ -21,27 +22,30 @@ export default function Home() {
       <HeroSection />
 
       {/* 🔥 DYNAMIC OFFER SECTION */}
-      <section className="w-full bg-[#f8f5f2] py-14 text-center border-t border-[#e5dcd6]">
-        
-        <h2 className="text-3xl font-semibold text-[#4a2c2a]">
-          {offerTitle}
-        </h2>
-
-        <p className="mt-3 text-lg text-[#6b4c4c]">
-          {offerText}
-        </p>
-
-        <p className="mt-2 text-sm text-[#a94442]">
-          {offerTag}
-        </p>
-
-        <a
-          href="/book-now"
-          className="inline-block mt-6 px-8 py-3 bg-[#4a2c2a] text-white rounded-full hover:bg-[#3a1f1d] transition"
-        >
-          Order Now
-        </a>
-      </section>
+      {showOffer && (
+        <section className="w-full bg-[#f8f5f2] py-14 text-center border-t border-[#e5dcd6]">
+          
+          <h2 className="text-3xl font-semibold text-[#4a2c2a]">
+            {offerTitle}
+          </h2>
+      
+          <p className="mt-3 text-lg text-[#6b4c4c]">
+            {offerText}
+          </p>
+      
+          <p className="mt-2 text-sm text-[#a94442]">
+            {offerTag}
+          </p>
+      
+          <a
+            href="/book-now"
+            className="inline-block mt-6 px-8 py-3 bg-[#4a2c2a] text-white rounded-full hover:bg-[#3a1f1d] transition"
+          >
+            Order Now
+          </a>
+      
+        </section>
+      )}
 
       {/* EXISTING CONTENT */}
       <section className="max-w-5xl mx-auto px-6 py-16 text-center">
