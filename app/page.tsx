@@ -36,30 +36,46 @@ export default function Home() {
 
       {/* 🔥 OFFER SECTION */}
       {showOffer && (
-        <section className="w-full bg-[#f8f5f2] py-14 text-center border-t border-[#e5dcd6]">
+        <section className="w-full bg-[#f8f5f2] py-14 border-t border-[#e5dcd6]">
           
-          <h2 className="text-3xl font-semibold text-[#4a2c2a]">
-            {offerTitle}
-          </h2>
+          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
       
-          <p className="mt-3 text-lg text-[#6b4c4c]">
-            {offerText}
-          </p>
+            {/* LEFT TEXT */}
+            <div className="text-center md:text-left">
+              
+              <h2 className="text-3xl font-semibold text-[#4a2c2a]">
+                {offerTitle}
+              </h2>
       
-          <p className="mt-2 text-sm text-[#a94442]">
-            {offerTag}
-          </p>
+              <p className="mt-3 text-lg text-[#6b4c4c]">
+                {offerText}
+              </p>
       
-          <a
-            href="/book-now"
-            className="inline-block mt-6 px-8 py-3 bg-[#4a2c2a] text-white rounded-full hover:bg-[#3a1f1d] transition"
-          >
-            Order Now
-          </a>
+              <p className="mt-2 text-sm text-[#a94442]">
+                {offerTag}
+              </p>
+      
+              <a
+                href="/book-now"
+                className="inline-block mt-6 px-8 py-3 bg-[#4a2c2a] text-white rounded-full hover:bg-[#3a1f1d] transition"
+              >
+                Order Now
+              </a>
+            </div>
+      
+            {/* RIGHT IMAGE */}
+            <div className="flex justify-center">
+              <img
+                src="/offer-miniature.jpg"   // 👈 yaha apni image ka naam daalo
+                alt="Miniature Offer"
+                className="w-full max-w-sm rounded-2xl shadow-lg object-cover"
+              />
+            </div>
+      
+          </div>
       
         </section>
       )}
-
       
 
       <GallerySection />
