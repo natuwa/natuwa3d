@@ -25,7 +25,7 @@ export default function BookNowPage() {
             form.submit();
           
             // optional alert
-            alert("Order Submitted Successfully 🎉\n\nComplete your payment to confirm 💳");
+            alert("Order Submitted Successfully 🎉\n\nNow Make Advance Payment to confirm Your Miniature Order 💳");
           
             // redirect to payment
             setTimeout(() => {
