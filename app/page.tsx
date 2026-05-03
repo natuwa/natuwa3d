@@ -7,10 +7,12 @@ import { ProcessSection } from "@/components/process-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
+import Image from "next/image"
 
 const showOffer = true
-// 🔥 OFFER CONFIG (BAS YE CHANGE KARNA HAI FUTURE ME)
-const offerTitle = "🎁 Raksha Bandhan Special Miniature"
+
+// 🔥 OFFER CONFIG (ONLY CHANGE THIS)
+const offerTitle = "Raksha Bandhan Special Miniature"
 const offerText = "Flat 20% OFF – Make Your Bond Memorable ❤️"
 const offerTag = "⏳ Limited Time Offer"
 
@@ -22,7 +24,7 @@ export default function Home() {
       <HeroSection />
       
       {/* About natuwa3d Description */}
-      <section className="max-w-5xl mx-auto px-6 py-16 text-center">
+      <section className="max-w-5xl mx-auto px-6 py-14 text-center">
         <h2 className="text-3xl font-semibold mb-4">
           Personalized 3D Wedding Miniatures
         </h2>
@@ -43,16 +45,18 @@ export default function Home() {
             {/* LEFT TEXT */}
             <div className="text-center md:text-left">
               
-              <h2 className="text-3xl font-semibold">
+              <h2 className="text-3xl font-semibold leading-snug">
 
+                {/* Brand Badge */}
                 <span className="bg-[#4a2c2a]/10 text-[#4a2c2a] border border-[#4a2c2a]/20 px-3 py-1 rounded-full text-sm mr-2">
                   🎁 Special Offer
-                </span
-              
-                <span className="text-[#4a2c2a]">
-                  Raksha Bandhan Special Miniature
                 </span>
               
+                {/* Dynamic Festival Text */}
+                <span className="text-[#4a2c2a]">
+                  {offerTitle}
+                </span>
+
               </h2>
       
               <p className="mt-3 text-lg text-[#6b4c4c]">
@@ -73,10 +77,12 @@ export default function Home() {
       
             {/* RIGHT IMAGE */}
             <div className="flex justify-center">
-              <img
+              <Image
                 src="/images/raksha-bhandhan-6.webp"
                 alt="Raksha Bandhan Miniature"
-                className="w-full max-w-[220px] rounded-2xl shadow-lg object-cover"
+                width={260}
+                height={260}
+                className="rounded-2xl shadow-lg object-cover border border-[#e5dcd6]"
               />
             </div>
       
@@ -84,7 +90,6 @@ export default function Home() {
       
         </section>
       )}
-      
 
       <GallerySection />
       <SizeSection />
