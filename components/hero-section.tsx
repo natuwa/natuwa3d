@@ -114,18 +114,10 @@ export function HeroSection() {
                 />
 
                 {/* Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  {!playing && (
-                    <div className="bg-black/60 backdrop-blur-md p-4 rounded-full text-white text-2xl group-hover:scale-110 transition">
-                      ▶
-                    </div>
-                  )}
-                </div>
-
                 {/* Bottom Label */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
-                  <div className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-full text-white text-sm shadow-lg">
-                    {playing ? "Pause" : "View 360°"}
+                  <div className="bg-black/70 px-5 py-2 rounded-full text-white text-sm shadow-lg">
+                    {playing ? "Pause ⏸" : "View 360° ▶"}
                   </div>
                 </div>
 
