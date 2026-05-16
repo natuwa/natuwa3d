@@ -6,22 +6,6 @@ const blogs = [
     description:
       "Discover personalized wedding gift ideas including custom 3D printed miniatures.",
   },
-
-  {
-    title: "Custom Bride Groom Miniature",
-    slug: "custom-bride-groom-miniature",
-    image: "/images/miniature-a.jpg",
-    description:
-      "Realistic custom bride groom miniature made from your wedding photos.",
-  },
-
-  {
-    title: "Indian Wedding Miniatures",
-    slug: "indian-wedding-miniatures",
-    image: "/images/miniature-b.jpg",
-    description:
-      "Premium Indian wedding miniatures with traditional outfits and realistic details.",
-  },
 ];
 
 export default function BlogPage() {
