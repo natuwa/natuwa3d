@@ -20,7 +20,8 @@ export default function BrideGroomMiniatureBlog() {
       <div className="max-w-3xl mx-auto">
         {/* Title */}
         <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-          Custom Bride Groom Miniature – A Unique Wedding Gift to Treasure Forever
+          Custom Bride Groom Miniature – A Unique Wedding Gift to Treasure
+          Forever
         </h1>
 
         {/* Published By */}
@@ -45,7 +46,7 @@ export default function BrideGroomMiniatureBlog() {
 
         <p className="text-lg leading-8 mb-6 text-gray-700">
           At Natuwa3D, we create highly detailed 3D miniatures that capture the
-          bride and groom’s expressions, outfits, and pose with incredible
+          bride and groom&apos;s expressions, outfits, and pose with incredible
           accuracy.
         </p>
 
@@ -96,9 +97,7 @@ export default function BrideGroomMiniatureBlog() {
           <li>Your keepsake is safely delivered to your doorstep.</li>
         </ol>
 
-        <h2 className="text-3xl font-bold mt-12 mb-4">
-          Perfect For
-        </h2>
+        <h2 className="text-3xl font-bold mt-12 mb-4">Perfect For</h2>
 
         <ul className="list-disc pl-6 text-lg leading-8 text-gray-700 mb-8">
           <li>Wedding gifts for newlyweds</li>
@@ -109,9 +108,7 @@ export default function BrideGroomMiniatureBlog() {
         </ul>
 
         {/* Why Natuwa3D */}
-        <h2 className="text-3xl font-bold mt-12 mb-4">
-          Why Choose Natuwa3D?
-        </h2>
+        <h2 className="text-3xl font-bold mt-12 mb-4">Why Choose Natuwa3D?</h2>
 
         <ul className="list-disc pl-6 text-lg leading-8 text-gray-700 mb-8">
           <li>Realistic face detailing</li>
@@ -153,7 +150,10 @@ export default function BrideGroomMiniatureBlog() {
               wedding miniatures
             </Link>{" "}
             or{" "}
-            <Link href="/contact" className="text-blue-600 hover:underline">
+            <Link
+              href="/contact"
+              className="text-blue-600 hover:underline"
+            >
               contact us
             </Link>{" "}
             to start your custom order.
