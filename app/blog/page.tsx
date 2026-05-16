@@ -1,84 +1,93 @@
-import fs from "fs";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Natuwa3D Blog | Personalized Miniature Gift Ideas",
-  description:
-    "Explore wedding gift ideas, anniversary gifts, custom 3D miniatures, and personalized figurine inspiration from Natuwa3D.",
-  alternates: {
-    canonical: "https://www.natuwa3d.com/blog",
+const blogs = [
+  {
+    title: "Best Wedding Gift Ideas in India",
+    slug: "best-wedding-gift-ideas",
+    image: "/images/hero-couple.jpg",
+    description:
+      "Discover unique and personalized wedding gift ideas including custom 3D printed miniatures.",
   },
-};
 
-type BlogPost = {
-  slug: string;
-  title: string;
-  description: string;
-};
+  {
+    title: "Custom Bride Groom Miniature",
+    slug: "custom-bride-groom-miniature",
+    image: "/images/family-couple.webp",
+    description:
+      "Explore realistic custom bride groom miniatures created from real wedding photos.",
+  },
 
-function formatTitle(slug: string) {
-  return slug
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-}
-
-function getAllBlogs(): BlogPost[] {
-  const blogDir = path.join(process.cwd(), "app", "blog");
-
-  const folders = fs
-    .readdirSync(blogDir, { withFileTypes: true })
-    .filter(
-      (item) =>
-        item.isDirectory() &&
-        item.name !== "components" &&
-        item.name !== "category"
-    )
-    .map((item) => item.name);
-
-  const blogs = folders
-    .filter((slug) => {
-      const pagePath = path.join(blogDir, slug, "page.tsx");
-      return fs.existsSync(pagePath);
-    })
-    .map((slug) => ({
-      slug,
-      title: formatTitle(slug),
-      description:
-        "Read this blog to discover personalized 3D miniature gift ideas by Natuwa3D.",
-    }));
-
-  // Latest folders first (alphabetical reverse).
-  blogs.sort((a, b) => b.slug.localeCompare(a.slug));
-
-  return blogs;
-}
+  {
+    title: "Indian Wedding Miniatures",
+    slug: "indian-wedding-miniatures",
+    image: "/images/compare.webp",
+    description:
+      "Beautiful Indian wedding miniatures designed with detailed outfits and premium finishing.",
+  },
+];
 
 export default function BlogPage() {
-  const blogs = getAllBlogs();
-
   return (
     <main className="min-h-screen px-6 py-20 bg-white">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-5xl font-bold mb-6">Natuwa3D Blog</h1>
-
-        <p className="text-xl text-gray-600 mb-12">
-          Explore custom 3D miniature ideas, wedding gifts, anniversary gifts,
-          personalized figurines, and behind-the-scenes stories.
+      
+      {/* Heading */}
+      <div className="max-w-6xl mx-auto text-center mb-16">
+        <p className="text-primary uppercase tracking-[4px] text-sm mb-4">
+          Natuwa3D Blog
         </p>
 
-        {blogs.length === 0 ? (
-          <p className="text-gray-500">No blog posts found.</p>
-        ) : (
-          <div className="grid gap-8 md:grid-cols-2">
-            {blogs.map((blog) => (
-              <Link
-                key={blog.slug}
-                href={`/blog/${blog.slug}`}
-                className="border rounded-3xl p-8 hover:shadow-lg transition bg-white"
-              >
-                <h2 className="text-2xl font-bold mb-3">{blog.title}</h2>
-                <p className="text-gray-600 mb-4">{blog.description}</p>
-                <span className="text-green-600 font-semibold">
-                  Read More →
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          Wedding Miniature Blogs
+        </h1>
+
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          Explore personalized wedding gifts, custom miniatures,
+          couple figurines, 3D printing stories, and creative ideas.
+        </p>
+      </div>
+
+      {/* Blog Grid */}
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        {blogs.map((blog, index) => (
+          <Link
+            key={index}
+            href={`/blog/${blog.slug}`}
+            className="group"
+          >
+            <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
+
+              {/* Image */}
+              <div className="overflow-hidden">
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-full h-[260px] object-cover group-hover:scale-105 transition duration-500"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+
+                <h2 className="text-2xl font-bold mb-4 group-hover:text-primary transition">
+                  {blog.title}
+                </h2>
+
+                <p className="text-gray-600 leading-7 mb-6">
+                  {blog.description}
+                </p>
+
+                <div className="inline-flex items-center text-primary font-semibold">
+                  Read Blog →
+                </div>
+
+              </div>
+            </div>
+          </Link>
+        ))}
+
+      </div>
+
+    </main>
+  );
 }
