@@ -1,5 +1,3 @@
-import { Metadata } from "next";
-
 export const metadata: Metadata = {
   title: "Custom Bride Groom Miniature in India | Natuwa3D",
 
