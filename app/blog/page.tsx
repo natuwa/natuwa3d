@@ -5,7 +5,7 @@ const blogs = [
     image: "/images/hero-couple.jpg",
     description:
       "Discover personalized wedding gift ideas including custom 3D printed miniatures.",
-  },
+  }
 ];
 
 export default function BlogPage() {
