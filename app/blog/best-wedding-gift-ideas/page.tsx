@@ -24,7 +24,7 @@ export default function BlogPost() {
 
       {/* Image */}
       <img
-        src="/blog/wedding-gift.jpg"
+        src="/images/hero-couple.jpg"
         alt="Best Wedding Gift Ideas"
         className="w-full rounded-3xl mb-10"
       />
