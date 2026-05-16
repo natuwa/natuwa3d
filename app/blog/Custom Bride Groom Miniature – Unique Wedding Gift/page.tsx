@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Custom Bride Groom Miniature – Unique Wedding Gift | Natuwa3D",
   description:
     "Turn your wedding photos into a custom bride and groom miniature. A unique personalized wedding gift and timeless keepsake handcrafted by Natuwa3D.",
@@ -34,19 +35,19 @@ export default function BrideGroomMiniatureBlog() {
           width={1200}
           height={630}
           priority
-          className="w-full rounded-3xl shadow-lg mb-10"
+          className="w-full h-auto rounded-3xl shadow-lg mb-10"
         />
 
-        {/* Intro */}
+        {/* Introduction */}
         <p className="text-lg leading-8 mb-6 text-gray-700">
           Looking for a wedding gift that is personal, memorable, and truly
-          one-of-a-kind? A custom bride and groom miniature transforms a special
-          wedding photo into a realistic handcrafted keepsake.
+          one-of-a-kind? A custom bride and groom miniature transforms your
+          favorite wedding photo into a realistic handcrafted keepsake.
         </p>
 
         <p className="text-lg leading-8 mb-6 text-gray-700">
           At Natuwa3D, we create highly detailed 3D miniatures that capture the
-          bride and groom&apos;s expressions, outfits, and pose with incredible
+          bride and groom&apos;s expressions, outfits, and poses with incredible
           accuracy.
         </p>
 
@@ -60,7 +61,7 @@ export default function BrideGroomMiniatureBlog() {
           Order Your Miniature on WhatsApp
         </a>
 
-        {/* Section */}
+        {/* Why This Gift Is Special */}
         <h2 className="text-3xl font-bold mt-12 mb-4">
           Why This Makes the Perfect Wedding Gift
         </h2>
@@ -73,6 +74,7 @@ export default function BrideGroomMiniatureBlog() {
           <li>Perfect for weddings, engagements, and anniversaries</li>
         </ul>
 
+        {/* Customization Options */}
         <h2 className="text-3xl font-bold mt-12 mb-4">
           What Can Be Customized?
         </h2>
@@ -81,44 +83,48 @@ export default function BrideGroomMiniatureBlog() {
           <li>Facial features and expressions</li>
           <li>Wedding outfits and accessories</li>
           <li>Pose and hairstyle</li>
-          <li>Base text with names and date</li>
-          <li>Background theme and props</li>
+          <li>Names and wedding date on the base</li>
+          <li>Custom props and background themes</li>
         </ul>
 
+        {/* Process */}
         <h2 className="text-3xl font-bold mt-12 mb-4">
           How the Process Works
         </h2>
 
         <ol className="list-decimal pl-6 text-lg leading-8 text-gray-700 mb-8">
           <li>Share your favorite wedding photos on WhatsApp.</li>
-          <li>Our artists create a digital 3D model.</li>
+          <li>Our artists create a detailed 3D model.</li>
           <li>You review and approve the design.</li>
           <li>We 3D print and hand-paint the miniature.</li>
           <li>Your keepsake is safely delivered to your doorstep.</li>
         </ol>
 
+        {/* Perfect For */}
         <h2 className="text-3xl font-bold mt-12 mb-4">Perfect For</h2>
 
         <ul className="list-disc pl-6 text-lg leading-8 text-gray-700 mb-8">
           <li>Wedding gifts for newlyweds</li>
           <li>Engagement gifts</li>
           <li>Anniversary gifts</li>
-          <li>Cake toppers</li>
-          <li>Home décor</li>
+          <li>Wedding cake toppers</li>
+          <li>Home décor keepsakes</li>
         </ul>
 
-        {/* Why Natuwa3D */}
-        <h2 className="text-3xl font-bold mt-12 mb-4">Why Choose Natuwa3D?</h2>
+        {/* Why Choose Natuwa3D */}
+        <h2 className="text-3xl font-bold mt-12 mb-4">
+          Why Choose Natuwa3D?
+        </h2>
 
         <ul className="list-disc pl-6 text-lg leading-8 text-gray-700 mb-8">
-          <li>Realistic face detailing</li>
+          <li>Highly realistic face detailing</li>
           <li>Premium handcrafted finish</li>
-          <li>Approval before printing</li>
+          <li>Design approval before printing</li>
           <li>Secure packaging</li>
           <li>Delivery across India</li>
         </ul>
 
-        {/* Bottom CTA */}
+        {/* Final CTA Box */}
         <div className="bg-gray-50 border rounded-3xl p-8 mt-12">
           <h3 className="text-2xl font-bold mb-4">
             Turn Your Wedding Photo into a Lifelong Keepsake
