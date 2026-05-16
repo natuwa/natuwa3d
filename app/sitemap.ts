@@ -5,44 +5,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://natuwa3d.com",
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: "weekly" as const,
       priority: 1,
-    },
-
-    {
-      url: "https://natuwa3d.com/blog",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
     },
 
     {
       url: "https://natuwa3d.com/book-now",
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "monthly" as const,
       priority: 0.8,
     },
-
-    // BLOGS
 
     {
       url: "https://natuwa3d.com/blog/best-wedding-gift-ideas",
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "monthly" as const,
       priority: 0.8,
     },
 
     {
       url: "https://natuwa3d.com/blog/custom-bride-groom-miniature",
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "monthly" as const,
       priority: 0.8,
     },
 
     {
       url: "https://natuwa3d.com/blog/indian-wedding-miniatures",
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "monthly" as const,
       priority: 0.8,
     },
   ];
