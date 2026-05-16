@@ -1,18 +1,15 @@
-export const metadata: Metadata = {
-  title: "Custom Bride Groom Miniature in India | Natuwa3D",
+export const metadata = {
+  title: "Best Wedding Gift Ideas in India | Natuwa3D",
 
   description:
-    "Get realistic custom bride groom miniature made from photos. Personalized 3D printed wedding miniature gifts in India by Natuwa3D.",
+    "Discover personalized wedding gift ideas including custom 3D printed bride groom miniatures in India.",
 
   keywords: [
-    "custom bride groom miniature",
-    "wedding miniature",
-    "3d printed miniature",
-    "couple miniature",
-    "personalized wedding gift",
-    "indian wedding miniature",
-    "custom couple statue",
-    "miniature from photos",
+    "Wedding Gift Ideas",
+    "Custom Miniature",
+    "Bride Groom Miniature",
+    "3D Printed Miniatures",
+    "Personalized Gifts India",
   ],
 };
 
@@ -22,48 +19,61 @@ export default function BlogPost() {
 
       {/* Title */}
       <h1 className="text-5xl font-bold mb-6">
-        Custom Bride Groom Miniature in India
+        Best Wedding Gift Ideas
       </h1>
 
-      {/* Big Image */}
+      {/* Image */}
       <img
-        src="/images/miniature-a.jpg"
-        alt="Custom Bride Groom Miniature"
+        src="/images/hero-couple.jpg"
+        alt="Best Wedding Gift Ideas"
         className="w-full rounded-3xl mb-10"
       />
 
       {/* Intro */}
-      <p className="text-lg text-gray-700 mb-8 leading-8">
-        Custom bride groom miniature is becoming one of the most unique and
-        emotional wedding gift trends in India.
+      <p className="text-lg text-gray-700 mb-8">
+        Weddings are one of the most special moments in life.
+        Finding the perfect wedding gift can be difficult,
+        especially when you want something emotional,
+        personalized, and memorable.
       </p>
 
-      <p className="text-lg text-gray-700 mb-8 leading-8">
-        Natuwa3D creates premium quality personalized 3D printed wedding
-        miniatures using real couple photos.
-      </p>
-
-      {/* Heading */}
+      {/* Heading 1 */}
       <h2 className="text-3xl font-bold mb-4">
-        Personalized Wedding Miniatures
+        Why Personalized Gifts Are Trending
       </h2>
 
-      <p className="text-lg text-gray-700 mb-8 leading-8">
-        Wedding miniatures preserve memories forever and create emotional value.
+      <p className="text-lg text-gray-700 mb-8">
+        Personalized gifts create emotional value.
+        Today couples prefer meaningful gifts instead
+        of traditional items. Custom 3D printed miniatures
+        are becoming one of the most unique wedding gifts in India.
       </p>
 
-      {/* Heading */}
+      {/* Heading 2 */}
       <h2 className="text-3xl font-bold mb-4">
-        Indian Bride Groom Miniature
+        Custom Bride Groom Miniatures
       </h2>
 
-      <p className="text-lg text-gray-700 mb-8 leading-8">
-        Indian wedding outfits look amazing in custom miniature form.
+      <p className="text-lg text-gray-700 mb-8">
+        A custom miniature captures memories forever.
+        These miniatures are designed from real photos
+        and transformed into beautiful 3D printed statues.
       </p>
 
-      {/* WhatsApp */}
+      {/* Heading 3 */}
+      <h2 className="text-3xl font-bold mb-4">
+        Indian Wedding Miniatures
+      </h2>
+
+      <p className="text-lg text-gray-700 mb-8">
+        Indian wedding outfits look amazing in miniature form.
+        Sherwani, lehenga, jewelry, and traditional poses
+        make these miniatures look premium and emotional.
+      </p>
+
+      {/* WhatsApp Button */}
       <a
-        href="https://wa.me/918796289333?text=Hi%20Natuwa3D"
+        href="https://wa.me/918796289333"
         target="_blank"
         className="inline-block bg-green-500 text-white px-8 py-4 rounded-full text-lg font-semibold"
       >
