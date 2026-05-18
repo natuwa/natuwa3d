@@ -97,6 +97,30 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${playfair.variable} ${lato.variable} font-sans antialiased`}>
+        <Script
+  id="schema"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+
+      name: "NATUWA3D",
+
+      url: "https://www.natuwa3d.com",
+
+      logo: "https://www.natuwa3d.com/logo.png",
+
+      description:
+        "Custom 3D printed wedding miniatures and personalized couple figurines in India.",
+
+      sameAs: [
+        "https://www.instagram.com/natuwa3d",
+        "https://www.facebook.com/natuwa3d",
+      ],
+    }),
+  }}
+/>
         {children}
 
         {/* Tidio Chatbot */}
