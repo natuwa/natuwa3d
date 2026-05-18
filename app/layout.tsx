@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Custom 3D Wedding Miniatures | NATUWA3D",
     description:
       "Turn your wedding memories into stunning 3D printed miniatures. Perfect gift for couples.",
-    url: "https://natuwa3d.com",
+    url: "https://www.natuwa3d.com",
     siteName: "NATUWA3D",
     images: [
       {
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
 
-  metadataBase: new URL("https://natuwa3d.com"),
+  metadataBase: new URL("https://www.natuwa3d.com"),
 
   icons: {
     icon: [
