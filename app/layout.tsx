@@ -98,29 +98,61 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${playfair.variable} ${lato.variable} font-sans antialiased`}>
         <Script
-  id="schema"
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-
-      name: "NATUWA3D",
-
-      url: "https://www.natuwa3d.com",
-
-      logo: "https://www.natuwa3d.com/logo.png",
-
-      description:
-        "Custom 3D printed wedding miniatures and personalized couple figurines in India.",
-
-      sameAs: [
-        "https://www.instagram.com/natuwa3d",
-        "https://www.facebook.com/natuwa3d",
-      ],
-    }),
-  }}
-/>
+          id="schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+        
+              name: "NATUWA3D",
+        
+              url: "https://www.natuwa3d.com",
+        
+              logo: "https://www.natuwa3d.com/logo.png",
+        
+              description:
+                "Custom 3D printed wedding miniatures and personalized couple figurines in India.",
+        
+              sameAs: [
+                "https://www.instagram.com/natuwa3d",
+                "https://www.facebook.com/natuwa3d",
+              ],
+            }),
+          }}
+        />
+        <Script
+          id="product-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+        
+              name: "Custom 3D Wedding Miniature",
+        
+              image: [
+                "https://www.natuwa3d.com/og-image.jpg",
+              ],
+        
+              description:
+                "Personalized 3D printed bride groom miniature made from photos in India.",
+        
+              brand: {
+                "@type": "Brand",
+                name: "NATUWA3D",
+              },
+        
+              offers: {
+                "@type": "Offer",
+                priceCurrency: "INR",
+                price: "2999",
+                availability: "https://schema.org/InStock",
+                url: "https://www.natuwa3d.com/book-now",
+              },
+            }),
+          }}
+        />
         {children}
 
         {/* Tidio Chatbot */}
