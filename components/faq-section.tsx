@@ -4,19 +4,19 @@ export function FAQSection() {
     {
       question: "What is a custom 3D wedding miniature?",
       answer:
-        "A custom 3D wedding miniature is a personalized figurine created from your photos using 3D printing technology.",
+        "A custom 3D wedding miniature is a personalized figurine created from your photos using advanced 3D printing technology.",
     },
 
     {
       question: "What is the starting price of miniatures?",
       answer:
-        "Our custom 3D miniatures start from ₹2999 depending on size and detailing.",
+        "Our custom 3D miniatures start from ₹2999 depending on size, pose, and detailing.",
     },
 
     {
       question: "Do you deliver all over India?",
       answer:
-        "Yes, NATUWA3D delivers personalized 3D miniatures across India.",
+        "Yes, NATUWA3D delivers personalized 3D printed miniatures across India safely.",
     },
 
     {
@@ -27,32 +27,49 @@ export function FAQSection() {
   ];
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-20">
-      
-      <h2 className="text-4xl font-bold text-center mb-14">
-        Frequently Asked Questions
-      </h2>
+    <section className="w-full bg-[#f8f5f2] py-24 border-t border-[#e8ddd5]">
 
-      <div className="space-y-6">
-        
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="border rounded-2xl p-6 bg-white shadow-sm"
-          >
-            
-            <h3 className="text-xl font-semibold mb-3">
-              {faq.question}
-            </h3>
+      <div className="max-w-5xl mx-auto px-6">
 
-            <p className="text-gray-600 leading-7">
-              {faq.answer}
-            </p>
+        {/* TOP LABEL */}
+        <p className="text-center uppercase tracking-[4px] text-[#c17f59] text-sm mb-5">
+          FAQ
+        </p>
 
-          </div>
-        ))}
+        {/* HEADING */}
+        <h2 className="text-5xl md:text-6xl text-center font-serif text-[#2d1810] leading-tight mb-5">
+          Frequently Asked Questions
+        </h2>
+
+        {/* SUBTEXT */}
+        <p className="text-center text-[#6f625b] max-w-2xl mx-auto mb-16 text-lg">
+          Everything you need to know about our custom 3D printed wedding miniatures.
+        </p>
+
+        {/* FAQ LIST */}
+        <div className="space-y-5">
+
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="bg-white border border-[#eadfd7] rounded-3xl p-8 shadow-sm hover:shadow-md transition"
+            >
+
+              <h3 className="text-2xl font-serif text-[#2d1810] mb-4">
+                {faq.question}
+              </h3>
+
+              <p className="text-[#6f625b] leading-8 text-lg">
+                {faq.answer}
+              </p>
+
+            </div>
+          ))}
+
+        </div>
 
       </div>
+
     </section>
   );
 }
