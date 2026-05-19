@@ -10,7 +10,7 @@ const blogs = [
   {
     title: "Personalized Couple Miniature",
     slug: "personalized-couple-miniature",
-    image: "/images/og-image.jpg",
+    image: "/og-image.jpg",
     description:
       "Custom 3D printed personalized couple miniature for weddings, anniversaries, and gifts.",
   },
