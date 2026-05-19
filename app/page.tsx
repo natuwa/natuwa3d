@@ -16,7 +16,7 @@ const showOffer = true
 
 // 🔥 OFFER CONFIG
 const offerTitle = "Raksha Bandhan Miniature"
-const offerText = "Flat 20% OFF – Make Your Bond Memorable ❤️"
+const offerText = "Flat 20% OFF – Make Your Bond Memorable ❤️ "
 const offerTag = "⏳ Limited Time Offer"
 
 export default function Home() {
