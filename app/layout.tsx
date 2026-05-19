@@ -153,6 +153,70 @@ export default function RootLayout({
             }),
           }}
         />
+        <Script
+          id="faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+        
+              mainEntity: [
+                {
+                  "@type": "Question",
+        
+                  name: "What is a custom 3D wedding miniature?",
+        
+                  acceptedAnswer: {
+                    "@type": "Answer",
+        
+                    text:
+                      "A custom 3D wedding miniature is a personalized figurine created from your photos using 3D printing technology.",
+                  },
+                },
+        
+                {
+                  "@type": "Question",
+        
+                  name: "What is the price of a custom couple miniature?",
+        
+                  acceptedAnswer: {
+                    "@type": "Answer",
+        
+                    text:
+                      "Custom couple miniature prices at NATUWA3D start from ₹2999 depending on size and detailing.",
+                  },
+                },
+        
+                {
+                  "@type": "Question",
+        
+                  name: "Do you deliver all over India?",
+        
+                  acceptedAnswer: {
+                    "@type": "Answer",
+        
+                    text:
+                      "Yes, NATUWA3D delivers personalized 3D miniatures across India.",
+                  },
+                },
+        
+                {
+                  "@type": "Question",
+        
+                  name: "How can I order a miniature?",
+        
+                  acceptedAnswer: {
+                    "@type": "Answer",
+        
+                    text:
+                      "You can order directly through our website or WhatsApp by sharing your photos and requirements.",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
         {children}
 
         {/* Tidio Chatbot */}
