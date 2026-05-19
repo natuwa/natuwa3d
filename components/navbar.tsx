@@ -31,6 +31,7 @@ export function Navbar() {
               How It Works
             </Link>
             <Link href="#gallery" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"> Gallery </Link>
+            <Link href="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"> Blog </Link>
             <Link href="#faq" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" > FAQ </Link>
             <Link href="#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Contact
@@ -76,6 +77,13 @@ export function Navbar() {
                 onClick={() => setIsOpen(false)}
               >
                 Gallery
+              </Link>
+              <Link
+                href="/blog"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Blog
               </Link>
               <Link 
                 href="#faq" 
