@@ -30,7 +30,7 @@ export default function BlogPost() {
 
       {/* IMAGE */}
       <img
-        src="/images/og-image.jpg"
+        src="/og-image.jpg"
         alt="Personalized Couple Miniature"
         className="w-full rounded-3xl mb-12"
       />
