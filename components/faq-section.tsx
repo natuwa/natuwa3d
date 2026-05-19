@@ -37,7 +37,7 @@ export function FAQSection() {
         </p>
 
         {/* HEADING */}
-        <h2 className="text-5xl md:text-6xl text-center font-serif text-[#2d1810] leading-tight mb-5">
+        <<h2 className="text-5xl md:text-6xl font-serif font-bold text-center mb-14 text-[#2b1715] tracking-tight">
           Frequently Asked Questions
         </h2>
 
