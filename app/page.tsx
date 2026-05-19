@@ -11,6 +11,7 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
+import { FAQSection } from "@/components/faq-section";
 
 const showOffer = true
 
