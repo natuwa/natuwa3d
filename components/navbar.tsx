@@ -31,6 +31,8 @@ export function Navbar() {
               How It Works
             </Link>
             <Link href="#gallery" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"> Gallery </Link>
+            <Link
+              href="#faq" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"> FAQ </Link>
             <Link href="#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Contact
             </Link>
@@ -76,9 +78,10 @@ export function Navbar() {
               >
                 Gallery
               </Link>
-              <Link
-                href="#faq"
+              <Link 
+                href="#faq" 
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setIsOpen(false)}
               >
                 FAQ
               </Link>
