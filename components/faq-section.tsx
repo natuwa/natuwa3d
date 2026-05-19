@@ -27,7 +27,10 @@ export function FAQSection() {
   ];
 
   return (
-    <section className="w-full bg-[#f8f5f2] py-24 border-t border-[#e8ddd5]">
+    <section
+      id="faq"
+      className="w-full bg-[#f8f5f2] py-24 border-t border-[#e8ddd5]"
+    >
 
       <div className="max-w-5xl mx-auto px-6">
 
