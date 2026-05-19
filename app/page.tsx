@@ -146,6 +146,7 @@ export default function Home() {
       <ProcessSection />      
       <TestimonialsSection />
       <ContactSection />
+      <FAQSection />
       <Footer />
 
     </main>
