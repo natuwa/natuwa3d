@@ -12,6 +12,7 @@ import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
 import { FAQSection } from "@/components/faq-section";
+import MiniatureViewer from "@/components/miniature-viewer";
 
 const showOffer = true
 
