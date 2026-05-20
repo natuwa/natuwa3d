@@ -142,17 +142,28 @@ export default function Home() {
       )}
       <section className="max-w-6xl mx-auto px-6 py-20">
 
-  <h2 className="text-5xl font-serif text-center mb-6 text-[#2d1810]">
-    Explore 3D Miniature
-  </h2>
-
-  <p className="text-center text-[#6f625b] mb-10">
-    Rotate and zoom the miniature interactively.
-  </p>
-
-  <MiniatureViewer />
-
-</section>
+      <h2 className="text-5xl font-serif text-center mb-6 text-[#2d1810]">
+        Explore 3D Miniature
+      </h2>
+    
+      <p className="text-center text-[#6f625b] mb-10">
+        Rotate and zoom the miniature interactively.
+      </p>
+    
+      <model-viewer
+        src="/models/miniature.glb"
+        alt="3D Miniature"
+        auto-rotate
+        camera-controls
+        shadow-intensity="1"
+        style={{
+          width: "100%",
+          height: "500px",
+          backgroundColor: "transparent",
+        }}
+      ></model-viewer>
+    
+    </section>
       <GallerySection />
       <SizeSection />
       <ProductsSection />      
