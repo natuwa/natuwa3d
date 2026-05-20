@@ -140,7 +140,19 @@ export default function Home() {
           </div>
         </div>
       )}
+      <section className="max-w-6xl mx-auto px-6 py-20">
 
+  <h2 className="text-5xl font-serif text-center mb-6 text-[#2d1810]">
+    Explore 3D Miniature
+  </h2>
+
+  <p className="text-center text-[#6f625b] mb-10">
+    Rotate and zoom the miniature interactively.
+  </p>
+
+  <MiniatureViewer />
+
+</section>
       <GallerySection />
       <SizeSection />
       <ProductsSection />      
