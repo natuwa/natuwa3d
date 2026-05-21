@@ -139,21 +139,7 @@ export default function Home() {
           </div>
         </div>
       )}
-      <section className="w-full py-24 bg-[#f5f1ec]">
-
-        <div className="max-w-7xl mx-auto px-6">
       
-          <h2 className="text-5xl font-serif text-center text-[#2d1810] mb-4">
-            Explore Your Miniature
-          </h2>
-      
-          <p className="text-center text-[#6b5b52] mb-16">
-            Upload photo • Generate miniature • Book your order
-          </p>         
-                  
-         </div>
-      
-      </section>
       <GallerySection />
       <SizeSection />
       <ProductsSection />      
