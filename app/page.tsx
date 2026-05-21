@@ -140,30 +140,85 @@ export default function Home() {
           </div>
         </div>
       )}
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <section className="w-full py-24 bg-[#f5f1ec]">
 
-      <h2 className="text-5xl font-serif text-center mb-6 text-[#2d1810]">
-        Explore 3D Miniature
-      </h2>
-    
-      <p className="text-center text-[#6f625b] mb-10">
-        Rotate and zoom the miniature interactively.
-      </p>
-    
-      <model-viewer
-        src="/models/miniature.glb"
-        alt="3D Miniature"
-        auto-rotate
-        camera-controls
-        shadow-intensity="1"
-        style={{
-          width: "100%",
-          height: "500px",
-          backgroundColor: "transparent",
-        }}
-      ></model-viewer>
-    
-    </section>
+        <div className="max-w-7xl mx-auto px-6">
+      
+          <h2 className="text-5xl font-serif text-center text-[#2d1810] mb-4">
+            Explore Your Miniature
+          </h2>
+      
+          <p className="text-center text-[#6b5b52] mb-16">
+            Upload photo • Generate miniature • Book your order
+          </p>
+      
+          {/* 3 COLUMN LAYOUT */}
+          <div className="grid md:grid-cols-3 gap-10 items-center">
+      
+            {/* LEFT SIDE */}
+            <div className="bg-white rounded-3xl p-8 shadow-sm border border-[#e7ddd4] text-center">
+      
+              <h3 className="text-2xl font-serif mb-4 text-[#2d1810]">
+                Upload Your Photo
+              </h3>
+      
+              <p className="text-[#6b5b52] mb-6">
+                Upload your couple image to create personalized miniature.
+              </p>
+      
+              <input
+                type="file"
+                className="w-full border border-[#d8c9bc] rounded-xl p-3"
+              />
+      
+            </div>
+      
+            {/* CENTER VIEWER */}
+            <div className="flex flex-col items-center">
+      
+              <h3 className="text-2xl font-serif mb-6 text-[#2d1810]">
+                3D Miniature Preview
+              </h3>
+      
+              <model-viewer
+                src="/miniature.glb"
+                alt="3D Miniature"
+                auto-rotate
+                camera-controls
+                shadow-intensity="1"
+                style={{
+                  width: "100%",
+                  height: "500px",
+                }}
+              />
+      
+            </div>
+      
+            {/* RIGHT SIDE */}
+            <div className="bg-white rounded-3xl p-8 shadow-sm border border-[#e7ddd4] text-center">
+      
+              <h3 className="text-2xl font-serif mb-4 text-[#2d1810]">
+                Ready To Order?
+              </h3>
+      
+              <p className="text-[#6b5b52] mb-6">
+                Turn your memories into a realistic 3D printed miniature.
+              </p>
+      
+              <a
+                href="/book-now"
+                className="inline-block bg-[#4a2c2a] text-white px-8 py-4 rounded-full hover:bg-[#3b211f] transition"
+              >
+                Book Now
+              </a>
+      
+            </div>
+      
+          </div>
+      
+        </div>
+      
+      </section>
       <GallerySection />
       <SizeSection />
       <ProductsSection />      
