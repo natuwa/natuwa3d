@@ -190,8 +190,9 @@ export default function Home() {
                   width: "100%",
                   height: "500px",
                 }}
-              />
-      
+              >
+              </model-viewer>
+                    
             </div>
       
             {/* RIGHT SIDE */}
