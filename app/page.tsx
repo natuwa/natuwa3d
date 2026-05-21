@@ -219,6 +219,7 @@ export default function Home() {
         </div>
       
       </section>
+      <MiniatureViewer />
       <GallerySection />
       <SizeSection />
       <ProductsSection />      
