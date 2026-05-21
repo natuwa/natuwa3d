@@ -1,4 +1,5 @@
 "use client"
+// @ts-ignore
 import "@google/model-viewer";
 import { useState } from "react"
 import { Navbar } from "@/components/navbar"
@@ -179,7 +180,7 @@ export default function Home() {
               <h3 className="text-2xl font-serif mb-6 text-[#2d1810]">
                 3D Miniature Preview
               </h3>
-      
+              // @ts-ignore   
               <model-viewer
                 src="/miniature.glb"
                 alt="3D Miniature"
