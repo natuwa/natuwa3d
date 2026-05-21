@@ -1,5 +1,5 @@
 "use client"
-
+import "@google/model-viewer";
 import { useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
