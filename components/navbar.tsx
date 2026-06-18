@@ -36,6 +36,7 @@ export function Navbar() {
             <Link href="#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Contact
             </Link>
+            <Link href="/about">About Us</Link>
             <Link href="/book-now">
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
                 Book Now
