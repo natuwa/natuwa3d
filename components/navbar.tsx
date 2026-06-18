@@ -100,6 +100,13 @@ export function Navbar() {
               >
                 Contact
               </Link>
+              <Link
+                href="/about"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                About Us
+              </Link>
              
                 <Link
                   href="/book-now"
