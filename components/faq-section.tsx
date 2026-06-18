@@ -1,30 +1,37 @@
 "use client";
 export function FAQSection() {
   const faqs = [
-    {
-      question: "What is a custom 3D wedding miniature?",
-      answer:
-        "A custom 3D wedding miniature is a personalized figurine created from your photos using advanced 3D printing technology.",
-    },
-
-    {
-      question: "What is the starting price of miniatures?",
-      answer:
-        "Our custom 3D miniatures start from ₹2999 depending on size, pose, and detailing.",
-    },
-
-    {
-      question: "Do you deliver all over India?",
-      answer:
-        "Yes, NATUWA3D delivers personalized 3D printed miniatures across India safely.",
-    },
-
-    {
-      question: "How can I order my miniature?",
-      answer:
-        "You can order directly through our website or WhatsApp by sharing your photos and requirements.",
-    },
-  ];
+  {
+    question: "What is a custom 3D wedding miniature?",
+    answer:
+      "A custom 3D wedding miniature is a personalized figurine created from your photos using advanced 3D printing technology to preserve your special memories.",
+  },
+  {
+    question: "What is the starting price of miniatures?",
+    answer:
+      "Our custom 3D miniatures start from ₹2999. Pricing depends on size, customization, pose, and detailing.",
+  },
+  {
+    question: "Do you deliver all over India?",
+    answer:
+      "Yes, NATUWA3D delivers personalized 3D printed miniatures, wedding figurines, couple figurines, and custom gifts across India.",
+  },
+  {
+    question: "How can I order my miniature?",
+    answer:
+      "Simply upload your photos through our website or contact us via WhatsApp. Our team will guide you through the complete process.",
+  },
+  {
+    question: "Can you create miniatures from a single photo?",
+    answer:
+      "Yes, we can often create realistic custom miniatures from a single clear photograph.",
+  },
+  {
+    question: "Are custom miniatures suitable as gifts?",
+    answer:
+      "Absolutely. Personalized 3D miniatures are perfect gifts for weddings, anniversaries, birthdays, retirements, and special occasions.",
+  },
+];
 
   return (
     <section
