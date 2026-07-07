@@ -35,6 +35,10 @@ export default function TrackOrder() {
   const progress = data?.status ? getProgress(data.status) : 0;
 
   async function trackOrder() {
+    if (!orderId.trim() || !email.trim()) {
+      alert("Please enter Order ID and Email.");
+      return;
+    }
     setLoading(true);
 
     try {
