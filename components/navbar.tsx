@@ -114,6 +114,13 @@ export function Navbar() {
               >
                 About Us
               </Link>
+              <Link
+                href="/track-order"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Track Order
+              </Link>
               
                            
                 <Link
