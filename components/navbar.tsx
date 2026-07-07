@@ -37,12 +37,7 @@ export function Navbar() {
               Contact
             </Link>
             <Link href="/about">About Us</Link>
-            <Link
-              href="/track-order"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Track Order
-            </Link>
+            
             <Link href="/book-now">
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
                 Book Now
@@ -113,13 +108,7 @@ export function Navbar() {
               >
                 About Us
               </Link>
-              <Link
-                href="/track-order"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Track Order
-              </Link>
+              
                            
                 <Link
                   href="/book-now"
