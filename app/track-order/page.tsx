@@ -90,6 +90,9 @@ export default function TrackOrder() {
         >
           {loading ? "Searching..." : "Track Order"}
         </button>
+        <p className="mt-4 text-sm text-gray-500 text-center">
+          💡 Enter your <b>Order ID</b> and the <b>same email address</b> used while placing your order to track your miniature.
+        </p>
 
         {data && data.success && (
           <div className="mt-10 border rounded-2xl p-6">
