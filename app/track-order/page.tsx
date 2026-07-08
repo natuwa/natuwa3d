@@ -91,7 +91,7 @@ export default function TrackOrder() {
           {loading ? "Searching..." : "Track Order"}
         </button>
         <p className="mt-4 text-sm text-gray-500 text-center">
-          💡 Enter your <b>Order ID</b> and the <b>same email address</b> used while placing your order to track your miniature.
+          💡 Use the Order ID sent in your confirmation email along with the same email address used while placing your order.
         </p>
 
         {data && data.success && (
