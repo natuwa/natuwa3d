@@ -1,4 +1,5 @@
 "use client"
+
 import { useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
@@ -11,6 +12,8 @@ import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
 import { FAQSection } from "@/components/faq-section"
+import RecentOrders from "./components/RecentOrders";
+import ProductionStatus from "./components/ProductionStatus";
 
 
 const showOffer = true
