@@ -12,8 +12,6 @@ import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
 import { FAQSection } from "@/components/faq-section"
-import RecentOrders from "./components/RecentOrders";
-import ProductionStatus from "./components/ProductionStatus";
 
 
 const showOffer = true
