@@ -58,15 +58,15 @@ export default function AdminPage() {
           color="bg-orange-500"
           icon={<Clock3 size={28} />}
         />
- {/* Bottom Section */}
 
-<div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-8">
+      </div>
 
-  <RecentOrders />
+      {/* Bottom Section */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-8">
 
-  <ProductionStatus />
+        <RecentOrders />
 
-</div>
+        <ProductionStatus />
 
       </div>
 
