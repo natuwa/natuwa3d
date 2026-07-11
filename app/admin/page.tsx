@@ -1,9 +1,13 @@
 export default function AdminPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold">
-        NATUWA3D ADMIN PANEL
+    <>
+      <h1 className="text-3xl font-bold">
+        Dashboard
       </h1>
-    </div>
+
+      <p className="text-gray-500 mt-2">
+        Welcome to NATUWA3D Admin Panel.
+      </p>
+    </>
   );
 }
