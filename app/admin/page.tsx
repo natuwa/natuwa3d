@@ -1,6 +1,7 @@
 import StatsCard from "./components/StatsCard";
 import RecentOrders from "./components/RecentOrders";
 import ProductionStatus from "./components/ProductionStatus";
+import { getOrders } from "./lib/api";
 
 import {
   ShoppingBag,
@@ -9,11 +10,33 @@ import {
   Clock3,
 } from "lucide-react";
 
-export default function AdminPage() {
+export default async function AdminPage() {
+
+  const orders = await getOrders();
+
+  const totalInquiry = orders.length;
+
+  const totalRevenue = orders.reduce(
+    (sum: number, item: any) =>
+      sum + Number(item["Advance Paid"] || 0),
+    0
+  );
+
+  const activeOrders = orders.filter(
+    (item: any) =>
+      item.Status &&
+      item.Status !== "Delivered"
+  ).length;
+
+  const pendingFollowUp = orders.filter(
+    (item: any) =>
+      !item.Status ||
+      item.Status === "Advance Received"
+  ).length;
+
   return (
     <div>
 
-      {/* Heading */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">
           Dashboard
@@ -24,28 +47,27 @@ export default function AdminPage() {
         </p>
       </div>
 
-      {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
 
         <StatsCard
-          title="Today's Inquiry"
-          value={5}
-          subtitle="2 more than yesterday"
+          title="Total Inquiry"
+          value={totalInquiry}
+          subtitle="Live from Google Sheet"
           color="bg-blue-600"
           icon={<ShoppingBag size={28} />}
         />
 
         <StatsCard
-          title="Revenue"
-          value="₹12,500"
-          subtitle="Today's Collection"
+          title="Advance Received"
+          value={`₹${totalRevenue}`}
+          subtitle="Live Collection"
           color="bg-green-600"
           icon={<IndianRupee size={28} />}
         />
 
         <StatsCard
           title="Active Orders"
-          value={14}
+          value={activeOrders}
           subtitle="Currently in Production"
           color="bg-purple-600"
           icon={<Package size={28} />}
@@ -53,7 +75,7 @@ export default function AdminPage() {
 
         <StatsCard
           title="Pending Follow-up"
-          value={3}
+          value={pendingFollowUp}
           subtitle="Need Your Attention"
           color="bg-orange-500"
           icon={<Clock3 size={28} />}
@@ -61,7 +83,6 @@ export default function AdminPage() {
 
       </div>
 
-      {/* Bottom Section */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-8">
 
         <RecentOrders />
