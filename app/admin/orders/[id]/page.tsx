@@ -1,3 +1,4 @@
+import StatusEditor from "./components/StatusEditor";
 import { getOrders } from "../../lib/api";
 import { notFound } from "next/navigation";
 
@@ -109,6 +110,7 @@ export default async function OrderDetailPage({
         </div>
 
       </div>
+      <StatusEditor currentStatus={order.Status} />
 
     </div>
   );
