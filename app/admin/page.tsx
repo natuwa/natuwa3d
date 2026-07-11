@@ -34,6 +34,15 @@ export default async function AdminPage() {
       item.Status === "Advance Received"
   ).length;
 
+  const recentOrders = orders
+  .slice(-5)
+  .reverse()
+  .map((item: any) => ({
+    id: item["Oredr ID"] || "-",
+    customer: item.name,
+    status: item.Status || "New",
+  }));
+
   return (
     <div>
 
