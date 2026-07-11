@@ -1,3 +1,4 @@
+import Timeline from "./components/Timeline";
 import StatusEditor from "./components/StatusEditor";
 import { getOrders } from "../../lib/api";
 import { notFound } from "next/navigation";
