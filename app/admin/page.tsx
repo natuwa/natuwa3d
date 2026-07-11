@@ -1,4 +1,6 @@
 import StatsCard from "./components/StatsCard";
+import RecentOrders from "./components/RecentOrders";
+import ProductionStatus from "./components/ProductionStatus";
 
 import {
   ShoppingBag,
@@ -56,6 +58,15 @@ export default function AdminPage() {
           color="bg-orange-500"
           icon={<Clock3 size={28} />}
         />
+ {/* Bottom Section */}
+
+<div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-8">
+
+  <RecentOrders />
+
+  <ProductionStatus />
+
+</div>
 
       </div>
 
