@@ -38,7 +38,7 @@ export default async function AdminPage() {
   .slice(-5)
   .reverse()
   .map((item: any) => ({
-    id: item["Oredr ID"] || "-",
+    id: item["Order ID"] || "-",
     customer: item.name,
     status: item.Status || "New",
   }));
