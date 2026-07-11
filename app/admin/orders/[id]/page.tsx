@@ -110,7 +110,10 @@ export default async function OrderDetailPage({
         </div>
 
       </div>
-      <StatusEditor currentStatus={order.Status} />
+      <StatusEditor
+        currentStatus={order.Status}
+        orderId={id}
+      />
 
     </div>
   );
