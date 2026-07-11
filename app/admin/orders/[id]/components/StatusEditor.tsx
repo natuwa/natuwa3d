@@ -17,14 +17,47 @@ const statusList = [
 
 export default function StatusEditor({
   currentStatus,
+  orderId,
 }: {
   currentStatus: string;
+  orderId: string;
 }) {
   const [status, setStatus] = useState(currentStatus);
+  const [loading, setLoading] = useState(false);
+
+  async function saveStatus() {
+    try {
+      setLoading(true);
+
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycbwF54tHs0Sz4sUK67hJu_7jEXp8NqYZo2X2VsbspLut6Ybo4MT_fw_g9WyAtrOWDPSn/exec",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            action: "updateStatus",
+            orderId,
+            status,
+          }),
+        }
+      );
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("✅ Status Updated Successfully");
+      } else {
+        alert("❌ Order ID not found");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="bg-white rounded-xl shadow border p-6 mt-6">
-
       <h2 className="text-xl font-semibold mb-5">
         Update Order Status
       </h2>
@@ -35,18 +68,17 @@ export default function StatusEditor({
         className="w-full border rounded-lg p-3"
       >
         {statusList.map((item) => (
-          <option key={item}>
-            {item}
-          </option>
+          <option key={item}>{item}</option>
         ))}
       </select>
 
       <button
+        onClick={saveStatus}
+        disabled={loading}
         className="mt-5 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg"
       >
-        Save Changes
+        {loading ? "Saving..." : "Save Changes"}
       </button>
-
     </div>
   );
 }
