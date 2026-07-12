@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { updateProduction } from "../../../lib/updateProduction";
+
 export default function ProductionInfo({
   orderId,
 }: {
@@ -12,6 +13,33 @@ export default function ProductionInfo({
   const [trackingNo, setTrackingNo] = useState("");
   const [courier, setCourier] = useState("");
   const [notes, setNotes] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const saveProduction = async () => {
+    try {
+      setLoading(true);
+
+      const result = await updateProduction({
+        orderId,
+        printingTime,
+        paintingTime,
+        trackingNo,
+        courier,
+        notes,
+      });
+
+      if (result.success) {
+        alert("✅ Production Information Saved");
+      } else {
+        alert("❌ Failed to Save");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="bg-white rounded-xl shadow border p-6 mt-6">
@@ -28,6 +56,7 @@ export default function ProductionInfo({
           </label>
 
           <input
+            type="text"
             value={printingTime}
             onChange={(e) => setPrintingTime(e.target.value)}
             placeholder="10-12 Hours"
@@ -41,6 +70,7 @@ export default function ProductionInfo({
           </label>
 
           <input
+            type="text"
             value={paintingTime}
             onChange={(e) => setPaintingTime(e.target.value)}
             placeholder="2 Days"
@@ -54,6 +84,7 @@ export default function ProductionInfo({
           </label>
 
           <input
+            type="text"
             value={trackingNo}
             onChange={(e) => setTrackingNo(e.target.value)}
             placeholder="Tracking Number"
@@ -72,18 +103,17 @@ export default function ProductionInfo({
             className="w-full border rounded-lg p-3"
           >
             <option value="">Select Courier</option>
-            <option>DTDC</option>
-            <option>Delhivery</option>
-            <option>Bluedart</option>
-            <option>India Post</option>
-            <option>XpressBees</option>
+            <option value="DTDC">DTDC</option>
+            <option value="Delhivery">Delhivery</option>
+            <option value="Bluedart">Bluedart</option>
+            <option value="India Post">India Post</option>
+            <option value="XpressBees">XpressBees</option>
           </select>
         </div>
 
       </div>
 
       <div className="mt-5">
-
         <label className="block text-sm font-medium mb-2">
           Internal Notes
         </label>
@@ -95,28 +125,14 @@ export default function ProductionInfo({
           placeholder="Write production notes..."
           className="w-full border rounded-lg p-3"
         />
-
       </div>
-      const saveProduction = async () => {
-
-        await updateProduction({
-          orderId,
-          printingTime,
-          paintingTime,
-          trackingNo,
-          courier,
-          notes,
-        });
-      
-        alert("Production Information Saved ✅");
-      
-      };
 
       <button
         onClick={saveProduction}
-        className="mt-6 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg"
+        disabled={loading}
+        className="mt-6 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg disabled:bg-gray-400"
       >
-        Save Production Info
+        {loading ? "Saving..." : "Save Production Info"}
       </button>
 
     </div>
