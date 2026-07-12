@@ -33,12 +33,14 @@ export default async function QuotationPage({
 
         <div className="mb-6 flex justify-between">
 
-          <button
-            onClick={() => window.print()}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg"
-          >
-            🖨 Print / Save PDF
-          </button>
+          {/* 
+<button
+  onClick={() => window.print()}
+  className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg"
+>
+  🖨 Print / Save PDF
+</button>
+*/}
 
         </div>
 
