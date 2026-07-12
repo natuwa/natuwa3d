@@ -3,7 +3,7 @@ export async function updateOrderStatus(
   status: string
 ) {
   const response = await fetch(
-    "YOUR_GOOGLE_SCRIPT_URL",
+    "https://script.google.com/macros/library/d/1xJXMbCy3wuR1bpQvLD_C0VzHh4ipj-SIbYzleHy2D8y8Wgiq-gpbrmr2/6",
     {
       method: "POST",
       headers: {
