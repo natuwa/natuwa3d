@@ -14,10 +14,11 @@ export default async function CustomersPage() {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow border overflow-hidden">
-        <table className="w-full">
+      <div className="bg-white rounded-xl shadow border overflow-hidden overflow-x-auto">
+        <table className="min-w-full">
           <thead className="bg-gray-100">
             <tr>
+              <th className="p-4 text-left">Order ID</th>
               <th className="p-4 text-left">Customer</th>
               <th className="p-4 text-left">Phone</th>
               <th className="p-4 text-left">Email</th>
@@ -33,6 +34,10 @@ export default async function CustomersPage() {
                 className="border-t hover:bg-gray-50"
               >
                 <td className="p-4 font-medium">
+                  {order["Order ID"] || "-"}
+                </td>
+
+                <td className="p-4">
                   {order.name || "-"}
                 </td>
 
@@ -57,12 +62,13 @@ export default async function CustomersPage() {
                       href={`tel:${order.phone}`}
                       className="bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-lg text-sm"
                     >
-                      Call
+                      📞 Call
                     </a>
 
                     <a
                       href={`https://wa.me/91${order.phone}`}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-2 rounded-lg text-sm"
                     >
                       WhatsApp
