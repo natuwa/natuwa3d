@@ -117,7 +117,7 @@ export default async function OrderDetailPage({
         orderId={id}
       />
       <Timeline currentStatus={order.Status} />
-      <ProductionInfo />
+      <ProductionInfo orderId={id} />
 
     </div>
   );
