@@ -1,3 +1,4 @@
+import ProductionInfo from "./components/ProductionInfo";
 import Timeline from "./components/Timeline";
 import StatusEditor from "./components/StatusEditor";
 import { getOrders } from "../../lib/api";
@@ -116,6 +117,7 @@ export default async function OrderDetailPage({
         orderId={id}
       />
       <Timeline currentStatus={order.Status} />
+      <ProductionInfo />
 
     </div>
   );
