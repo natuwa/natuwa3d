@@ -1,8 +1,12 @@
 "use client";
 
 import { useState } from "react";
-
-export default function ProductionInfo() {
+import { updateProduction } from "../../../lib/updateProduction";
+export default function ProductionInfo({
+  orderId,
+}: {
+  orderId: string;
+}) {
   const [printingTime, setPrintingTime] = useState("");
   const [paintingTime, setPaintingTime] = useState("");
   const [trackingNo, setTrackingNo] = useState("");
@@ -93,8 +97,23 @@ export default function ProductionInfo() {
         />
 
       </div>
+      const saveProduction = async () => {
+
+        await updateProduction({
+          orderId,
+          printingTime,
+          paintingTime,
+          trackingNo,
+          courier,
+          notes,
+        });
+      
+        alert("Production Information Saved ✅");
+      
+      };
 
       <button
+        onClick={saveProduction}
         className="mt-6 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg"
       >
         Save Production Info
