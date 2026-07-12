@@ -1,5 +1,6 @@
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
+import AdminGuard from "./components/AdminGuard";
 
 export default function AdminLayout({
   children,
@@ -7,16 +8,18 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen bg-gray-100">
-      <Sidebar />
+    <AdminGuard>
+      <div className="flex min-h-screen bg-gray-100">
+        <Sidebar />
 
-      <div className="flex-1 flex flex-col">
-        <Header />
+        <div className="flex-1 flex flex-col">
+          <Header />
 
-        <main className="p-8">
-          {children}
-        </main>
+          <main className="p-8">
+            {children}
+          </main>
+        </div>
       </div>
-    </div>
+    </AdminGuard>
   );
 }
