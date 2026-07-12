@@ -1,3 +1,4 @@
+import PrintButton from "./components/PrintButton";
 import { getOrders } from "../../../lib/api";
 import { notFound } from "next/navigation";
 
@@ -33,14 +34,9 @@ export default async function QuotationPage({
 
         <div className="mb-6 flex justify-between">
 
-          {/* 
-<button
-  onClick={() => window.print()}
-  className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg"
->
-  🖨 Print / Save PDF
-</button>
-*/}
+          <div className="mb-6 flex justify-between">
+            <PrintButton />
+          </div>
 
         </div>
 
