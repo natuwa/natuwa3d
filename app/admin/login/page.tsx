@@ -8,17 +8,37 @@ export default function AdminLogin() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  function login() {
-    if (
-      username === "admin" &&
-      password === "Natuwa@123"
-    ) {
-      localStorage.setItem("adminLoggedIn", "true");
-      router.push("/admin");
-    } else {
-      alert("Invalid Username or Password");
+  async function login() {
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        router.push("/admin");
+        router.refresh();
+      } else {
+        alert("Invalid Username or Password");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Login Failed");
     }
+
+    setLoading(false);
   }
 
   return (
@@ -27,7 +47,7 @@ export default function AdminLogin() {
       <div className="bg-white p-8 rounded-xl shadow-xl w-full max-w-md">
 
         <h1 className="text-3xl font-bold text-center mb-8">
-          Admin Login
+          NATUWA3D Admin Login
         </h1>
 
         <input
@@ -48,9 +68,10 @@ export default function AdminLogin() {
 
         <button
           onClick={login}
+          disabled={loading}
           className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold"
         >
-          Login
+          {loading ? "Logging in..." : "Login"}
         </button>
 
       </div>
