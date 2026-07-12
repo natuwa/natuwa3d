@@ -1,35 +1,10 @@
-import { NextResponse } from "next/server";
+const ADMIN_USERNAME = "admin";
+const ADMIN_PASSWORD = "Natuwa@123";
 
-export async function POST(req: Request) {
-  const { username, password } = await req.json();
+console.log("Username:", username);
+console.log("Password:", password);
 
-  const ADMIN_USERNAME = "admin";
-  const ADMIN_PASSWORD = "Natuwa@123";
-
-  if (
-    username === ADMIN_USERNAME &&
-    password === ADMIN_PASSWORD
-  ) {
-    const response = NextResponse.json({
-      success: true,
-    });
-
-    response.cookies.set("admin-auth", "loggedin", {
-      httpOnly: true,
-      secure: true,
-      sameSite: "lax",
-      path: "/",
-      maxAge: 60 * 60 * 24 * 7, // 7 days
-    });
-
-    return response;
-  }
-
-  return NextResponse.json(
-    {
-      success: false,
-      message: "Invalid Username or Password",
-    },
-    { status: 401 }
-  );
-}
+console.log(
+  username === ADMIN_USERNAME,
+  password === ADMIN_PASSWORD
+);
