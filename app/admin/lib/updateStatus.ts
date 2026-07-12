@@ -17,5 +17,9 @@ export async function updateOrderStatus(
     }
   );
 
-  return response.json();
+  if (!response.ok) {
+    throw new Error("Failed to update status");
+  }
+
+  return await response.json();
 }
