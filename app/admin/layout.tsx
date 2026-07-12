@@ -1,12 +1,20 @@
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import AdminGuard from "./components/AdminGuard";
+import { headers } from "next/headers";
 
-export default function AdminLayout({
+export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pathname =
+    (await headers()).get("x-invoke-path") || "";
+
+  if (pathname.includes("/admin/login")) {
+    return <>{children}</>;
+  }
+
   return (
     <AdminGuard>
       <div className="flex min-h-screen bg-gray-100">
