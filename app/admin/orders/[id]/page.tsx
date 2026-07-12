@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ProductionInfo from "./components/ProductionInfo";
 import Timeline from "./components/Timeline";
 import StatusEditor from "./components/StatusEditor";
@@ -32,6 +33,14 @@ export default async function OrderDetailPage({
         <p className="text-gray-500 mt-2">
           Order ID : <b>{id}</b>
         </p>
+        <div className="mt-5">
+          <Link
+            href={`/admin/orders/${id}/quotation`}
+            className="inline-block bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg"
+          >
+            🧾 Generate Quotation
+          </Link>
+</div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
