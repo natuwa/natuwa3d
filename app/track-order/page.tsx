@@ -1,5 +1,5 @@
 "use client";
-
+import OrderTimeline from "./components/OrderTimeline";
 import { useState } from "react";
 
 const steps = [
@@ -117,6 +117,7 @@ export default function TrackOrder() {
                   style={{ width: `${progress}%` }}
                 />
               </div>
+              <OrderTimeline currentStatus={data.status} />
             </div>
 
             <div className="grid md:grid-cols-2 gap-4">
