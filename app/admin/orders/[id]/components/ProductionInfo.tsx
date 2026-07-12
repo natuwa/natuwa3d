@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { updateProduction } from "../../../lib/updateProduction";
 
+interface ProductionInfoProps {
+  orderId: string;
+}
+
 export default function ProductionInfo({
   orderId,
-}: {
-  orderId: string;
-}) {
+}: ProductionInfoProps) {
   const [printingTime, setPrintingTime] = useState("");
   const [paintingTime, setPaintingTime] = useState("");
   const [trackingNo, setTrackingNo] = useState("");
@@ -15,7 +17,7 @@ export default function ProductionInfo({
   const [notes, setNotes] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const saveProduction = async () => {
+  async function saveProduction() {
     try {
       setLoading(true);
 
@@ -39,17 +41,15 @@ export default function ProductionInfo({
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   return (
     <div className="bg-white rounded-xl shadow border p-6 mt-6">
-
       <h2 className="text-xl font-semibold mb-6">
         Production Information
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-
         <div>
           <label className="block text-sm font-medium mb-2">
             Estimated Printing Time
@@ -110,7 +110,6 @@ export default function ProductionInfo({
             <option value="XpressBees">XpressBees</option>
           </select>
         </div>
-
       </div>
 
       <div className="mt-5">
@@ -128,13 +127,13 @@ export default function ProductionInfo({
       </div>
 
       <button
+        type="button"
         onClick={saveProduction}
         disabled={loading}
         className="mt-6 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg disabled:bg-gray-400"
       >
         {loading ? "Saving..." : "Save Production Info"}
       </button>
-
     </div>
   );
 }
