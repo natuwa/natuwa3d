@@ -3,12 +3,16 @@
 import { useState } from "react";
 
 const statusList = [
-  "Inquiry",
+  "New Inquiry",
   "Advance Received",
-  "Photo Retouching",
-  "3D Modelling",
-  "Printing",
-  "Painting",
+  "Image Retouching Started",
+  "Image Approved"
+  "3D Designing Started",
+  "3D Design Approved",
+  "3D Printing Started",
+  "3D Printing Completed",
+  "Painting Started",
+  "Painting Completed",
   "Quality Check",
   "Packed",
   "Shipped",
