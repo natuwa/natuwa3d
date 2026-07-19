@@ -17,10 +17,10 @@ export default async function AdminPage() {
   const totalInquiry = orders.length;
 
   const totalRevenue = orders.reduce(
-    (sum: number, item: any) =>
-      sum + Number(item["Advance Paid"] || 0),
-    0
-  );
+  (sum: number, item: any) =>
+    sum + Number(item["totalAmount"] || 0),
+  0
+);
 
   const activeOrders = orders.filter(
     (item: any) =>
