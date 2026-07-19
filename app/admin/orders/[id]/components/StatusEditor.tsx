@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const statusList = [
   "New Inquiry",
+  "Photo Requested",
   "Advance Received",
   "Image Retouching Started",
   "Image Approved",
