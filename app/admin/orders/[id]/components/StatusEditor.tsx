@@ -20,6 +20,7 @@ const statusList = [
   "Shipped",
   "Delivered (Awaiting Confirmation)",
   "Delivery and Issue",
+  "Refund Requested",
   "Delivery Confirmed"
 ];
 
