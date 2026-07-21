@@ -18,6 +18,7 @@ const statusList = [
   "Packed",
   "Shipped",
   "Delivered (Awaiting Confirmation)",
+  "Delivery and Issue",
   "Delivery Confirmed"
 ];
 
