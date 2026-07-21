@@ -6,6 +6,7 @@ const statusList = [
   "New Inquiry",
   "Photo Requested",
   "Advance Received",
+  "Design Guidelines Sent",
   "Image Retouching Started",
   "Image Approved",
   "3D Designing Started",
