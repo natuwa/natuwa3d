@@ -17,7 +17,8 @@ const statusList = [
   "Quality Check",
   "Packed",
   "Shipped",
-  "Delivered",
+  "Delivered (Awaiting Confirmation)",
+  "Delivery Confirmed"
 ];
 
 export default function StatusEditor({
