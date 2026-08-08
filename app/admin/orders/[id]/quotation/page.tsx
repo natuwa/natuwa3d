@@ -19,12 +19,16 @@ export default async function QuotationPage({
     notFound();
   }
 
-  const productPrice = Number(order["Product Price"] || 0);
+  const productPrice = Number(order["totalAmount"] || 0);
   const shipping = Number(order["Shipping"] || 0);
-  const gst = Number(order["GST"] || 0);
+  const gstRate = Number(order["GST"] || 0);
+  const discount = Number(order["Discount"] || 0);
   const advance = Number(order["Advance Paid"] || 0);
-
-  const total = productPrice + shipping + gst;
+  
+  const discountedPrice = productPrice - discount;
+  const gstAmount = (discountedPrice * gstRate) / 100;
+  
+  const total = discountedPrice + gstAmount + shipping;
   const balance = total - advance;
 
   return (
@@ -142,13 +146,22 @@ export default async function QuotationPage({
                     ₹{productPrice}
                   </td>
                 </tr>
+                
+                <tr>
+                  <td className="border p-3">
+                    Discount
+                  </td>
+                  <td className="border p-3">
+                    - ₹{discount.toFixed(2)}
+                  </td>
+                </tr>
 
                 <tr>
                   <td className="border p-3">
-                    GST
+                    GST ({gstRate}%)
                   </td>
                   <td className="border p-3">
-                    ₹{gst}
+                    ₹{gstAmount.toFixed(2)}
                   </td>
                 </tr>
 
