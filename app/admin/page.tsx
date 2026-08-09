@@ -11,21 +11,33 @@ import {
 } from "lucide-react";
 
 export default async function AdminPage() {
-
   const orders = await getOrders();
 
   const totalInquiry = orders.length;
 
-  const totalAdvanceReceived = orders.reduce(
-  (sum: number, item: any) => {
-    const advance = Number(
-      String(item["Advance Paid"] || "0").replace(/[₹,\s]/g, "")
-    );
+  // Complete revenue / total order value
+  const totalRevenue = orders.reduce(
+    (sum: number, item: any) => {
+      const amount = Number(
+        String(item["totalAmount"] || "0").replace(/[₹,\s]/g, "")
+      );
 
-    return sum + (isNaN(advance) ? 0 : advance);
-  },
-  0
-);
+      return sum + (isNaN(amount) ? 0 : amount);
+    },
+    0
+  );
+
+  // Actual advance received
+  const totalAdvanceReceived = orders.reduce(
+    (sum: number, item: any) => {
+      const advance = Number(
+        String(item["Advance Paid"] || "0").replace(/[₹,\s]/g, "")
+      );
+
+      return sum + (isNaN(advance) ? 0 : advance);
+    },
+    0
+  );
 
   const activeOrders = orders.filter(
     (item: any) =>
@@ -40,13 +52,13 @@ export default async function AdminPage() {
   ).length;
 
   const recentOrders = orders
-  .slice(-5)
-  .reverse()
-  .map((item: any) => ({
-    id: item["Order ID"] || "-",
-    customer: item.name,
-    status: item.Status || "New",
-  }));
+    .slice(-5)
+    .reverse()
+    .map((item: any) => ({
+      id: item["Order ID"] || "-",
+      customer: item.name,
+      status: item.Status || "New",
+    }));
 
   return (
     <div>
@@ -61,8 +73,9 @@ export default async function AdminPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
 
+        {/* Total Inquiry */}
         <StatsCard
           title="Total Inquiry"
           value={totalInquiry}
@@ -71,14 +84,25 @@ export default async function AdminPage() {
           icon={<ShoppingBag size={28} />}
         />
 
+        {/* Total Revenue */}
+        <StatsCard
+          title="Total Revenue"
+          value={`₹${totalRevenue.toLocaleString("en-IN")}`}
+          subtitle="Complete Order Value"
+          color="bg-indigo-600"
+          icon={<IndianRupee size={28} />}
+        />
+
+        {/* Advance Received */}
         <StatsCard
           title="Advance Received"
           value={`₹${totalAdvanceReceived.toLocaleString("en-IN")}`}
-          subtitle="Live Collection"
+          subtitle="Actual Collection"
           color="bg-green-600"
           icon={<IndianRupee size={28} />}
         />
 
+        {/* Active Orders */}
         <StatsCard
           title="Active Orders"
           value={activeOrders}
@@ -87,6 +111,7 @@ export default async function AdminPage() {
           icon={<Package size={28} />}
         />
 
+        {/* Pending Follow-up */}
         <StatsCard
           title="Pending Follow-up"
           value={pendingFollowUp}
@@ -100,6 +125,7 @@ export default async function AdminPage() {
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-8">
 
         <RecentOrders orders={recentOrders} />
+
         <ProductionStatus />
 
       </div>
