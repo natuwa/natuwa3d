@@ -16,9 +16,14 @@ export default async function AdminPage() {
 
   const totalInquiry = orders.length;
 
-  const totalRevenue = orders.reduce(
-  (sum: number, item: any) =>
-    sum + Number(item["totalAmount"] || 0),
+  const totalAdvanceReceived = orders.reduce(
+  (sum: number, item: any) => {
+    const advance = Number(
+      String(item["Advance Paid"] || "0").replace(/[₹,\s]/g, "")
+    );
+
+    return sum + (isNaN(advance) ? 0 : advance);
+  },
   0
 );
 
@@ -68,7 +73,7 @@ export default async function AdminPage() {
 
         <StatsCard
           title="Advance Received"
-          value={`₹${totalRevenue}`}
+          value={`₹${totalAdvanceReceived.toLocaleString("en-IN")}`}
           subtitle="Live Collection"
           color="bg-green-600"
           icon={<IndianRupee size={28} />}
