@@ -6,6 +6,7 @@ import { getOrders } from "./lib/api";
 import {
   ShoppingBag,
   IndianRupee,
+  Wallet,
   Package,
   Clock3,
 } from "lucide-react";
@@ -13,9 +14,10 @@ import {
 export default async function AdminPage() {
   const orders = await getOrders();
 
+  // Total inquiries / orders
   const totalInquiry = orders.length;
 
-  // Complete revenue / total order value
+  // Complete order value
   const totalRevenue = orders.reduce(
     (sum: number, item: any) => {
       const amount = Number(
@@ -27,30 +29,36 @@ export default async function AdminPage() {
     0
   );
 
-  // Actual advance received
-  const totalAdvanceReceived = orders.reduce(
+  // Total amount actually received
+  const totalPaid = orders.reduce(
     (sum: number, item: any) => {
-      const advance = Number(
-        String(item["Advance Paid"] || "0").replace(/[₹,\s]/g, "")
+      const paid = Number(
+        String(item["Total Paid"] || "0").replace(/[₹,\s]/g, "")
       );
 
-      return sum + (isNaN(advance) ? 0 : advance);
+      return sum + (isNaN(paid) ? 0 : paid);
     },
     0
   );
 
+  // Amount still pending from customers
+  const outstanding = totalRevenue - totalPaid;
+
+  // Active orders
   const activeOrders = orders.filter(
     (item: any) =>
       item.Status &&
       item.Status !== "Delivered"
   ).length;
 
+  // Orders needing follow-up
   const pendingFollowUp = orders.filter(
     (item: any) =>
       !item.Status ||
       item.Status === "Advance Received"
   ).length;
 
+  // Recent orders
   const recentOrders = orders
     .slice(-5)
     .reverse()
@@ -63,6 +71,7 @@ export default async function AdminPage() {
   return (
     <div>
 
+      {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">
           Dashboard
@@ -73,7 +82,8 @@ export default async function AdminPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
+      {/* Stats Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-6">
 
         {/* Total Inquiry */}
         <StatsCard
@@ -93,12 +103,21 @@ export default async function AdminPage() {
           icon={<IndianRupee size={28} />}
         />
 
-        {/* Advance Received */}
+        {/* Total Paid */}
         <StatsCard
-          title="Advance Received"
-          value={`₹${totalAdvanceReceived.toLocaleString("en-IN")}`}
+          title="Total Paid"
+          value={`₹${totalPaid.toLocaleString("en-IN")}`}
           subtitle="Actual Collection"
           color="bg-green-600"
+          icon={<Wallet size={28} />}
+        />
+
+        {/* Outstanding */}
+        <StatsCard
+          title="Outstanding"
+          value={`₹${outstanding.toLocaleString("en-IN")}`}
+          subtitle="Payment Pending"
+          color="bg-red-600"
           icon={<IndianRupee size={28} />}
         />
 
@@ -122,6 +141,7 @@ export default async function AdminPage() {
 
       </div>
 
+      {/* Recent Orders + Production */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-8">
 
         <RecentOrders orders={recentOrders} />
