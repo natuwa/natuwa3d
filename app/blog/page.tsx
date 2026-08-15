@@ -18,7 +18,7 @@ const blogs = [
   {
   title: "18th Birthday Gift Ideas for Your Crush",
   slug: "18th-birthday-gift-ideas-for-crush",
-  image: "/images/18th-birthday-crush.jpg",
+  image: "/images/18th-birthday-crush.png",
   description:
     "Looking for a memorable 18th birthday gift for your crush? Discover thoughtful personalized gift ideas, including custom 3D miniatures made from photos.",
 },
