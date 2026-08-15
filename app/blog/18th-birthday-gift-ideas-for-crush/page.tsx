@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "NATUWA3D",
     images: [
       {
-        url: "/images/18th-birthday-crush.jpg",
+        url: "/images/18th-birthday-crush.png",
         width: 1200,
         height: 630,
         alt: "Personalized 3D miniature birthday gift",
@@ -58,7 +58,7 @@ export default function BirthdayGiftBlog() {
       {/* Featured Image */}
       <section className="max-w-5xl mx-auto px-6">
         <img
-          src="/images/18th-birthday-crush.jpg"
+          src="/images/18th-birthday-crush.png"
           alt="Personalized 3D miniature birthday gift"
           className="w-full max-h-[560px] object-cover rounded-3xl"
         />
