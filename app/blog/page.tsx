@@ -14,6 +14,14 @@ const blogs = [
     description:
       "Custom 3D printed personalized couple miniature for weddings, anniversaries, and gifts.",
   },
+  
+  {
+  title: "18th Birthday Gift Ideas for Your Crush",
+  slug: "18th-birthday-gift-ideas-for-crush",
+  image: "/images/18th-birthday-crush.jpg",
+  description:
+    "Looking for a memorable 18th birthday gift for your crush? Discover thoughtful personalized gift ideas, including custom 3D miniatures made from photos.",
+},
 ];
 
 export default function BlogPage() {
