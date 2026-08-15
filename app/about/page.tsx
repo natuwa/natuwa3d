@@ -2,7 +2,7 @@ export default function AboutUs() {
   return (
     <main className="bg-white text-gray-900">
 
-      {/* ================= HERO ================= */}
+      {/* HERO */}
       <section className="px-6 pt-16 pb-14 md:pt-20 md:pb-16">
         <div className="max-w-5xl mx-auto text-center">
 
@@ -11,21 +11,20 @@ export default function AboutUs() {
           </p>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-5">
-            Turning Your Memories Into
-            <span className="block">3D Miniatures.</span>
+            Custom 3D Miniatures From Your Photos
           </h1>
 
           <p className="max-w-3xl mx-auto text-base md:text-lg text-gray-600 leading-7 md:leading-8">
-            We transform your photographs into personalized 3D miniatures,
-            carefully designed, printed, painted and finished to preserve
-            your special moments in a tangible form.
+            NATUWA3D creates personalized 3D miniatures from photographs,
+            including custom couple miniatures, wedding figurines, family
+            miniatures and meaningful personalized gifts.
           </p>
 
         </div>
       </section>
 
 
-      {/* ================= OUR STORY ================= */}
+      {/* OUR STORY */}
       <section className="bg-gray-50 border-y border-gray-100 px-6 py-14 md:py-16">
         <div className="max-w-6xl mx-auto">
 
@@ -36,28 +35,30 @@ export default function AboutUs() {
             </p>
 
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-              From a Photograph to Something You Can Hold.
+              Turning Photographs Into Personalized 3D Miniatures
             </h2>
 
             <div className="space-y-4 text-base md:text-lg text-gray-600 leading-7 md:leading-8">
 
               <p>
-                NATUWA3D was created with a simple idea — your most meaningful
-                memories deserve more than just a place in your phone gallery.
-                They deserve to become something you can see, hold and keep
-                for years.
+                NATUWA3D was created with a simple idea — meaningful memories
+                deserve more than just a place in your phone gallery. We
+                transform special photographs into physical 3D keepsakes
+                that you can see, hold and treasure for years.
               </p>
 
               <p>
-                We take your photographs and transform them into custom 3D
-                miniatures using digital 3D designing, professional 3D
-                printing, detailed painting and careful finishing.
+                Our team uses digital 3D designing, professional 3D printing,
+                painting and finishing techniques to create custom 3D
+                miniatures based on your photographs.
               </p>
 
               <p>
-                Every miniature is created specifically for you — your
-                photographs, your people, your pose, your occasion and your
-                story become part of the design.
+                Whether you are looking for a{" "}
+                <strong>3D wedding miniature</strong>, a{" "}
+                <strong>custom couple figurine</strong>, a family miniature
+                or a personalized gift, every model is created specifically
+                according to your requirements.
               </p>
 
             </div>
@@ -68,23 +69,23 @@ export default function AboutUs() {
       </section>
 
 
-      {/* ================= PROCESS ================= */}
+      {/* HOW IT WORKS */}
       <section className="px-6 py-14 md:py-16">
         <div className="max-w-6xl mx-auto">
 
           <div className="max-w-3xl mb-10">
 
             <p className="text-xs font-semibold tracking-[0.18em] uppercase text-gray-500 mb-2">
-              OUR PROCESS
+              HOW IT WORKS
             </p>
 
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-              You Stay Involved at Every Step.
+              How Our Custom 3D Miniature Process Works
             </h2>
 
             <p className="text-base md:text-lg text-gray-600 leading-7">
-              We don't simply take your photos and start production.
-              Your confirmation is an important part of our process.
+              From your photographs to the finished miniature, we keep you
+              involved at important stages of the process.
             </p>
 
           </div>
@@ -92,93 +93,73 @@ export default function AboutUs() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-            {/* Step 1 */}
-            <div className="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-shadow">
-
-              <div className="text-2xl mb-4">
-                📸
-              </div>
+            <div className="p-6 rounded-xl border border-gray-200 bg-white">
+              <div className="text-2xl mb-4">📸</div>
 
               <h3 className="text-lg font-bold mb-2">
                 01. Photo Review
               </h3>
 
               <p className="text-sm md:text-base text-gray-600 leading-6">
-                We review your photographs and understand the required
-                pose, appearance, clothing and important details.
+                We review your photographs and understand the pose,
+                appearance, clothing and important details required for
+                your custom miniature.
               </p>
-
             </div>
 
 
-            {/* Step 2 */}
-            <div className="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-shadow">
-
-              <div className="text-2xl mb-4">
-                🖥️
-              </div>
+            <div className="p-6 rounded-xl border border-gray-200 bg-white">
+              <div className="text-2xl mb-4">🖥️</div>
 
               <h3 className="text-lg font-bold mb-2">
                 02. 3D Designing
               </h3>
 
               <p className="text-sm md:text-base text-gray-600 leading-6">
-                Your photographs are transformed into a customized
-                3D design with attention to proportions, pose and details.
+                Your photographs are converted into a personalized 3D
+                design with attention to pose, proportions and details.
               </p>
-
             </div>
 
 
-            {/* Step 3 */}
-            <div className="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-shadow">
-
-              <div className="text-2xl mb-4">
-                ✅
-              </div>
+            <div className="p-6 rounded-xl border border-gray-200 bg-white">
+              <div className="text-2xl mb-4">✅</div>
 
               <h3 className="text-lg font-bold mb-2">
-                03. Your Approval
+                03. Customer Approval
               </h3>
 
               <p className="text-sm md:text-base text-gray-600 leading-6">
-                We share the important design stage with you for
-                confirmation before moving forward.
+                We share important design stages with you for confirmation
+                before moving forward with production.
               </p>
-
             </div>
 
 
-            {/* Step 4 */}
-            <div className="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-shadow">
-
-              <div className="text-2xl mb-4">
-                🖨️
-              </div>
+            <div className="p-6 rounded-xl border border-gray-200 bg-white">
+              <div className="text-2xl mb-4">🖨️</div>
 
               <h3 className="text-lg font-bold mb-2">
-                04. Print & Finish
+                04. 3D Printing & Finishing
               </h3>
 
               <p className="text-sm md:text-base text-gray-600 leading-6">
-                The approved design moves through printing, cleaning,
+                The approved design goes through 3D printing, cleaning,
                 painting, detailing, finishing and quality inspection.
               </p>
-
             </div>
 
           </div>
 
 
-          {/* Timeline */}
           <div className="mt-6 rounded-xl bg-gray-50 border border-gray-200 px-6 py-5 text-center">
 
             <p className="text-sm md:text-base text-gray-600">
               <span className="font-semibold text-gray-900">
-                Typical production time: 7–10 working days
-              </span>
-              {" "}depending on the complexity of the miniature,
-              design requirements and finishing work.
+                Typical production time: 7–10 working days.
+              </span>{" "}
+              The exact timeline can vary depending on the design,
+              miniature size, complexity and finishing requirements.
             </p>
 
           </div>
@@ -187,7 +168,7 @@ export default function AboutUs() {
       </section>
 
 
-      {/* ================= APPROVAL ================= */}
+      {/* CUSTOMER APPROVAL */}
       <section className="bg-gray-50 border-y border-gray-100 px-6 py-14 md:py-16">
         <div className="max-w-6xl mx-auto">
 
@@ -198,13 +179,13 @@ export default function AboutUs() {
             </p>
 
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-              Nothing Important Moves Forward Without Your Confirmation.
+              A Transparent Custom Miniature Experience
             </h2>
 
             <p className="text-base md:text-lg text-gray-600 leading-7">
-              We believe custom work should be a collaborative process.
-              That's why we keep you involved at important stages of
-              your miniature's creation.
+              Since every miniature is personalized, we believe customers
+              should stay involved throughout the important stages of
+              creation.
             </p>
 
           </div>
@@ -214,20 +195,14 @@ export default function AboutUs() {
 
             <div className="bg-white p-6 md:p-7 rounded-xl border border-gray-200">
 
-              <div className="flex items-center gap-3 mb-4">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-900 text-white text-sm font-bold">
-                  1
-                </span>
-
-                <h3 className="text-xl font-bold">
-                  Image Approval
-                </h3>
-              </div>
+              <h3 className="text-xl font-bold mb-3">
+                Image Approval
+              </h3>
 
               <p className="text-sm md:text-base text-gray-600 leading-7">
-                After photo retouching and preparation, we share the
-                proposed image with you. Once you are comfortable with
-                the result, we move forward.
+                After photo preparation and retouching, we share the
+                proposed image with you. Once confirmed, we continue
+                towards the 3D design stage.
               </p>
 
             </div>
@@ -235,36 +210,30 @@ export default function AboutUs() {
 
             <div className="bg-white p-6 md:p-7 rounded-xl border border-gray-200">
 
-              <div className="flex items-center gap-3 mb-4">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-900 text-white text-sm font-bold">
-                  2
-                </span>
-
-                <h3 className="text-xl font-bold">
-                  3D Design Approval
-                </h3>
-              </div>
+              <h3 className="text-xl font-bold mb-3">
+                3D Design Approval
+              </h3>
 
               <p className="text-sm md:text-base text-gray-600 leading-7">
-                Once the 3D design is ready, we share it with you for
-                confirmation before moving to the next production stage.
+                Once your custom 3D design is ready, we share it with
+                you for confirmation before moving to the next major
+                production stage.
               </p>
 
             </div>
 
           </div>
 
-
           <p className="text-sm md:text-base text-gray-500 mt-6">
-            This process helps reduce surprises and gives you confidence
-            throughout the creation of your miniature.
+            This approval-based process helps create a smoother and more
+            transparent experience when ordering a personalized 3D miniature.
           </p>
 
         </div>
       </section>
 
 
-      {/* ================= TRANSPARENT PRICING ================= */}
+      {/* PRICING */}
       <section className="px-6 py-14 md:py-16">
         <div className="max-w-6xl mx-auto">
 
@@ -277,18 +246,19 @@ export default function AboutUs() {
               </p>
 
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-                No Hidden Charges.
+                Clear Pricing With No Hidden Charges
               </h2>
 
               <p className="text-base md:text-lg text-gray-600 leading-7">
-                We believe the price you agree to should be clear from
-                the beginning. The amount communicated in your quotation
-                clearly includes the applicable GST and delivery charges.
+                We believe the price of a custom miniature should be clear
+                before production begins. Your quotation clearly shows the
+                applicable product price, GST and delivery charges.
               </p>
 
               <p className="text-base md:text-lg text-gray-600 leading-7 mt-4">
-                Before you confirm your order, you receive the pricing
-                details so you know exactly what you're paying for.
+                You can review the complete quotation before confirming
+                your order, so there are no unexpected charges during
+                production.
               </p>
 
             </div>
@@ -299,28 +269,28 @@ export default function AboutUs() {
               <div className="space-y-4">
 
                 <div className="flex items-center gap-3">
-                  <span className="text-gray-900 font-bold">✓</span>
+                  <span className="font-bold">✓</span>
                   <span className="text-sm md:text-base text-gray-700">
                     Clear product pricing
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="text-gray-900 font-bold">✓</span>
+                  <span className="font-bold">✓</span>
                   <span className="text-sm md:text-base text-gray-700">
                     Applicable GST clearly mentioned
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="text-gray-900 font-bold">✓</span>
+                  <span className="font-bold">✓</span>
                   <span className="text-sm md:text-base text-gray-700">
                     Delivery charges clearly mentioned
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="text-gray-900 font-bold">✓</span>
+                  <span className="font-bold">✓</span>
                   <span className="text-sm md:text-base text-gray-700">
                     No surprise charges during production
                   </span>
@@ -336,7 +306,7 @@ export default function AboutUs() {
       </section>
 
 
-      {/* ================= CUSTOMER PROMISE ================= */}
+      {/* CANCELLATION / SUPPORT */}
       <section className="bg-gray-50 border-y border-gray-100 px-6 py-14 md:py-16">
         <div className="max-w-6xl mx-auto">
 
@@ -347,13 +317,13 @@ export default function AboutUs() {
             </p>
 
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-              Your Trust Comes First.
+              Your Trust Comes First
             </h2>
 
             <p className="text-base md:text-lg text-gray-600 leading-7">
-              We understand that ordering a personalized miniature is
-              different from buying a regular product. That's why we aim
-              to keep the entire experience transparent and customer-friendly.
+              We understand that a personalized miniature is a meaningful
+              purchase. Our goal is to keep the experience transparent,
+              communicative and customer-friendly.
             </p>
 
           </div>
@@ -368,11 +338,10 @@ export default function AboutUs() {
               </h3>
 
               <p className="text-sm md:text-base text-gray-600 leading-7">
-                If you decide to cancel your order before delivery,
-                you can contact us and request cancellation. Once the
-                cancellation is accepted, the amount paid to NATUWA3D
-                will be returned according to our cancellation and
-                refund process.
+                If you wish to cancel your order before delivery, you can
+                contact NATUWA3D and request cancellation. Once accepted,
+                the amount paid to NATUWA3D will be handled according to
+                our cancellation and refund process.
               </p>
 
             </div>
@@ -385,11 +354,10 @@ export default function AboutUs() {
               </h3>
 
               <p className="text-sm md:text-base text-gray-600 leading-7">
-                If your miniature arrives with a genuine issue or you
-                experience a problem with the delivered product, please
-                contact us with photographs or videos. We will review
-                the situation and discuss the most appropriate solution
-                with you.
+                If there is a genuine issue with your delivered miniature,
+                please contact us with photographs or videos. We will
+                review the issue and work with you to determine the most
+                appropriate solution.
               </p>
 
             </div>
@@ -400,7 +368,7 @@ export default function AboutUs() {
       </section>
 
 
-      {/* ================= WHY NATUWA3D ================= */}
+      {/* WHY NATUWA3D */}
       <section className="px-6 py-14 md:py-16">
         <div className="max-w-6xl mx-auto">
 
@@ -411,12 +379,12 @@ export default function AboutUs() {
             </p>
 
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-              Made Personally. Finished Carefully.
+              Custom 3D Miniatures Crafted With Care
             </h2>
 
             <p className="text-base md:text-lg text-gray-600 leading-7">
-              Every miniature passes through multiple stages before
-              reaching you.
+              From digital design to final finishing, every miniature
+              passes through multiple stages before dispatch.
             </p>
 
           </div>
@@ -426,17 +394,15 @@ export default function AboutUs() {
 
             <div className="p-6 rounded-xl border border-gray-200">
 
-              <div className="text-2xl mb-4">
-                ✨
-              </div>
+              <div className="text-2xl mb-4">✨</div>
 
               <h3 className="text-lg font-bold mb-2">
                 Premium Quality
               </h3>
 
               <p className="text-sm md:text-base text-gray-600 leading-6">
-                High-resolution 3D printing combined with detailed
-                painting and professional finishing.
+                High-quality 3D printing combined with detailed painting
+                and professional finishing.
               </p>
 
             </div>
@@ -444,17 +410,15 @@ export default function AboutUs() {
 
             <div className="p-6 rounded-xl border border-gray-200">
 
-              <div className="text-2xl mb-4">
-                🎯
-              </div>
+              <div className="text-2xl mb-4">🎯</div>
 
               <h3 className="text-lg font-bold mb-2">
                 Fully Personalized
               </h3>
 
               <p className="text-sm md:text-base text-gray-600 leading-6">
-                Every miniature is created specifically from your
-                photographs and requirements.
+                Every miniature is customized from your photographs,
+                requirements and selected specifications.
               </p>
 
             </div>
@@ -462,9 +426,7 @@ export default function AboutUs() {
 
             <div className="p-6 rounded-xl border border-gray-200">
 
-              <div className="text-2xl mb-4">
-                ❤️
-              </div>
+              <div className="text-2xl mb-4">❤️</div>
 
               <h3 className="text-lg font-bold mb-2">
                 Crafted With Care
@@ -483,7 +445,7 @@ export default function AboutUs() {
       </section>
 
 
-      {/* ================= WHAT WE CREATE ================= */}
+      {/* PRODUCTS */}
       <section className="bg-gray-50 border-y border-gray-100 px-6 py-14 md:py-16">
         <div className="max-w-6xl mx-auto">
 
@@ -494,7 +456,7 @@ export default function AboutUs() {
             </p>
 
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Miniatures Made for Meaningful Moments.
+              Personalized Miniatures for Every Occasion
             </h2>
 
           </div>
@@ -502,28 +464,28 @@ export default function AboutUs() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-            <div className="bg-white p-5 rounded-xl border border-gray-200 text-sm md:text-base">
-              ✓ Custom Couple Miniatures
+            <div className="bg-white p-5 rounded-xl border border-gray-200">
+              Custom Couple Miniatures
             </div>
 
-            <div className="bg-white p-5 rounded-xl border border-gray-200 text-sm md:text-base">
-              ✓ Wedding Figurines
+            <div className="bg-white p-5 rounded-xl border border-gray-200">
+              3D Wedding Figurines
             </div>
 
-            <div className="bg-white p-5 rounded-xl border border-gray-200 text-sm md:text-base">
-              ✓ Family Miniatures
+            <div className="bg-white p-5 rounded-xl border border-gray-200">
+              Family Miniatures
             </div>
 
-            <div className="bg-white p-5 rounded-xl border border-gray-200 text-sm md:text-base">
-              ✓ Personalized Gifts
+            <div className="bg-white p-5 rounded-xl border border-gray-200">
+              Personalized 3D Gifts
             </div>
 
-            <div className="bg-white p-5 rounded-xl border border-gray-200 text-sm md:text-base">
-              ✓ Pet Miniatures
+            <div className="bg-white p-5 rounded-xl border border-gray-200">
+              Pet Miniatures
             </div>
 
-            <div className="bg-white p-5 rounded-xl border border-gray-200 text-sm md:text-base">
-              ✓ Corporate Awards & Keepsakes
+            <div className="bg-white p-5 rounded-xl border border-gray-200">
+              Corporate Awards & Keepsakes
             </div>
 
           </div>
@@ -532,7 +494,7 @@ export default function AboutUs() {
       </section>
 
 
-      {/* ================= MISSION ================= */}
+      {/* MISSION */}
       <section className="px-6 py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
 
@@ -541,31 +503,31 @@ export default function AboutUs() {
           </p>
 
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-5">
-            Your Memories Deserve to Exist Beyond a Screen.
+            Your Memories Deserve to Exist Beyond a Screen
           </h2>
 
           <p className="text-base md:text-lg text-gray-600 leading-8">
-            We believe the best memories are the ones you can revisit,
-            touch and share. Our mission is to transform meaningful
-            photographs into beautifully crafted physical keepsakes
-            that can be treasured for years.
+            We believe meaningful memories should be more than digital
+            photographs. Our mission is to transform special moments into
+            beautifully crafted physical keepsakes that can be treasured
+            for years.
           </p>
 
         </div>
       </section>
 
 
-      {/* ================= CTA ================= */}
+      {/* CTA */}
       <section className="px-6 py-16 md:py-20 bg-black text-white text-center">
 
         <div className="max-w-3xl mx-auto">
 
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Ready to Turn Your Memory Into a Miniature?
+            Create Your Custom 3D Miniature
           </h2>
 
           <p className="text-base md:text-lg text-gray-300 leading-7 mb-7">
-            Share your photographs with us and let our team transform
+            Share your photographs with NATUWA3D and let us transform
             your special moment into a personalized 3D miniature.
           </p>
 
