@@ -2,20 +2,20 @@ export default function AboutUs() {
   return (
     <main className="bg-white text-gray-900">
 
-      {/* Hero Section */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* ================= HERO ================= */}
+      <section className="px-6 pt-16 pb-14 md:pt-20 md:pb-16">
+        <div className="max-w-5xl mx-auto text-center">
 
-          <p className="text-sm font-semibold tracking-[0.2em] uppercase text-gray-500 mb-4">
-            About NATUWA3D
+          <p className="text-xs md:text-sm font-semibold tracking-[0.18em] uppercase text-gray-500 mb-3">
+            ABOUT NATUWA3D
           </p>
 
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-            Turning Your Memories
-            <span className="block">Into 3D Miniatures.</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-5">
+            Turning Your Memories Into
+            <span className="block">3D Miniatures.</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-600 leading-9 max-w-3xl mx-auto">
+          <p className="max-w-3xl mx-auto text-base md:text-lg text-gray-600 leading-7 md:leading-8">
             We transform your photographs into personalized 3D miniatures,
             carefully designed, printed, painted and finished to preserve
             your special moments in a tangible form.
@@ -25,191 +25,237 @@ export default function AboutUs() {
       </section>
 
 
-      {/* Our Story */}
-      <section className="py-20 px-6 bg-gray-50">
+      {/* ================= OUR STORY ================= */}
+      <section className="bg-gray-50 border-y border-gray-100 px-6 py-14 md:py-16">
         <div className="max-w-6xl mx-auto">
 
           <div className="max-w-4xl">
-            <p className="text-sm font-semibold tracking-widest uppercase text-gray-500 mb-3">
-              Our Story
+
+            <p className="text-xs font-semibold tracking-[0.18em] uppercase text-gray-500 mb-2">
+              OUR STORY
             </p>
 
-            <h2 className="text-4xl font-bold mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
               From a Photograph to Something You Can Hold.
             </h2>
 
-            <p className="text-lg text-gray-700 leading-8">
-              NATUWA3D was created with a simple idea — your most meaningful
-              memories deserve more than just a place in your phone gallery.
-              They deserve to become something you can see, hold and keep
-              for years.
-            </p>
+            <div className="space-y-4 text-base md:text-lg text-gray-600 leading-7 md:leading-8">
 
-            <p className="text-lg text-gray-700 leading-8 mt-6">
-              We take your photographs and turn them into custom 3D
-              miniatures through a combination of digital 3D designing,
-              professional 3D printing, detailed painting and careful
-              finishing.
-            </p>
+              <p>
+                NATUWA3D was created with a simple idea — your most meaningful
+                memories deserve more than just a place in your phone gallery.
+                They deserve to become something you can see, hold and keep
+                for years.
+              </p>
 
-            <p className="text-lg text-gray-700 leading-8 mt-6">
-              Every miniature is created specifically for the person who
-              orders it. That means your photos, your people, your pose,
-              your occasion and your story become part of the design.
-            </p>
+              <p>
+                We take your photographs and transform them into custom 3D
+                miniatures using digital 3D designing, professional 3D
+                printing, detailed painting and careful finishing.
+              </p>
+
+              <p>
+                Every miniature is created specifically for you — your
+                photographs, your people, your pose, your occasion and your
+                story become part of the design.
+              </p>
+
+            </div>
+
           </div>
 
         </div>
       </section>
 
 
-      {/* How It Works */}
-      <section className="py-20 px-6">
+      {/* ================= PROCESS ================= */}
+      <section className="px-6 py-14 md:py-16">
         <div className="max-w-6xl mx-auto">
 
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <p className="text-sm font-semibold tracking-widest uppercase text-gray-500 mb-3">
-              Our Process
+          <div className="max-w-3xl mb-10">
+
+            <p className="text-xs font-semibold tracking-[0.18em] uppercase text-gray-500 mb-2">
+              OUR PROCESS
             </p>
 
-            <h2 className="text-4xl font-bold mb-5">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
               You Stay Involved at Every Step.
             </h2>
 
-            <p className="text-lg text-gray-600 leading-8">
+            <p className="text-base md:text-lg text-gray-600 leading-7">
               We don't simply take your photos and start production.
-              Your approval is an important part of our process.
+              Your confirmation is an important part of our process.
             </p>
+
           </div>
 
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-            <div className="p-7 border rounded-2xl bg-white shadow-sm">
-              <div className="text-3xl mb-5">📸</div>
+            {/* Step 1 */}
+            <div className="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-shadow">
 
-              <h3 className="text-xl font-bold mb-3">
+              <div className="text-2xl mb-4">
+                📸
+              </div>
+
+              <h3 className="text-lg font-bold mb-2">
                 01. Photo Review
               </h3>
 
-              <p className="text-gray-600 leading-7">
+              <p className="text-sm md:text-base text-gray-600 leading-6">
                 We review your photographs and understand the required
-                pose, appearance, clothing and important details before
-                starting the design.
+                pose, appearance, clothing and important details.
               </p>
+
             </div>
 
 
-            <div className="p-7 border rounded-2xl bg-white shadow-sm">
-              <div className="text-3xl mb-5">🖥️</div>
+            {/* Step 2 */}
+            <div className="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-shadow">
 
-              <h3 className="text-xl font-bold mb-3">
+              <div className="text-2xl mb-4">
+                🖥️
+              </div>
+
+              <h3 className="text-lg font-bold mb-2">
                 02. 3D Designing
               </h3>
 
-              <p className="text-gray-600 leading-7">
-                Your photographs are transformed into a customized 3D
-                design. We work on proportions, pose, clothing and other
-                important details.
+              <p className="text-sm md:text-base text-gray-600 leading-6">
+                Your photographs are transformed into a customized
+                3D design with attention to proportions, pose and details.
               </p>
+
             </div>
 
 
-            <div className="p-7 border rounded-2xl bg-white shadow-sm">
-              <div className="text-3xl mb-5">✅</div>
+            {/* Step 3 */}
+            <div className="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-shadow">
 
-              <h3 className="text-xl font-bold mb-3">
+              <div className="text-2xl mb-4">
+                ✅
+              </div>
+
+              <h3 className="text-lg font-bold mb-2">
                 03. Your Approval
               </h3>
 
-              <p className="text-gray-600 leading-7">
-                Before moving to the next major stage, we share the design
-                with you for confirmation. Your approval helps us ensure
-                we're moving in the right direction.
+              <p className="text-sm md:text-base text-gray-600 leading-6">
+                We share the important design stage with you for
+                confirmation before moving forward.
               </p>
+
             </div>
 
 
-            <div className="p-7 border rounded-2xl bg-white shadow-sm">
-              <div className="text-3xl mb-5">🖨️</div>
+            {/* Step 4 */}
+            <div className="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md transition-shadow">
 
-              <h3 className="text-xl font-bold mb-3">
+              <div className="text-2xl mb-4">
+                🖨️
+              </div>
+
+              <h3 className="text-lg font-bold mb-2">
                 04. Print & Finish
               </h3>
 
-              <p className="text-gray-600 leading-7">
-                After approval, the miniature moves through 3D printing,
-                surface preparation, painting, detailing, finishing and
-                final quality inspection.
+              <p className="text-sm md:text-base text-gray-600 leading-6">
+                The approved design moves through printing, cleaning,
+                painting, detailing, finishing and quality inspection.
               </p>
+
             </div>
 
           </div>
 
 
-          <div className="mt-10 p-7 rounded-2xl bg-gray-50 border text-center">
-            <p className="text-lg text-gray-700 leading-8">
-              <strong>Our typical production timeline is 7–10 working days</strong>,
-              depending on the complexity of the miniature, design requirements
-              and finishing work.
+          {/* Timeline */}
+          <div className="mt-6 rounded-xl bg-gray-50 border border-gray-200 px-6 py-5 text-center">
+
+            <p className="text-sm md:text-base text-gray-600">
+              <span className="font-semibold text-gray-900">
+                Typical production time: 7–10 working days
+              </span>
+              {" "}depending on the complexity of the miniature,
+              design requirements and finishing work.
             </p>
+
           </div>
 
         </div>
       </section>
 
 
-      {/* Customer Approval */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
+      {/* ================= APPROVAL ================= */}
+      <section className="bg-gray-50 border-y border-gray-100 px-6 py-14 md:py-16">
+        <div className="max-w-6xl mx-auto">
 
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold tracking-widest uppercase text-gray-500 mb-3">
-              Customer Approval
+          <div className="max-w-3xl mb-10">
+
+            <p className="text-xs font-semibold tracking-[0.18em] uppercase text-gray-500 mb-2">
+              CUSTOMER APPROVAL
             </p>
 
-            <h2 className="text-4xl font-bold mb-5">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
               Nothing Important Moves Forward Without Your Confirmation.
             </h2>
 
-            <p className="text-lg text-gray-600 leading-8 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-gray-600 leading-7">
               We believe custom work should be a collaborative process.
               That's why we keep you involved at important stages of
               your miniature's creation.
             </p>
+
           </div>
 
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-5">
 
-            <div className="bg-white p-8 rounded-2xl border shadow-sm">
-              <h3 className="text-2xl font-bold mb-4">
-                Image Approval
-              </h3>
+            <div className="bg-white p-6 md:p-7 rounded-xl border border-gray-200">
 
-              <p className="text-gray-600 leading-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-900 text-white text-sm font-bold">
+                  1
+                </span>
+
+                <h3 className="text-xl font-bold">
+                  Image Approval
+                </h3>
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600 leading-7">
                 After photo retouching and preparation, we share the
-                proposed image with you. Once you're comfortable with
+                proposed image with you. Once you are comfortable with
                 the result, we move forward.
               </p>
+
             </div>
 
 
-            <div className="bg-white p-8 rounded-2xl border shadow-sm">
-              <h3 className="text-2xl font-bold mb-4">
-                3D Design Approval
-              </h3>
+            <div className="bg-white p-6 md:p-7 rounded-xl border border-gray-200">
 
-              <p className="text-gray-600 leading-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-900 text-white text-sm font-bold">
+                  2
+                </span>
+
+                <h3 className="text-xl font-bold">
+                  3D Design Approval
+                </h3>
+              </div>
+
+              <p className="text-sm md:text-base text-gray-600 leading-7">
                 Once the 3D design is ready, we share it with you for
-                confirmation before the next production stage.
+                confirmation before moving to the next production stage.
               </p>
+
             </div>
 
           </div>
 
 
-          <p className="text-center text-gray-600 mt-8">
+          <p className="text-sm md:text-base text-gray-500 mt-6">
             This process helps reduce surprises and gives you confidence
             throughout the creation of your miniature.
           </p>
@@ -218,63 +264,64 @@ export default function AboutUs() {
       </section>
 
 
-      {/* Transparent Pricing */}
-      <section className="py-20 px-6">
+      {/* ================= TRANSPARENT PRICING ================= */}
+      <section className="px-6 py-14 md:py-16">
         <div className="max-w-6xl mx-auto">
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 
             <div>
-              <p className="text-sm font-semibold tracking-widest uppercase text-gray-500 mb-3">
-                Transparent Pricing
+
+              <p className="text-xs font-semibold tracking-[0.18em] uppercase text-gray-500 mb-2">
+                TRANSPARENT PRICING
               </p>
 
-              <h2 className="text-4xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
                 No Hidden Charges.
               </h2>
 
-              <p className="text-lg text-gray-600 leading-8">
+              <p className="text-base md:text-lg text-gray-600 leading-7">
                 We believe the price you agree to should be clear from
-                the beginning. The amount communicated to you includes
-                the applicable GST and delivery charges as specified in
-                your quotation.
+                the beginning. The amount communicated in your quotation
+                clearly includes the applicable GST and delivery charges.
               </p>
 
-              <p className="text-lg text-gray-600 leading-8 mt-5">
-                Before you confirm your order, we provide the pricing
+              <p className="text-base md:text-lg text-gray-600 leading-7 mt-4">
+                Before you confirm your order, you receive the pricing
                 details so you know exactly what you're paying for.
               </p>
+
             </div>
 
 
-            <div className="bg-gray-50 border rounded-2xl p-8">
+            <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 md:p-7">
 
-              <div className="space-y-5">
+              <div className="space-y-4">
 
-                <div className="flex items-center gap-4">
-                  <span className="text-2xl">✓</span>
-                  <span className="text-lg">
+                <div className="flex items-center gap-3">
+                  <span className="text-gray-900 font-bold">✓</span>
+                  <span className="text-sm md:text-base text-gray-700">
                     Clear product pricing
                   </span>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <span className="text-2xl">✓</span>
-                  <span className="text-lg">
-                    Applicable GST included in quotation
+                <div className="flex items-center gap-3">
+                  <span className="text-gray-900 font-bold">✓</span>
+                  <span className="text-sm md:text-base text-gray-700">
+                    Applicable GST clearly mentioned
                   </span>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <span className="text-2xl">✓</span>
-                  <span className="text-lg">
+                <div className="flex items-center gap-3">
+                  <span className="text-gray-900 font-bold">✓</span>
+                  <span className="text-sm md:text-base text-gray-700">
                     Delivery charges clearly mentioned
                   </span>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <span className="text-2xl">✓</span>
-                  <span className="text-lg">
+                <div className="flex items-center gap-3">
+                  <span className="text-gray-900 font-bold">✓</span>
+                  <span className="text-sm md:text-base text-gray-700">
                     No surprise charges during production
                   </span>
                 </div>
@@ -289,57 +336,60 @@ export default function AboutUs() {
       </section>
 
 
-      {/* Cancellation & Refund */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto text-center">
+      {/* ================= CUSTOMER PROMISE ================= */}
+      <section className="bg-gray-50 border-y border-gray-100 px-6 py-14 md:py-16">
+        <div className="max-w-6xl mx-auto">
 
-          <p className="text-sm font-semibold tracking-widest uppercase text-gray-500 mb-3">
-            Our Customer Promise
-          </p>
+          <div className="text-center max-w-3xl mx-auto mb-10">
 
-          <h2 className="text-4xl font-bold mb-6">
-            Your Trust Comes First.
-          </h2>
+            <p className="text-xs font-semibold tracking-[0.18em] uppercase text-gray-500 mb-2">
+              CUSTOMER PROMISE
+            </p>
 
-          <p className="text-lg text-gray-600 leading-8 max-w-3xl mx-auto">
-            We understand that ordering a personalized miniature is
-            different from buying a regular product. That's why we aim
-            to keep the process transparent and customer-friendly.
-          </p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+              Your Trust Comes First.
+            </h2>
+
+            <p className="text-base md:text-lg text-gray-600 leading-7">
+              We understand that ordering a personalized miniature is
+              different from buying a regular product. That's why we aim
+              to keep the entire experience transparent and customer-friendly.
+            </p>
+
+          </div>
 
 
-          <div className="grid md:grid-cols-2 gap-6 mt-12 text-left">
+          <div className="grid md:grid-cols-2 gap-5">
 
-            <div className="bg-white p-8 rounded-2xl border shadow-sm">
+            <div className="bg-white p-6 md:p-7 rounded-xl border border-gray-200">
 
-              <h3 className="text-2xl font-bold mb-4">
+              <h3 className="text-xl font-bold mb-3">
                 Cancellation Before Delivery
               </h3>
 
-              <p className="text-gray-600 leading-8">
+              <p className="text-sm md:text-base text-gray-600 leading-7">
                 If you decide to cancel your order before delivery,
                 you can contact us and request cancellation. Once the
-                cancellation is accepted, the amount paid by you to
-                NATUWA3D will be returned according to our cancellation
-                and refund process.
+                cancellation is accepted, the amount paid to NATUWA3D
+                will be returned according to our cancellation and
+                refund process.
               </p>
 
             </div>
 
 
-            <div className="bg-white p-8 rounded-2xl border shadow-sm">
+            <div className="bg-white p-6 md:p-7 rounded-xl border border-gray-200">
 
-              <h3 className="text-2xl font-bold mb-4">
-                If There Is an Issue After Delivery
+              <h3 className="text-xl font-bold mb-3">
+                Support After Delivery
               </h3>
 
-              <p className="text-gray-600 leading-8">
-                Your satisfaction matters to us even after delivery.
+              <p className="text-sm md:text-base text-gray-600 leading-7">
                 If your miniature arrives with a genuine issue or you
-                are not satisfied with an aspect of the delivered
-                product, please contact us with photographs or videos.
-                We will review the situation and discuss the most
-                appropriate solution with you.
+                experience a problem with the delivered product, please
+                contact us with photographs or videos. We will review
+                the situation and discuss the most appropriate solution
+                with you.
               </p>
 
             </div>
@@ -350,21 +400,21 @@ export default function AboutUs() {
       </section>
 
 
-      {/* Why Choose Us */}
-      <section className="py-20 px-6">
+      {/* ================= WHY NATUWA3D ================= */}
+      <section className="px-6 py-14 md:py-16">
         <div className="max-w-6xl mx-auto">
 
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="max-w-3xl mb-10">
 
-            <p className="text-sm font-semibold tracking-widest uppercase text-gray-500 mb-3">
-              Why NATUWA3D
+            <p className="text-xs font-semibold tracking-[0.18em] uppercase text-gray-500 mb-2">
+              WHY NATUWA3D
             </p>
 
-            <h2 className="text-4xl font-bold mb-5">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
               Made Personally. Finished Carefully.
             </h2>
 
-            <p className="text-lg text-gray-600 leading-8">
+            <p className="text-base md:text-lg text-gray-600 leading-7">
               Every miniature passes through multiple stages before
               reaching you.
             </p>
@@ -372,47 +422,59 @@ export default function AboutUs() {
           </div>
 
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-5">
 
-            <div className="p-8 border rounded-2xl shadow-sm">
-              <div className="text-3xl mb-5">✨</div>
+            <div className="p-6 rounded-xl border border-gray-200">
 
-              <h3 className="text-xl font-bold mb-3">
+              <div className="text-2xl mb-4">
+                ✨
+              </div>
+
+              <h3 className="text-lg font-bold mb-2">
                 Premium Quality
               </h3>
 
-              <p className="text-gray-600 leading-7">
+              <p className="text-sm md:text-base text-gray-600 leading-6">
                 High-resolution 3D printing combined with detailed
                 painting and professional finishing.
               </p>
+
             </div>
 
 
-            <div className="p-8 border rounded-2xl shadow-sm">
-              <div className="text-3xl mb-5">🎯</div>
+            <div className="p-6 rounded-xl border border-gray-200">
 
-              <h3 className="text-xl font-bold mb-3">
+              <div className="text-2xl mb-4">
+                🎯
+              </div>
+
+              <h3 className="text-lg font-bold mb-2">
                 Fully Personalized
               </h3>
 
-              <p className="text-gray-600 leading-7">
+              <p className="text-sm md:text-base text-gray-600 leading-6">
                 Every miniature is created specifically from your
                 photographs and requirements.
               </p>
+
             </div>
 
 
-            <div className="p-8 border rounded-2xl shadow-sm">
-              <div className="text-3xl mb-5">❤️</div>
+            <div className="p-6 rounded-xl border border-gray-200">
 
-              <h3 className="text-xl font-bold mb-3">
+              <div className="text-2xl mb-4">
+                ❤️
+              </div>
+
+              <h3 className="text-lg font-bold mb-2">
                 Crafted With Care
               </h3>
 
-              <p className="text-gray-600 leading-7">
+              <p className="text-sm md:text-base text-gray-600 leading-6">
                 We carefully review the design, printing, painting and
                 finishing stages before your miniature is dispatched.
               </p>
+
             </div>
 
           </div>
@@ -421,46 +483,46 @@ export default function AboutUs() {
       </section>
 
 
-      {/* What We Create */}
-      <section className="py-20 px-6 bg-gray-50">
+      {/* ================= WHAT WE CREATE ================= */}
+      <section className="bg-gray-50 border-y border-gray-100 px-6 py-14 md:py-16">
         <div className="max-w-6xl mx-auto">
 
-          <div className="text-center mb-12">
+          <div className="text-center mb-9">
 
-            <p className="text-sm font-semibold tracking-widest uppercase text-gray-500 mb-3">
-              What We Create
+            <p className="text-xs font-semibold tracking-[0.18em] uppercase text-gray-500 mb-2">
+              WHAT WE CREATE
             </p>
 
-            <h2 className="text-4xl font-bold">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
               Miniatures Made for Meaningful Moments.
             </h2>
 
           </div>
 
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 text-lg">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-            <div className="bg-white p-6 rounded-xl border">
+            <div className="bg-white p-5 rounded-xl border border-gray-200 text-sm md:text-base">
               ✓ Custom Couple Miniatures
             </div>
 
-            <div className="bg-white p-6 rounded-xl border">
+            <div className="bg-white p-5 rounded-xl border border-gray-200 text-sm md:text-base">
               ✓ Wedding Figurines
             </div>
 
-            <div className="bg-white p-6 rounded-xl border">
+            <div className="bg-white p-5 rounded-xl border border-gray-200 text-sm md:text-base">
               ✓ Family Miniatures
             </div>
 
-            <div className="bg-white p-6 rounded-xl border">
+            <div className="bg-white p-5 rounded-xl border border-gray-200 text-sm md:text-base">
               ✓ Personalized Gifts
             </div>
 
-            <div className="bg-white p-6 rounded-xl border">
+            <div className="bg-white p-5 rounded-xl border border-gray-200 text-sm md:text-base">
               ✓ Pet Miniatures
             </div>
 
-            <div className="bg-white p-6 rounded-xl border">
+            <div className="bg-white p-5 rounded-xl border border-gray-200 text-sm md:text-base">
               ✓ Corporate Awards & Keepsakes
             </div>
 
@@ -470,19 +532,19 @@ export default function AboutUs() {
       </section>
 
 
-      {/* Mission */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto text-center">
+      {/* ================= MISSION ================= */}
+      <section className="px-6 py-16 md:py-20">
+        <div className="max-w-4xl mx-auto text-center">
 
-          <p className="text-sm font-semibold tracking-widest uppercase text-gray-500 mb-3">
-            Our Mission
+          <p className="text-xs font-semibold tracking-[0.18em] uppercase text-gray-500 mb-2">
+            OUR MISSION
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-7">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-5">
             Your Memories Deserve to Exist Beyond a Screen.
           </h2>
 
-          <p className="text-xl text-gray-600 leading-9">
+          <p className="text-base md:text-lg text-gray-600 leading-8">
             We believe the best memories are the ones you can revisit,
             touch and share. Our mission is to transform meaningful
             photographs into beautifully crafted physical keepsakes
@@ -493,23 +555,23 @@ export default function AboutUs() {
       </section>
 
 
-      {/* CTA */}
-      <section className="py-24 px-6 bg-black text-white text-center">
+      {/* ================= CTA ================= */}
+      <section className="px-6 py-16 md:py-20 bg-black text-white text-center">
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
             Ready to Turn Your Memory Into a Miniature?
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-300 leading-8 mb-10">
+          <p className="text-base md:text-lg text-gray-300 leading-7 mb-7">
             Share your photographs with us and let our team transform
             your special moment into a personalized 3D miniature.
           </p>
 
           <a
             href="/order"
-            className="inline-block bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-gray-200 transition"
+            className="inline-flex items-center justify-center bg-white text-black px-7 py-3.5 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-200 transition"
           >
             Create Your Miniature
           </a>
