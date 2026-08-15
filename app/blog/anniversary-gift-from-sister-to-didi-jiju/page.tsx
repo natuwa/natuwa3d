@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "NATUWA3D",
     images: [
       {
-        url: "/images/didi-jiju-anniversary.jpg",
+        url: "/images/didi-jiju-anniversary.png",
         width: 1200,
         height: 630,
         alt: "Custom 3D miniature anniversary gift for a couple",
