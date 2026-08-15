@@ -24,7 +24,9 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <Link href="#products" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <Link
+              href="/products"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Products
             </Link>
             <Link href="#process" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
@@ -65,11 +67,10 @@ export function Navbar() {
         {isOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border py-4 px-6">
             <div className="flex flex-col gap-4">
-              <Link 
-                href="#products" 
+              <Link
+                href="/products"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
+                onClick={() => setIsOpen(false)}>
                 Products
               </Link>
               <Link 
