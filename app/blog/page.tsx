@@ -26,7 +26,7 @@ const blogs = [
   {
   title: "A Heartfelt Anniversary Gift for Didi & Jiju",
   slug: "anniversary-gift-from-sister-to-didi-jiju",
-  image: "/images/didi-jiju-anniversary.jpg",
+  image: "/images/didi-jiju-anniversary.png",
   description:
     "Discover a heartfelt anniversary gift idea: turning a special photograph of didi and jiju into a personalized 3D miniature.",
 },
