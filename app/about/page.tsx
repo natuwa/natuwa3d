@@ -1,3 +1,29 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About NATUWA3D | Custom 3D Miniatures From Photos",
+
+  description:
+    "Learn how NATUWA3D creates custom 3D miniatures from photos through digital 3D designing, 3D printing, painting and professional finishing.",
+
+  alternates: {
+    canonical: "https://www.natuwa3d.com/about",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "About NATUWA3D | Custom 3D Miniatures From Photos",
+    description:
+      "Discover how NATUWA3D transforms photographs into personalized 3D miniatures.",
+    url: "https://www.natuwa3d.com/about",
+    siteName: "NATUWA3D",
+    type: "website",
+  },
+};
 export default function AboutUs() {
   return (
     <main className="bg-white text-gray-900">
