@@ -558,7 +558,7 @@ export default function AboutUs() {
           </p>
 
           <a
-            href="/order"
+            href="/book-now"
             className="inline-flex items-center justify-center bg-white text-black px-7 py-3.5 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-200 transition"
           >
             Create Your Miniature
