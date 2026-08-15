@@ -22,6 +22,15 @@ const blogs = [
   description:
     "Looking for a memorable 18th birthday gift for your crush? Discover thoughtful personalized gift ideas, including custom 3D miniatures made from photos.",
 },
+
+  {
+  title: "A Heartfelt Anniversary Gift for Didi & Jiju",
+  slug: "anniversary-gift-from-sister-to-didi-jiju",
+  image: "/images/didi-jiju-anniversary.jpg",
+  description:
+    "Discover a heartfelt anniversary gift idea: turning a special photograph of didi and jiju into a personalized 3D miniature.",
+},
+  
 ];
 
 export default function BlogPage() {
