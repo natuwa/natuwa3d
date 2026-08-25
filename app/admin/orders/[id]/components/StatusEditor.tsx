@@ -34,6 +34,7 @@ export default function StatusEditor({
 }) {
   const [status, setStatus] = useState(currentStatus);
   const [loading, setLoading] = useState(false);
+  const [refundAmount, setRefundAmount] = useState("");
 
   async function saveStatus() {
     try {
