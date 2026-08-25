@@ -83,6 +83,27 @@ export default function StatusEditor({
         ))}
       </select>
 
+      {status === "Refund Transferred" && (
+        <div className="mt-5">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Refund Amount
+          </label>
+      
+          <input
+            type="number"
+            min="0"
+            value={refundAmount}
+            onChange={(e) => setRefundAmount(e.target.value)}
+            placeholder="Enter refund amount"
+            className="w-full border rounded-lg p-3"
+          />
+      
+          <p className="text-sm text-gray-500 mt-2">
+            Enter the exact amount transferred to the customer.
+          </p>
+        </div>
+)}
+
       <button
         onClick={saveStatus}
         disabled={loading}
