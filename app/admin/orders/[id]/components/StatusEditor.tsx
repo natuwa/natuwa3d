@@ -48,6 +48,10 @@ export default function StatusEditor({
             action: "updateStatus",
             orderId,
             status,
+            refundAmount:
+              status === "Refund Transferred"
+                ? refundAmount
+                : "",
           }),
         }
       );
