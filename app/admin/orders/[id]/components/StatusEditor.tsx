@@ -21,7 +21,8 @@ const statusList = [
   "Delivered (Awaiting Confirmation)",
   "Delivery and Issue",
   "Refund Requested",
-  "Delivery Confirmed"
+  "Delivery Confirmed",
+  "Refund Transferred"
 ];
 
 export default function StatusEditor({
