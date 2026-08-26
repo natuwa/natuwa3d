@@ -17,9 +17,13 @@ export async function updateOrderStatus(
     }
   );
 
+  const result = await response.text();
+
+  console.log("APPS SCRIPT RESPONSE:", result);
+
   if (!response.ok) {
     throw new Error("Failed to update status");
   }
 
-  return await response.json();
+  return JSON.parse(result);
 }
