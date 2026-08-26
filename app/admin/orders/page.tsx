@@ -4,13 +4,24 @@ import { getOrders } from "../lib/api";
 export default async function OrdersPage() {
   const orders = await getOrders();
 
+  // Order ID ke number ke according ascending sequence
+  const sortedOrders = [...orders].sort((a: any, b: any) => {
+    const aNumber =
+      parseInt(String(a["Order ID"] || "").replace(/\D/g, ""), 10) || 999999;
+
+    const bNumber =
+      parseInt(String(b["Order ID"] || "").replace(/\D/g, ""), 10) || 999999;
+
+    return aNumber - bNumber;
+  });
+
   return (
     <div>
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold">Orders</h1>
 
         <div className="text-gray-500">
-          Total Orders : <b>{orders.length}</b>
+          Total Orders : <b>{sortedOrders.length}</b>
         </div>
       </div>
 
@@ -28,7 +39,7 @@ export default async function OrdersPage() {
           </thead>
 
           <tbody>
-            {orders.map((order: any, index: number) => (
+            {sortedOrders.map((order: any, index: number) => (
               <tr
                 key={index}
                 className="border-t hover:bg-gray-50"
