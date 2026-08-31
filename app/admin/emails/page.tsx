@@ -3,6 +3,17 @@ import { getOrders } from "../lib/api";
 export default async function EmailPage() {
   const orders = await getOrders();
 
+  // Order ID ke number ke according ascending sequence
+  const sortedOrders = [...orders].sort((a: any, b: any) => {
+    const aNumber =
+      parseInt(String(a["Order ID"] || "").replace(/\D/g, ""), 10) || 999999;
+
+    const bNumber =
+      parseInt(String(b["Order ID"] || "").replace(/\D/g, ""), 10) || 999999;
+
+    return aNumber - bNumber;
+  });
+
   return (
     <div>
 
@@ -12,7 +23,7 @@ export default async function EmailPage() {
         </h1>
 
         <div className="text-gray-500">
-          Total Customers : <b>{orders.length}</b>
+          Total Customers : <b>{sortedOrders.length}</b>
         </div>
       </div>
 
@@ -23,42 +34,20 @@ export default async function EmailPage() {
           <thead className="bg-gray-100">
 
             <tr>
-
-              <th className="p-4 text-left">
-                Order ID
-              </th>
-
-              <th className="p-4 text-left">
-                Customer
-              </th>
-
-              <th className="p-4 text-left">
-                Email
-              </th>
-
-              <th className="p-4 text-left">
-                Status
-              </th>
-
-              <th className="p-4 text-left">
-                Last Email
-              </th>
-
-              <th className="p-4 text-left">
-                Email Time
-              </th>
-
-              <th className="p-4 text-center">
-                Action
-              </th>
-
+              <th className="p-4 text-left">Order ID</th>
+              <th className="p-4 text-left">Customer</th>
+              <th className="p-4 text-left">Email</th>
+              <th className="p-4 text-left">Status</th>
+              <th className="p-4 text-left">Last Email</th>
+              <th className="p-4 text-left">Email Time</th>
+              <th className="p-4 text-center">Action</th>
             </tr>
 
           </thead>
 
           <tbody>
 
-            {orders.map((order: any, index: number) => (
+            {sortedOrders.map((order: any, index: number) => (
 
               <tr
                 key={index}
