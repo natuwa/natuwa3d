@@ -3,6 +3,17 @@ import { getOrders } from "../lib/api";
 export default async function AnalyticsPage() {
   const orders = await getOrders();
 
+  // Order ID ke number ke according ascending sequence
+  const sortedOrders = [...orders].sort((a: any, b: any) => {
+    const aNumber =
+      parseInt(String(a["Order ID"] || "").replace(/\D/g, ""), 10) || 999999;
+
+    const bNumber =
+      parseInt(String(b["Order ID"] || "").replace(/\D/g, ""), 10) || 999999;
+
+    return aNumber - bNumber;
+  });
+
   const totalOrders = orders.length;
 
   const delivered = orders.filter(
@@ -111,7 +122,8 @@ export default async function AnalyticsPage() {
 
           <div className="space-y-4">
 
-            {orders.slice(0, 8).map((order: any, index: number) => (
+            {sortedOrders.slice(0, 8).map(
+              (order: any, index: number) => (
 
               <div
                 key={index}
