@@ -3,6 +3,17 @@ import { getOrders } from "../lib/api";
 export default async function RevenuePage() {
   const orders = await getOrders();
 
+  // Order ID ke number ke according ascending sequence
+  const sortedOrders = [...orders].sort((a: any, b: any) => {
+    const aNumber =
+      parseInt(String(a["Order ID"] || "").replace(/\D/g, ""), 10) || 999999;
+
+    const bNumber =
+      parseInt(String(b["Order ID"] || "").replace(/\D/g, ""), 10) || 999999;
+
+    return aNumber - bNumber;
+  });
+
   const totalOrders = orders.length;
 
   const totalAdvance = orders.reduce(
@@ -91,7 +102,7 @@ export default async function RevenuePage() {
 
           <tbody>
 
-            {orders.map((order: any, index: number) => (
+            {sortedOrders.map((order: any, index: number) => (
 
               <tr
                 key={index}
