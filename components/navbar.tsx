@@ -1,22 +1,46 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
+import { createClient } from "@/lib/supabase/client"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    const supabase = createClient()
+
+    // Check current login
+    supabase.auth.getUser().then(({ data }) => {
+      setIsLoggedIn(!!data.user)
+    })
+
+    // Listen for login/logout changes
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsLoggedIn(!!session?.user)
+    })
+
+    return () => {
+      subscription.unsubscribe()
+    }
+  }, [])
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
+
+          {/* Logo */}
           <Link href="/" className="flex flex-col">
             <span className="font-serif text-2xl md:text-3xl font-bold tracking-wide text-foreground">
               NATUWA3D
             </span>
+
             <span className="text-xs text-muted-foreground tracking-widest uppercase">
               Your frozen Moment
             </span>
@@ -24,33 +48,78 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
+
             <Link
               href="/products"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
               Products
             </Link>
-            <Link href="#process" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+
+            <Link
+              href="#process"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
               How It Works
             </Link>
-            <Link href="#gallery" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"> Gallery </Link>
-            <Link href="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"> Blog </Link>
-            <Link href="#faq" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" > FAQ </Link>
-            <Link href="#contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+
+            <Link
+              href="#gallery"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Gallery
+            </Link>
+
+            <Link
+              href="/blog"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Blog
+            </Link>
+
+            <Link
+              href="#faq"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              FAQ
+            </Link>
+
+            <Link
+              href="#contact"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
               Contact
             </Link>
-            <Link href="/about">About Us</Link>
+
+            <Link
+              href="/about"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              About Us
+            </Link>
+
             <Link
               href="/track-order"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               Track Order
             </Link>
-            
+
+            {/* Customer Account */}
+            <Link
+              href={isLoggedIn ? "/account" : "/login"}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {isLoggedIn ? "My Account" : "Login"}
+            </Link>
+
+            {/* Book Now */}
             <Link href="/book-now">
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
                 Book Now
               </Button>
             </Link>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -61,32 +130,39 @@ export function Navbar() {
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
+
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border py-4 px-6">
+
             <div className="flex flex-col gap-4">
+
               <Link
                 href="/products"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsOpen(false)}>
+                onClick={() => setIsOpen(false)}
+              >
                 Products
               </Link>
-              <Link 
-                href="#process" 
+
+              <Link
+                href="#process"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 How It Works
               </Link>
-              <Link 
-                href="#gallery" 
+
+              <Link
+                href="#gallery"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Gallery
               </Link>
+
               <Link
                 href="/blog"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -94,20 +170,23 @@ export function Navbar() {
               >
                 Blog
               </Link>
-              <Link 
-                href="#faq" 
+
+              <Link
+                href="#faq"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 FAQ
               </Link>
-              <Link 
-                href="#contact" 
+
+              <Link
+                href="#contact"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Contact
               </Link>
+
               <Link
                 href="/about"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -115,6 +194,7 @@ export function Navbar() {
               >
                 About Us
               </Link>
+
               <Link
                 href="/track-order"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -122,19 +202,29 @@ export function Navbar() {
               >
                 Track Order
               </Link>
-              
-                           
-                <Link
-                  href="/book-now"
-                  onClick={() => setIsOpen(false)}
-                  className="block bg-primary text-primary-foreground px-4 py-2 rounded-md text-center"
-                >
-                  Book Now
-                </Link>
-                
+
+              {/* Customer Account - Mobile */}
+              <Link
+                href={isLoggedIn ? "/account" : "/login"}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {isLoggedIn ? "My Account" : "Login"}
+              </Link>
+
+              {/* Book Now */}
+              <Link
+                href="/book-now"
+                onClick={() => setIsOpen(false)}
+                className="block bg-primary text-primary-foreground px-4 py-2 rounded-md text-center"
+              >
+                Book Now
+              </Link>
+
             </div>
           </div>
         )}
+
       </nav>
     </header>
   )
