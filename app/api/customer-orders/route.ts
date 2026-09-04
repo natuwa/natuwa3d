@@ -240,13 +240,13 @@ export async function GET() {
             order["Estimated Painting Time"] || "",
 
           eventDate:
-            order["Event Date"] || "",
+            order["date"] || "",
 
           size:
-            order["Size"] || "",
+            order["size"] || "",
 
           quality:
-            order["Quality"] || "",
+            order["quality"] || "",
         };
       });
 
