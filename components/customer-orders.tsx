@@ -73,6 +73,8 @@ export default function CustomerOrders() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [payingOrderId, setPayingOrderId] = useState("");
+  const [paymentError, setPaymentError] = useState("");
 
   useEffect(() => {
     async function loadOrders() {
@@ -98,6 +100,37 @@ export default function CustomerOrders() {
 
     loadOrders();
   }, []);
+
+  async function handleRemainingPayment(orderId: string) {
+    try {
+      setPaymentError("");
+      setPayingOrderId(orderId);
+
+      const response = await fetch("/api/create-payment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ orderId }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success || !data.paymentLink) {
+        throw new Error(data.message || "Unable to create payment link.");
+      }
+
+      window.location.href = data.paymentLink;
+    } catch (err) {
+      console.error("Remaining payment error:", err);
+      setPaymentError(
+        err instanceof Error
+          ? err.message
+          : "Unable to start payment. Please try again."
+      );
+      setPayingOrderId("");
+    }
+  }
 
   if (loading) {
     return (
@@ -428,17 +461,36 @@ export default function CustomerOrders() {
                   </a>
 
                   {!isPaid && (
-                    <a
-                      href="https://wa.me/918796289333"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-5 py-2.5 border border-gray-300 bg-white text-gray-800 rounded-lg text-sm font-medium hover:bg-gray-50 transition"
-                    >
-                      Contact for Payment
-                    </a>
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => handleRemainingPayment(order.orderId)}
+                        disabled={payingOrderId === order.orderId}
+                        className="px-5 py-2.5 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition disabled:opacity-60 disabled:cursor-not-allowed"
+                      >
+                        {payingOrderId === order.orderId
+                          ? "Creating Payment..."
+                          : `Pay Remaining ₹${order.remainingAmount.toLocaleString("en-IN")}`}
+                      </button>
+
+                      <a
+                        href="https://wa.me/918796289333"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-5 py-2.5 border border-gray-300 bg-white text-gray-800 rounded-lg text-sm font-medium hover:bg-gray-50 transition"
+                      >
+                        Contact for Payment
+                      </a>
+                    </>
                   )}
 
                 </div>
+
+                {paymentError && !isPaid && (
+                  <div className="mt-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+                    {paymentError}
+                  </div>
+                )}
 
               </div>
 
