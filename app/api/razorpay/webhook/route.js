@@ -88,7 +88,13 @@ export async function POST(request) {
         expectedBuffer
       )
     ) {
-      console.error("Invalid Razorpay webhook signature.");
+      console.error("========== RAZORPAY SIGNATURE DEBUG ==========");
+      console.error("Received signature length:", razorpaySignature.length);
+      console.error("Expected signature length:", expectedSignature.length);
+      console.error("Raw body length:", rawBody.length);
+      console.error("Webhook secret configured:", Boolean(WEBHOOK_SECRET));
+      console.error("Webhook secret length:", WEBHOOK_SECRET.length);
+      console.error("==============================================");
 
       return NextResponse.json(
         {
