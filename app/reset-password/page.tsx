@@ -1,8 +1,8 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
 export default function ResetPasswordPage() {
@@ -12,17 +12,22 @@ export default function ResetPasswordPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   const [loading, setLoading] = useState(false);
   const [checking, setChecking] = useState(true);
 
-  const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     async function checkSession() {
-      const { data } = await supabase.auth.getSession();
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
 
-      if (!data.session) {
+      if (!session) {
         setError(
           "This password reset link is invalid or has expired. Please request a new reset link."
         );
@@ -32,6 +37,19 @@ export default function ResetPasswordPage() {
     }
 
     checkSession();
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === "PASSWORD_RECOVERY" && session) {
+        setError("");
+        setChecking(false);
+      }
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
   }, [supabase]);
 
   async function handleUpdatePassword(e: FormEvent<HTMLFormElement>) {
@@ -41,7 +59,7 @@ export default function ResetPasswordPage() {
     setMessage("");
 
     if (password.length < 6) {
-      setError("Password must be at least 6 characters.");
+      setError("Password must be at least 6 characters long.");
       return;
     }
 
@@ -78,11 +96,13 @@ export default function ResetPasswordPage() {
 
   if (checking) {
     return (
-      <main className="min-h-screen bg-[#f8f5f2] flex items-center justify-center px-4">
-        <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-          <p className="text-gray-600">
-            Checking password reset link...
-          </p>
+      <main className="min-h-screen bg-[#f8f5f2] flex items-center justify-center px-4 py-12">
+        <div className="w-full max-w-md">
+          <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+            <p className="text-gray-600">
+              Checking password reset link...
+            </p>
+          </div>
         </div>
       </main>
     );
@@ -119,8 +139,12 @@ export default function ResetPasswordPage() {
             </div>
           )}
 
-          {!error && !message && (
-            <form onSubmit={handleUpdatePassword} className="space-y-5">
+          {/* Password Form */}
+          {!message && (
+            <form
+              onSubmit={handleUpdatePassword}
+              className="space-y-5"
+            >
 
               {/* New Password */}
               <div>
@@ -128,14 +152,31 @@ export default function ResetPasswordPage() {
                   New Password
                 </label>
 
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Minimum 6 characters"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-black"
-                  required
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter new password"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-3 pr-20 outline-none focus:border-black"
+                    minLength={6}
+                    required
+                  />
+
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setShowPassword(!showPassword)
+                    }
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-600 hover:text-black"
+                  >
+                    {showPassword ? "Hide" : "Show"}
+                  </button>
+                </div>
+
+                <p className="text-xs text-gray-500 mt-1">
+                  Password must be at least 6 characters.
+                </p>
               </div>
 
               {/* Confirm Password */}
@@ -144,29 +185,46 @@ export default function ResetPasswordPage() {
                   Confirm New Password
                 </label>
 
-                <input
-                  type="password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  placeholder="Re-enter your new password"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-black"
-                  required
-                />
+                <div className="relative">
+                  <input
+                    type={showConfirmPassword ? "text" : "password"}
+                    value={confirmPassword}
+                    onChange={(e) =>
+                      setConfirmPassword(e.target.value)
+                    }
+                    placeholder="Confirm new password"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-3 pr-20 outline-none focus:border-black"
+                    minLength={6}
+                    required
+                  />
+
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setShowConfirmPassword(!showConfirmPassword)
+                    }
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-600 hover:text-black"
+                  >
+                    {showConfirmPassword ? "Hide" : "Show"}
+                  </button>
+                </div>
               </div>
 
-              {/* Button */}
+              {/* Update Button */}
               <button
                 type="submit"
                 disabled={loading}
                 className="w-full rounded-lg bg-black text-white py-3 font-medium hover:bg-gray-800 transition disabled:opacity-50"
               >
-                {loading ? "Updating Password..." : "Update Password"}
+                {loading
+                  ? "Updating Password..."
+                  : "Update Password"}
               </button>
 
             </form>
           )}
 
-          {/* Login */}
+          {/* Back to Login */}
           <div className="text-center mt-6 text-sm text-gray-600">
             <Link
               href="/login"
