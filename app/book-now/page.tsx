@@ -10,10 +10,10 @@ export default function BookNowPage() {
 
     const form = e.currentTarget
 
-    // Submit to Google Form
+    // Submit to existing Google Form
     HTMLFormElement.prototype.submit.call(form)
 
-    // Show advance payment button after submission
+    // Show payment button after form submission
     setTimeout(() => {
       setSubmitted(true)
     }, 1200)
@@ -76,12 +76,15 @@ export default function BookNowPage() {
                 required
               >
                 <option value="">Select Quality</option>
+
                 <option value="raw">
                   Raw Miniature
                 </option>
+
                 <option value="flat">
                   Flat Color Finish
                 </option>
+
                 <option value="premium">
                   Premium Detailed
                 </option>
@@ -94,6 +97,7 @@ export default function BookNowPage() {
                 required
               >
                 <option value="">Select Size</option>
+
                 <option value="4">4 Inch</option>
                 <option value="6">6 Inch</option>
                 <option value="8">8 Inch</option>
@@ -101,21 +105,43 @@ export default function BookNowPage() {
                 <option value="12">12 Inch</option>
               </select>
 
-              {/* DATE - EXISTING */}
-              <input
-                name="entry.1361243778"
-                type="date"
-                className="w-full border p-3 rounded-md"
-                required
-              />
+              {/* EXPECTED DELIVERY DATE */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Expected Delivery Date
+                </label>
 
-              {/* DELIVERY ADDRESS - EXISTING */}
-              <textarea
-                name="entry.1361398854"
-                placeholder="Delivery Address"
-                className="w-full border p-3 rounded-md"
-                required
-              ></textarea>
+                <p className="text-xs text-gray-500 mb-2">
+                  Please select the date by which you need to receive your
+                  miniature.
+                </p>
+
+                <input
+                  name="entry.1361243778"
+                  type="date"
+                  className="w-full border p-3 rounded-md"
+                  required
+                />
+              </div>
+
+              {/* DELIVERY ADDRESS */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Delivery Address (including Pincode)
+                </label>
+
+                <p className="text-xs text-gray-500 mb-2">
+                  Please enter your complete delivery address along with your
+                  6-digit pincode.
+                </p>
+
+                <textarea
+                  name="entry.1361398854"
+                  placeholder="House/Flat No., Street, Area, City, State, Pincode"
+                  className="w-full border p-3 rounded-md min-h-[110px]"
+                  required
+                ></textarea>
+              </div>
 
               {/* SUBMIT */}
               <button
