@@ -10,10 +10,10 @@ export default function BookNowPage() {
 
     const form = e.currentTarget
 
-    // Submit to existing Google Form
+    // Submit the form to Google Forms
     HTMLFormElement.prototype.submit.call(form)
 
-    // Show payment button after form submission
+    // Show payment button after Google Form submission starts
     setTimeout(() => {
       setSubmitted(true)
     }, 1200)
@@ -60,7 +60,7 @@ export default function BookNowPage() {
                 required
               />
 
-              {/* EMAIL - NEW */}
+              {/* EMAIL */}
               <input
                 name="entry.1409320824"
                 type="email"
@@ -69,40 +69,54 @@ export default function BookNowPage() {
                 required
               />
 
-              {/* QUALITY - EXISTING */}
+              {/* QUALITY */}
               <select
                 name="entry.1834772149"
                 className="w-full border p-3 rounded-md"
                 required
               >
-                <option value="">Select Quality</option>
-
-                <option value="raw">
-                  Raw Miniature
+                <option value="">
+                  Select Quality
                 </option>
 
-                <option value="flat">
-                  Flat Color Finish
+                <option value="RAw(without Color)">
+                  Raw (without Color)
                 </option>
 
-                <option value="premium">
-                  Premium Detailed
+                <option value="Premium(With Color)">
+                  Premium (With Color)
                 </option>
               </select>
 
-              {/* SIZE - EXISTING */}
+              {/* SIZE */}
               <select
                 name="entry.627069154"
                 className="w-full border p-3 rounded-md"
                 required
               >
-                <option value="">Select Size</option>
+                <option value="">
+                  Select Size
+                </option>
 
-                <option value="4">4 Inch</option>
-                <option value="6">6 Inch</option>
-                <option value="8">8 Inch</option>
-                <option value="10">10 Inch</option>
-                <option value="12">12 Inch</option>
+                <option value="4 inch">
+                  4 Inch
+                </option>
+
+                <option value="6 inch">
+                  6 Inch
+                </option>
+
+                <option value="8 inch">
+                  8 Inch
+                </option>
+
+                <option value="10 inch">
+                  10 Inch
+                </option>
+
+                <option value="12 inch">
+                  12 Inch
+                </option>
               </select>
 
               {/* EXPECTED DELIVERY DATE */}
@@ -127,12 +141,12 @@ export default function BookNowPage() {
               {/* DELIVERY ADDRESS */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Delivery Address (including Pincode)
+                  Delivery Address
                 </label>
 
                 <p className="text-xs text-gray-500 mb-2">
-                  Please enter your complete delivery address along with your
-                  6-digit pincode.
+                  Please enter your complete delivery address along with
+                  your 6-digit pincode.
                 </p>
 
                 <textarea
@@ -153,13 +167,14 @@ export default function BookNowPage() {
 
             </form>
 
+            {/* Hidden Google Form target */}
             <iframe
               name="hidden_iframe"
               style={{ display: "none" }}
             ></iframe>
           </>
         ) : (
-          /* AFTER FORM SUBMISSION */
+          /* PAYMENT STEP AFTER FORM SUBMISSION */
           <div className="text-center py-8">
 
             <div className="text-4xl mb-4">
@@ -172,13 +187,15 @@ export default function BookNowPage() {
 
             <p className="text-gray-600 text-sm mb-8">
               Your details have been submitted successfully.
-              Please make the ₹500 advance payment to confirm your order.
+              Please make the ₹500 advance payment to confirm your
+              miniature order.
             </p>
 
             <button
               type="button"
               onClick={() => {
-                window.location.href = "https://rzp.io/rzp/Su5J66q"
+                window.location.href =
+                  "https://rzp.io/rzp/Su5J66q"
               }}
               className="w-full bg-black text-white py-3 rounded-md"
             >
@@ -186,7 +203,8 @@ export default function BookNowPage() {
             </button>
 
             <p className="text-xs text-gray-500 mt-4">
-              Your order will be confirmed after the advance payment is received.
+              Your order will be confirmed after the advance payment
+              is received.
             </p>
 
           </div>
