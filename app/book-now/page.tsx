@@ -10,10 +10,10 @@ export default function BookNowPage() {
 
     const form = e.currentTarget
 
-    // Submit data to Google Form
+    // Submit to Google Form
     HTMLFormElement.prototype.submit.call(form)
 
-    // Show payment button after form submission
+    // Show advance payment button after submission
     setTimeout(() => {
       setSubmitted(true)
     }, 1200)
@@ -60,7 +60,7 @@ export default function BookNowPage() {
                 required
               />
 
-              {/* EMAIL */}
+              {/* EMAIL - NEW */}
               <input
                 name="entry.1409320824"
                 type="email"
@@ -69,100 +69,53 @@ export default function BookNowPage() {
                 required
               />
 
-              {/* QUALITY */}
+              {/* QUALITY - EXISTING */}
               <select
                 name="entry.1834772149"
                 className="w-full border p-3 rounded-md"
                 required
               >
                 <option value="">Select Quality</option>
-
-                <option value="RAw(without Color)">
-                  Raw (without Color)
+                <option value="raw">
+                  Raw Miniature
                 </option>
-
-                <option value="Flat Color">
+                <option value="flat">
                   Flat Color Finish
                 </option>
-
-                <option value="Premium Detailed">
+                <option value="premium">
                   Premium Detailed
                 </option>
               </select>
 
-              {/* SIZE */}
+              {/* SIZE - EXISTING */}
               <select
                 name="entry.627069154"
                 className="w-full border p-3 rounded-md"
                 required
               >
                 <option value="">Select Size</option>
-
-                <option value="4 inch">
-                  4 Inch
-                </option>
-
-                <option value="6 inch">
-                  6 Inch
-                </option>
-
-                <option value="8 inch">
-                  8 Inch
-                </option>
-
-                <option value="10 inch">
-                  10 Inch
-                </option>
-
-                <option value="12 inch">
-                  12 Inch
-                </option>
+                <option value="4">4 Inch</option>
+                <option value="6">6 Inch</option>
+                <option value="8">8 Inch</option>
+                <option value="10">10 Inch</option>
+                <option value="12">12 Inch</option>
               </select>
 
-              {/* EXPECTED DELIVERY DATE */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Expected Delivery Date
-                </label>
-
-                <p className="text-xs text-gray-500 mb-2">
-                  Please select the date by which you need to receive your
-                  miniature.
-                </p>
-
-                <input
-                  name="entry.1361243778"
-                  type="date"
-                  className="w-full border p-3 rounded-md"
-                  required
-                />
-              </div>
-
-              {/* DELIVERY ADDRESS */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Delivery Address
-                </label>
-
-                <textarea
-                  name="entry.1361398854"
-                  placeholder="Enter your complete delivery address"
-                  className="w-full border p-3 rounded-md min-h-[110px]"
-                  required
-                ></textarea>
-              </div>
-
-              {/* PINCODE */}
+              {/* DATE - EXISTING */}
               <input
-                name="entry.1360570871"
-                type="text"
-                inputMode="numeric"
-                pattern="[0-9]{6}"
-                maxLength={6}
-                placeholder="Pincode"
+                name="entry.1361243778"
+                type="date"
                 className="w-full border p-3 rounded-md"
                 required
               />
+
+              {/* DELIVERY ADDRESS - EXISTING */}
+              <textarea
+                name="entry.1361398854"
+                placeholder="Delivery Address"
+                className="w-full border p-3 rounded-md"
+                required
+              ></textarea>
 
               {/* SUBMIT */}
               <button
@@ -180,7 +133,7 @@ export default function BookNowPage() {
             ></iframe>
           </>
         ) : (
-          /* PAYMENT STEP */
+          /* AFTER FORM SUBMISSION */
           <div className="text-center py-8">
 
             <div className="text-4xl mb-4">
@@ -192,11 +145,12 @@ export default function BookNowPage() {
             </h2>
 
             <p className="text-gray-600 text-sm mb-8">
-              Your order details have been submitted. Please pay the ₹500
-              advance to confirm your miniature order.
+              Your details have been submitted successfully.
+              Please make the ₹500 advance payment to confirm your order.
             </p>
 
             <button
+              type="button"
               onClick={() => {
                 window.location.href = "https://rzp.io/rzp/Su5J66q"
               }}
@@ -206,8 +160,7 @@ export default function BookNowPage() {
             </button>
 
             <p className="text-xs text-gray-500 mt-4">
-              Your order will be confirmed after the advance payment is
-              received.
+              Your order will be confirmed after the advance payment is received.
             </p>
 
           </div>
