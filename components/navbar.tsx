@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { Menu, X, UserRound } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { createClient } from "@/lib/supabase/client"
 
@@ -108,9 +108,10 @@ export function Navbar() {
             {/* Customer Account */}
             <Link
               href={isLoggedIn ? "/account" : "/login"}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              {isLoggedIn ? "My Account" : "Login"}
+              <UserRound size={19} strokeWidth={1.8} />
+              <span>{isLoggedIn ? "My Account" : "Login"}</span>
             </Link>
 
             {/* Book Now */}
@@ -206,10 +207,11 @@ export function Navbar() {
               {/* Customer Account - Mobile */}
               <Link
                 href={isLoggedIn ? "/account" : "/login"}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                {isLoggedIn ? "My Account" : "Login"}
+                <UserRound size={19} strokeWidth={1.8} />
+                <span>{isLoggedIn ? "My Account" : "Login"}</span>
               </Link>
 
               {/* Book Now */}
