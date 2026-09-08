@@ -316,13 +316,13 @@ export default async function MobileOrderDetailPage({
             </div>
 
             {/* Payment button placeholder */}
-            <button
-              type="button"
-              disabled
-              className="w-full mt-5 bg-gray-200 text-gray-500 py-3 rounded-xl font-semibold cursor-not-allowed"
-            >
-              Save Payment — Next Step
-            </button>
+            
+            <PaymentEditor
+              orderId={id}
+              totalAmount={totalAmount}
+              advancePaid={advancePaid}
+              remainingAmount={remainingAmount}
+            />
 
           </div>
 
