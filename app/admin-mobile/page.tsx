@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { getOrders } from "../admin/lib/api";
+import AdminGuard from "../admin/components/AdminGuard";
+import MobileOrderSearch from "./components/MobileOrderSearch";
 import {
   ShoppingBag,
   IndianRupee,
   Package,
   Clock3,
-  Search,
-  ArrowRight,
 } from "lucide-react";
 
 export default async function MobileAdminPage() {
@@ -27,7 +27,8 @@ export default async function MobileAdminPage() {
 
   const activeOrders = orders.filter(
     (item: any) =>
-      item.Status && item.Status !== "Delivered"
+      item.Status &&
+      item.Status !== "Delivered"
   ).length;
 
   const pendingFollowUp = orders.filter(
@@ -36,220 +37,146 @@ export default async function MobileAdminPage() {
       item.Status === "Advance Received"
   ).length;
 
-  const recentOrders = [...orders]
-    .sort((a: any, b: any) => {
-      const aNumber =
-        parseInt(
-          String(a["Order ID"] || "").replace(/\D/g, ""),
-          10
-        ) || 999999;
+  const sortedOrders = [...orders].sort((a: any, b: any) => {
+    const aNumber =
+      parseInt(
+        String(a["Order ID"] || "").replace(/\D/g, ""),
+        10
+      ) || -1;
 
-      const bNumber =
-        parseInt(
-          String(b["Order ID"] || "").replace(/\D/g, ""),
-          10
-        ) || 999999;
+    const bNumber =
+      parseInt(
+        String(b["Order ID"] || "").replace(/\D/g, ""),
+        10
+      ) || -1;
 
-      return bNumber - aNumber;
-    })
-    .slice(0, 8);
+    return bNumber - aNumber;
+  });
 
   return (
-    <div className="min-h-screen bg-gray-100 px-4 py-5">
+    <AdminGuard>
+      <div className="min-h-screen bg-gray-100">
 
-      {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <p className="text-sm text-gray-500">
-            NATUWA3D
-          </p>
+        {/* Mobile Header */}
+        <div className="sticky top-0 z-20 bg-white border-b">
+          <div className="max-w-md mx-auto px-4 py-4 flex items-center justify-between">
 
-          <h1 className="text-2xl font-bold text-gray-900">
-            Admin
-          </h1>
+            <div>
+              <p className="text-xs font-medium text-gray-400 tracking-wide">
+                NATUWA3D
+              </p>
+
+              <h1 className="text-xl font-bold text-gray-900">
+                Admin Dashboard
+              </h1>
+            </div>
+
+            <Link
+              href="/admin"
+              className="text-xs font-medium text-blue-600"
+            >
+              Desktop
+            </Link>
+
+          </div>
         </div>
 
-        <Link
-          href="/admin"
-          className="text-sm text-blue-600 font-medium"
-        >
-          Desktop
-        </Link>
-      </div>
+        {/* Main */}
+        <main className="max-w-md mx-auto px-4 py-5">
 
-      {/* Stats */}
-      <div className="grid grid-cols-2 gap-3">
+          {/* Stats */}
+          <div className="grid grid-cols-2 gap-3">
 
-        <div className="bg-white rounded-2xl p-4 shadow-sm border">
-          <div className="flex items-center justify-between">
-            <p className="text-sm text-gray-500">
-              Orders
-            </p>
+            {/* Orders */}
+            <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-200">
 
-            <ShoppingBag
-              size={20}
-              className="text-blue-600"
-            />
+              <div className="flex items-center justify-between">
+                <p className="text-xs text-gray-500">
+                  Orders
+                </p>
+
+                <ShoppingBag
+                  size={19}
+                  className="text-blue-600"
+                />
+              </div>
+
+              <p className="text-2xl font-bold text-gray-900 mt-2">
+                {totalInquiry}
+              </p>
+
+            </div>
+
+            {/* Active */}
+            <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-200">
+
+              <div className="flex items-center justify-between">
+                <p className="text-xs text-gray-500">
+                  Active
+                </p>
+
+                <Package
+                  size={19}
+                  className="text-purple-600"
+                />
+              </div>
+
+              <p className="text-2xl font-bold text-gray-900 mt-2">
+                {activeOrders}
+              </p>
+
+            </div>
+
+            {/* Advance */}
+            <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-200">
+
+              <div className="flex items-center justify-between">
+                <p className="text-xs text-gray-500">
+                  Advance
+                </p>
+
+                <IndianRupee
+                  size={19}
+                  className="text-green-600"
+                />
+              </div>
+
+              <p className="text-lg font-bold text-gray-900 mt-2">
+                ₹{totalAdvanceReceived.toLocaleString("en-IN")}
+              </p>
+
+            </div>
+
+            {/* Follow-up */}
+            <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-200">
+
+              <div className="flex items-center justify-between">
+                <p className="text-xs text-gray-500">
+                  Follow-up
+                </p>
+
+                <Clock3
+                  size={19}
+                  className="text-orange-500"
+                />
+              </div>
+
+              <p className="text-2xl font-bold text-gray-900 mt-2">
+                {pendingFollowUp}
+              </p>
+
+            </div>
+
           </div>
 
-          <p className="text-2xl font-bold mt-2">
-            {totalInquiry}
-          </p>
-        </div>
-
-        <div className="bg-white rounded-2xl p-4 shadow-sm border">
-          <div className="flex items-center justify-between">
-            <p className="text-sm text-gray-500">
-              Active
-            </p>
-
-            <Package
-              size={20}
-              className="text-purple-600"
-            />
-          </div>
-
-          <p className="text-2xl font-bold mt-2">
-            {activeOrders}
-          </p>
-        </div>
-
-        <div className="bg-white rounded-2xl p-4 shadow-sm border">
-          <div className="flex items-center justify-between">
-            <p className="text-sm text-gray-500">
-              Advance
-            </p>
-
-            <IndianRupee
-              size={20}
-              className="text-green-600"
-            />
-          </div>
-
-          <p className="text-xl font-bold mt-2">
-            ₹{totalAdvanceReceived.toLocaleString("en-IN")}
-          </p>
-        </div>
-
-        <div className="bg-white rounded-2xl p-4 shadow-sm border">
-          <div className="flex items-center justify-between">
-            <p className="text-sm text-gray-500">
-              Follow-up
-            </p>
-
-            <Clock3
-              size={20}
-              className="text-orange-500"
-            />
-          </div>
-
-          <p className="text-2xl font-bold mt-2">
-            {pendingFollowUp}
-          </p>
-        </div>
-
-      </div>
-
-      {/* Orders */}
-      <div className="mt-7">
-
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-lg font-bold text-gray-900">
-            Recent Orders
-          </h2>
-
-          <Link
-            href="/admin/orders"
-            className="text-sm text-blue-600 font-medium"
-          >
-            View All
-          </Link>
-        </div>
-
-        {/* Search visual */}
-        <div className="bg-white border rounded-xl px-4 py-3 flex items-center gap-3 mb-4">
-          <Search
-            size={19}
-            className="text-gray-400"
+          {/* Orders Search */}
+          <MobileOrderSearch
+            orders={sortedOrders}
           />
 
-          <span className="text-sm text-gray-400">
-            Search orders coming next...
-          </span>
-        </div>
-
-        <div className="space-y-3">
-
-          {recentOrders.map(
-            (order: any, index: number) => {
-
-              const orderId =
-                order["Order ID"];
-
-              return (
-                <div
-                  key={index}
-                  className="bg-white border rounded-2xl p-4 shadow-sm"
-                >
-
-                  <div className="flex items-start justify-between gap-3">
-
-                    <div className="min-w-0">
-
-                      <p className="font-bold text-gray-900">
-                        {orderId || "No Order ID"}
-                      </p>
-
-                      <p className="text-sm text-gray-600 mt-1 truncate">
-                        {order.name || "Customer"}
-                      </p>
-
-                      <p className="text-xs text-gray-400 mt-1">
-                        {order.phone || "-"}
-                      </p>
-
-                    </div>
-
-                    <span className="shrink-0 text-xs bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full">
-                      {order.Status || "New"}
-                    </span>
-
-                  </div>
-
-                  <div className="flex items-center justify-between mt-4">
-
-                    <p className="text-sm text-gray-600">
-                      Advance:{" "}
-                      <b>
-                        ₹{order["Advance Paid"] || 0}
-                      </b>
-                    </p>
-
-                    {orderId ? (
-                      <Link
-                        href={`/admin/orders/${orderId}`}
-                        className="flex items-center gap-1 bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-medium"
-                      >
-                        Open
-                        <ArrowRight size={16} />
-                      </Link>
-                    ) : (
-                      <span className="text-xs text-gray-400">
-                        No Order ID
-                      </span>
-                    )}
-
-                  </div>
-
-                </div>
-              );
-            }
-          )}
-
-        </div>
+        </main>
 
       </div>
-
-    </div>
+    </AdminGuard>
   );
 }
