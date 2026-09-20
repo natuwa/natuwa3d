@@ -11,6 +11,7 @@ const statusList = [
   "Image Approved",
   "3D Designing Started",
   "3D Design Approved",
+  "Payment Pending – Process May Be On Hold",
   "3D Printing Started",
   "3D Printing Completed",
   "Painting Started",
@@ -23,6 +24,7 @@ const statusList = [
   "Refund Requested",
   "Delivery Confirmed",
   "Refund Transferred"
+  
 ];
 
 export default function StatusEditor({
