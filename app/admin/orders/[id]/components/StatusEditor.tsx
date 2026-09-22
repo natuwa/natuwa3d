@@ -23,7 +23,7 @@ const statusList = [
   "Delivery and Issue",
   "Refund Requested",
   "Delivery Confirmed",
-  "NATUWA3D Family",
+  "NATUWA3d family",
   "Refund Transferred"
   
 ];
