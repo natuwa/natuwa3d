@@ -44,40 +44,78 @@ export default function Home() {
         </p>
       </section>
 
-      {/* KARWA CHAUTH OFFER SECTION */}
+      {/* ============================= */}
+      {/* KARWA CHAUTH SPECIAL OFFER */}
+      {/* ============================= */}
+
       {showOffer && (
-        <section className="w-full bg-[#f8f5f2] py-14 border-t border-[#e5dcd6]">
+        <section className="w-full bg-[#f8f5f2] py-16 border-t border-[#e5dcd6]">
 
-          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-            {/* LEFT TEXT */}
+            {/* LEFT CONTENT */}
             <div className="text-center md:text-left">
 
-              <h2 className="text-3xl font-semibold leading-snug">
+              {/* BIG SPECIAL OFFER BADGE */}
+              <div className="inline-flex items-center gap-3 mb-5">
 
-                <span className="inline-block bg-[#4a2c2a]/10 text-[#4a2c2a] border border-[#4a2c2a]/20 px-3 py-1 rounded-full text-sm mr-2 mb-2">
-                  🌙 Special Offer
+                <span className="flex items-center justify-center w-11 h-11 rounded-full bg-[#4a2c2a] text-2xl shadow-md">
+                  🌙
                 </span>
 
-                <span className="text-[#4a2c2a]">
-                  {offerTitle}
+                <span className="relative inline-block">
+
+                  {/* Glow */}
+                  <span className="absolute inset-0 rounded-full bg-[#d6a84f]/30 blur-md"></span>
+
+                  {/* Badge */}
+                  <span className="relative inline-flex items-center px-7 py-2.5 rounded-full bg-gradient-to-r from-[#4a2c2a] to-[#6b3834] border-2 border-[#d6a84f] text-white text-xl md:text-2xl font-bold tracking-wide shadow-lg">
+                    ✨ Special Offer ✨
+                  </span>
+
                 </span>
 
+              </div>
+
+              {/* TITLE */}
+              <h2 className="text-4xl md:text-5xl font-semibold leading-tight text-[#4a2c2a]">
+                {offerTitle}
               </h2>
 
-              <p className="mt-3 text-lg text-[#6b4c4c]">
-                {offerText}
+              {/* GOLD HEART DIVIDER */}
+              <div className="flex items-center justify-center md:justify-start gap-3 my-5">
+                <span className="h-[2px] w-16 bg-[#d6a84f]"></span>
+                <span className="text-xl">❤️</span>
+                <span className="h-[2px] w-16 bg-[#d6a84f]"></span>
+              </div>
+
+              {/* DISCOUNT HIGHLIGHT BOX */}
+              <div className="inline-block bg-white border-2 border-[#e8b4a8] rounded-2xl px-5 py-4 shadow-sm">
+
+                <p className="text-xl md:text-2xl text-[#4a2c2a] leading-snug">
+                  <span className="font-extrabold text-[#c62828] text-3xl md:text-4xl">
+                    Flat 20% OFF
+                  </span>
+
+                  <span className="block md:inline md:ml-2 mt-1 md:mt-0">
+                    – Turn Your Love Into a Forever Memory ❤️
+                  </span>
+                </p>
+
+              </div>
+
+              {/* LIMITED TIME */}
+              <p className="mt-5 text-base md:text-lg font-semibold text-[#a94442]">
+                ⏳ Limited Time Karwa Chauth Offer
               </p>
 
-              <p className="mt-2 text-sm text-[#a94442]">
-                {offerTag}
-              </p>
-
+              {/* ORDER BUTTON */}
               <a
                 href="/book-now"
-                className="inline-block mt-6 px-8 py-3 bg-[#4a2c2a] text-white rounded-full hover:bg-[#3a1f1d] transition"
+                className="inline-flex items-center justify-center gap-2 mt-7 px-9 py-4 bg-[#4a2c2a] text-white text-lg font-semibold rounded-full shadow-md hover:bg-[#3a1f1d] hover:scale-105 transition-all duration-300"
               >
                 Order Now
+                <span className="text-xl">→</span>
               </a>
 
             </div>
@@ -85,16 +123,25 @@ export default function Home() {
             {/* RIGHT IMAGE */}
             <div
               onClick={() => setOpen(true)}
-              className="flex justify-center overflow-hidden rounded-2xl cursor-pointer group"
+              className="flex justify-center cursor-pointer group"
             >
-              <Image
-                src={offerImage}
-                alt="Karwa Chauth Couple Miniature by NATUWA3D"
-                width={500}
-                height={500}
-                priority
-                className="w-[260px] h-[260px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
-              />
+
+              <div className="relative">
+
+                {/* Soft glow behind image */}
+                <div className="absolute inset-0 bg-[#d6a84f]/20 blur-2xl rounded-full scale-90"></div>
+
+                <Image
+                  src={offerImage}
+                  alt="Karwa Chauth Couple Miniature by NATUWA3D"
+                  width={500}
+                  height={500}
+                  priority
+                  className="relative w-[280px] h-[280px] md:w-[360px] md:h-[360px] object-cover rounded-2xl shadow-xl transition-transform duration-300 group-hover:scale-105"
+                />
+
+              </div>
+
             </div>
 
           </div>
@@ -102,7 +149,10 @@ export default function Home() {
         </section>
       )}
 
-      {/* FULLSCREEN MODAL */}
+      {/* ============================= */}
+      {/* FULLSCREEN IMAGE MODAL */}
+      {/* ============================= */}
+
       {open && (
         <div
           onClick={() => setOpen(false)}
@@ -132,7 +182,7 @@ export default function Home() {
               className="w-full max-h-[70vh] object-contain rounded-2xl shadow-2xl"
             />
 
-            {/* MODAL TEXT */}
+            {/* MODAL TITLE */}
             <h2 className="text-white text-2xl mt-6 font-semibold">
               {offerTitle}
             </h2>
@@ -153,7 +203,8 @@ export default function Home() {
         </div>
       )}
 
-      {/* MAIN WEBSITE SECTIONS */}
+      {/* WEBSITE SECTIONS */}
+
       <GallerySection />
 
       <SizeSection />
