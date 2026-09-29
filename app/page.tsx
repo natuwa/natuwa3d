@@ -13,116 +13,126 @@ import { Footer } from "@/components/footer"
 import Image from "next/image"
 import { FAQSection } from "@/components/faq-section"
 
-
 const showOffer = true
 
-// 🔥 OFFER CONFIG
+// KARWA CHAUTH OFFER CONFIG
 const offerTitle = "Karwa Chauth Couple Miniature"
 const offerText = "Flat 20% OFF – Turn Your Love Into a Forever Memory ❤️"
 const offerTag = "⏳ Limited Time Karwa Chauth Offer"
+
+const offerImage = "/images/natuwa3d-karwa-chauth-miniature.png"
 
 export default function Home() {
   const [open, setOpen] = useState(false)
 
   return (
     <main className="min-h-screen bg-background">
-      
+
       <Navbar />
+
       <HeroSection />
-      
+
       {/* About Section */}
       <section className="max-w-5xl mx-auto px-6 py-14 text-center">
         <h2 className="text-3xl font-semibold mb-4">
           Personalized 3D Wedding Miniatures
         </h2>
-      
+
         <p className="text-muted-foreground leading-relaxed">
-          At NATUWA3D, we create highly detailed 3D printed wedding miniatures that
-          capture your most special moments forever.
+          At NATUWA3D, we create highly detailed 3D printed wedding miniatures
+          that capture your most special moments forever.
         </p>
       </section>
 
-      {/* 🔥 KARWA CHAUTH OFFER SECTION */}
+      {/* KARWA CHAUTH OFFER SECTION */}
       {showOffer && (
         <section className="w-full bg-[#f8f5f2] py-14 border-t border-[#e5dcd6]">
-          
+
           <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-      
+
             {/* LEFT TEXT */}
             <div className="text-center md:text-left">
-              
+
               <h2 className="text-3xl font-semibold leading-snug">
 
-                <span className="bg-[#4a2c2a]/10 text-[#4a2c2a] border border-[#4a2c2a]/20 px-3 py-1 rounded-full text-sm mr-2">
+                <span className="inline-block bg-[#4a2c2a]/10 text-[#4a2c2a] border border-[#4a2c2a]/20 px-3 py-1 rounded-full text-sm mr-2 mb-2">
                   🌙 Special Offer
                 </span>
-              
+
                 <span className="text-[#4a2c2a]">
                   {offerTitle}
                 </span>
 
               </h2>
-      
+
               <p className="mt-3 text-lg text-[#6b4c4c]">
                 {offerText}
               </p>
-      
+
               <p className="mt-2 text-sm text-[#a94442]">
                 {offerTag}
               </p>
-      
+
               <a
                 href="/book-now"
                 className="inline-block mt-6 px-8 py-3 bg-[#4a2c2a] text-white rounded-full hover:bg-[#3a1f1d] transition"
               >
                 Order Now
               </a>
+
             </div>
-      
+
             {/* RIGHT IMAGE */}
             <div
               onClick={() => setOpen(true)}
               className="flex justify-center overflow-hidden rounded-2xl cursor-pointer group"
             >
               <Image
-                src="/images/natuwa3d-karwa-chauth-miniature.png"
-                alt="Karwa Chauth Couple Miniature"
-                width={260}
-                height={260}
-                className="transition-all duration-300 group-hover:scale-110 object-cover"
+                src={offerImage}
+                alt="Karwa Chauth Couple Miniature by NATUWA3D"
+                width={500}
+                height={500}
+                priority
+                className="w-[260px] h-[260px] object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
               />
             </div>
-      
+
           </div>
+
         </section>
       )}
 
-      {/* 🔥 FULLSCREEN MODAL */}
+      {/* FULLSCREEN MODAL */}
       {open && (
         <div
           onClick={() => setOpen(false)}
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
         >
+
           <div
             onClick={(e) => e.stopPropagation()}
-            className="text-center px-4"
+            className="relative text-center max-w-xl w-full"
           >
+
             {/* CLOSE BUTTON */}
             <button
               onClick={() => setOpen(false)}
-              className="absolute top-6 right-6 text-white text-3xl"
+              aria-label="Close image"
+              className="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300 transition"
             >
               ✕
             </button>
 
+            {/* LARGE IMAGE */}
             <Image
-              src="/images/natuwa3d-karwa-chauth-miniature.png"
-              alt="Karwa Chauth Couple Miniature"
-              width={500}
-              height={500}
-              className="rounded-2xl shadow-2xl"
+              src={offerImage}
+              alt="Karwa Chauth Couple Miniature by NATUWA3D"
+              width={700}
+              height={700}
+              className="w-full max-h-[70vh] object-contain rounded-2xl shadow-2xl"
             />
 
+            {/* MODAL TEXT */}
             <h2 className="text-white text-2xl mt-6 font-semibold">
               {offerTitle}
             </h2>
@@ -133,21 +143,31 @@ export default function Home() {
 
             <a
               href="/book-now"
-              className="inline-block mt-5 px-6 py-3 bg-white text-black rounded-full"
+              className="inline-block mt-5 px-6 py-3 bg-white text-black rounded-full hover:bg-gray-200 transition"
             >
               Order Now
             </a>
+
           </div>
+
         </div>
       )}
-      
+
+      {/* MAIN WEBSITE SECTIONS */}
       <GallerySection />
+
       <SizeSection />
-      <ProductsSection />      
-      <ProcessSection />      
+
+      <ProductsSection />
+
+      <ProcessSection />
+
       <TestimonialsSection />
+
       <ContactSection />
+
       <FAQSection />
+
       <Footer />
 
     </main>
