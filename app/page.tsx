@@ -17,9 +17,9 @@ import { FAQSection } from "@/components/faq-section"
 const showOffer = true
 
 // 🔥 OFFER CONFIG
-const offerTitle = "Raksha Bandhan Miniature"
-const offerText = "Flat 20% OFF – Make Your Bond Memorable ❤️ "
-const offerTag = "⏳ Limited Time Offer"
+const offerTitle = "Karwa Chauth Couple Miniature"
+const offerText = "Flat 20% OFF – Turn Your Love Into a Forever Memory ❤️"
+const offerTag = "⏳ Limited Time Karwa Chauth Offer"
 
 export default function Home() {
   const [open, setOpen] = useState(false)
@@ -42,7 +42,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* 🔥 OFFER SECTION */}
+      {/* 🔥 KARWA CHAUTH OFFER SECTION */}
       {showOffer && (
         <section className="w-full bg-[#f8f5f2] py-14 border-t border-[#e5dcd6]">
           
@@ -54,7 +54,7 @@ export default function Home() {
               <h2 className="text-3xl font-semibold leading-snug">
 
                 <span className="bg-[#4a2c2a]/10 text-[#4a2c2a] border border-[#4a2c2a]/20 px-3 py-1 rounded-full text-sm mr-2">
-                  🎁 Special Offer
+                  🌙 Special Offer
                 </span>
               
                 <span className="text-[#4a2c2a]">
@@ -85,8 +85,8 @@ export default function Home() {
               className="flex justify-center overflow-hidden rounded-2xl cursor-pointer group"
             >
               <Image
-                src="/images/raksha-bhandhan-6.webp"
-                alt="Miniature Offer"
+                src="/images/karwa-chauth-miniature.webp"
+                alt="Karwa Chauth Couple Miniature"
                 width={260}
                 height={260}
                 className="transition-all duration-300 group-hover:scale-110 object-cover"
@@ -116,8 +116,8 @@ export default function Home() {
             </button>
 
             <Image
-              src="/images/raksha-bhandhan-6.webp"
-              alt="Full Offer"
+              src="/images/karwa-chauth-miniature.webp"
+              alt="Karwa Chauth Couple Miniature"
               width={500}
               height={500}
               className="rounded-2xl shadow-2xl"
