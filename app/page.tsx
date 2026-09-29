@@ -85,7 +85,7 @@ export default function Home() {
               className="flex justify-center overflow-hidden rounded-2xl cursor-pointer group"
             >
               <Image
-                src="/images/natuwa3d-karwa-chauth-miniature.webp"
+                src="/images/natuwa3d-karwa-chauth-miniature.png"
                 alt="Karwa Chauth Couple Miniature"
                 width={260}
                 height={260}
@@ -116,7 +116,7 @@ export default function Home() {
             </button>
 
             <Image
-              src="/images/src="/images/natuwa3d-karwa-chauth-miniature.webp"
+              src="/images/src="/images/natuwa3d-karwa-chauth-miniature.png"
               alt="Karwa Chauth Couple Miniature"
               width={500}
               height={500}
