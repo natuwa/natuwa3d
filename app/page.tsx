@@ -116,7 +116,7 @@ export default function Home() {
             </button>
 
             <Image
-              src="/images/src="/images/natuwa3d-karwa-chauth-miniature.png"
+              src="/images/natuwa3d-karwa-chauth-miniature.png"
               alt="Karwa Chauth Couple Miniature"
               width={500}
               height={500}
